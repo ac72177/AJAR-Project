@@ -4,31 +4,31 @@ Plan+ (Plant) is designed for young adults and adults (ages 18-35) who want to s
 
 ## Task Requirements 
 ### Minimal
-- [ ] A user must be able to login/signup to their account
+1. A user must be able to login/signup to their account
 - Signup (consider firebase): username, password, email address, privacy agreement box
 - Login: input email and password or username and password to log in
 
-- [ ] A user must be able to create a plan in the UI
+2. A user must be able to create a plan in the UI
 - User can input plan information into fields
 - User can save changes to the server to create a new plan in the database
 - User can cancel to discard changes on the plan
 - Click Create Plan button that prompts open a form
 
-- [ ] App must be able to fetch and display plans data inputted from database for a specific user
+3. App must be able to fetch and display plans data inputted from database for a specific user
 
 ### Standard
-- [ ] A user can delete data from their account
-- [ ] A user can edit their existing plans
-- [ ] A user can sort/filter plans based on a specific plan attribute
-- [ ] A user can associate Plans with other Plans
-- [ ] A user can assign a due date field to a Plan
-- [ ] A user can attach files to each plan
-- [ ] A user can Aggregate progress for all plans on dashboard
+1. A user can delete data from their account
+2. A user can edit their existing plans
+3. A user can sort/filter plans based on a specific plan attribute
+4. A user can associate Plans with other Plans
+5. A user can assign a due date field to a Plan
+6. A user can attach files to each plan
+7. A user can Aggregate progress for all plans on dashboard
 
 ### Stretch
-- [ ] Notifications to remind users when a plan is due soon
-- [ ] Can invite other users to join the app
-- [ ] Can view profiles of other users 
+1. Notifications to remind users when a plan is due soon
+2. Can invite other users to join the app
+3. Can view profiles of other users 
 
 ## Rough Sketch
 

@@ -1,4 +1,4 @@
-import "./App.css";
+import "../styles/App.css";
 import Filter from "./Filter";
 import MiniPlan from "./MiniPlan";
 import Sort from "./Sort";

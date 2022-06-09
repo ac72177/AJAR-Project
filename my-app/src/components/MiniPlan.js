@@ -1,7 +1,7 @@
 import Label from "./Label";
 import MiniTask from "./MiniTask";
 import ProgressBar from "./ProgressBar";
-import "./MiniPlan.css";
+import "../styles/MiniPlan.css";
 
 function MiniPlan(props) {
     const labels = [];
@@ -47,9 +47,12 @@ function MiniPlan(props) {
                 <div className="subtasks-section">
                     <div className="due-this-week-section">
                         <h6>Due this week</h6>
+                        <hr></hr>
                     </div>
+                    <br></br>
                     <div className="all-tasks-section">
                         <h6>All Tasks</h6>
+                        <hr></hr>
                         {subplans}
                     </div>
                 </div>

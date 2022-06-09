@@ -13,7 +13,7 @@
 .heading-section {
     /* border: 1px solid green; */
     /* position: absolute; */
-    /* display: flex;
+    /* display: flex; */
     /* justify-content: flex-end; */
 }
 
@@ -24,8 +24,13 @@
 }
 
 .progress-bar-section {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    /* border-radius: 10px; */
     /* margin: 0px 2em; */
+}
+
+.subtasks-section {
+    text-align: left;
 }
 
 h2 {

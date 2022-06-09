@@ -17,7 +17,7 @@ function App(props) {
                     <button
                         id="new-plan-button"
                         className=""
-                        onClick={() => alert("open create plan modal")}
+                        onClick={() => alert("TODO: open create plan modal")}
                     >
                         New Plan
                     </button>

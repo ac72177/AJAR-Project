@@ -1,0 +1,11 @@
+.label {
+    margin: 10px;
+    border: 1px solid lightgrey;
+    background-color: lightgrey;
+    border-radius: 20%;
+    padding: 1px 20px;
+}
+
+h6 {
+    font-weight: bold;
+}

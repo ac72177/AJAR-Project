@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Filter from "./Filter";
+import MiniPlan from "./MiniPlan";
+import Sort from "./Sort";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+    const cards = [];
+    for (let i = 0; i < props.data.plans.length; i++) {
+        cards.push(
+            <MiniPlan key={i.toString()} cardNumber={i} data={props.data} />
+        );
+    }
+    return (
+        <div className="App">
+            <div className="options-container">
+                <div className="option new-plan-button">
+                    <button
+                        id="new-plan-button"
+                        className=""
+                        onClick={() => alert("open create plan modal")}
+                    >
+                        New Plan
+                    </button>
+                </div>
+                <div className="option sort-button">
+                    <Sort />
+                </div>
+
+                <div className="option filter-button">
+                    <Filter />
+                </div>
+            </div>
+
+            <div className="grid-container">{cards}</div>
+        </div>
+    );
 }
 
 export default App;

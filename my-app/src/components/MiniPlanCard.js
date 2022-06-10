@@ -1,42 +1,57 @@
 import Label from "./Label";
-import MiniTask from "./MiniTask";
+import Subtask from "./Subtask";
 import ProgressBar from "./ProgressBar";
 import "../styles/MiniPlan.css";
 
 function MiniPlan(props) {
+    const thisMiniPlan = props.data.plans[props.id];
     const labels = [];
-    const subplans = [];
-    for (let i = 0; i < props.data.plans[props.cardNumber].labels.length; i++) {
+    const subTasks = [];
+    const dueTasks = [];
+    const currentDate = new Date();
+
+    if (currentDate.getMonth === 1) {
+        
+    }
+
+    for (let i = 0; i < thisMiniPlan.labels.length; i++) {
         labels.push(
             <Label
                 key={i.toString()}
                 labelNumber={i}
-                data={props.data.plans[props.cardNumber].labels[i]}
+                data={thisMiniPlan.labels[i]}
             />
         );
     }
 
-    for (let i = 0; i < props.data.plans[props.cardNumber].plans.length; i++) {
-        subplans.push(
-            <MiniTask
+    for (let i = 0; i < thisMiniPlan.plans.length; i++) {
+        subTasks.push(
+            <Subtask
                 key={i.toString()}
                 taskNumber={i}
-                data={props.data.plans[props.cardNumber].plans[i]}
+                data={thisMiniPlan.plans[i]}
             />
         );
     }
+
+    for (let i = 0; i < thisMiniPlan.plans.length; i++) {
+        dueTasks.push(
+            // push subtask 
+        );
+    }
+
+
 
     return (
         <div className="card">
             <div className="card-content">
                 <div className="heading-section">
-                    <h2>{props.data.plans[props.cardNumber].name}</h2>
-
+                    <h2>{thisMiniPlan.name}</h2>
                     <i
                         className="fa-solid fa-pen-to-square"
                         onClick={() => alert("TODO: open editing modal")}
                     ></i>
-                    <h6>Due: {props.data.plans[props.cardNumber].dueDate}</h6>
+                    <h6>Due: {thisMiniPlan.dueDate}</h6>
                 </div>
 
                 <div className="labels-section">{labels}</div>
@@ -53,7 +68,7 @@ function MiniPlan(props) {
                     <div className="all-tasks-section">
                         <h6>All Tasks</h6>
                         <hr></hr>
-                        {subplans}
+                        {subTasks}
                     </div>
                 </div>
             </div>

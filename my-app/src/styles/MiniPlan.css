@@ -1,32 +1,23 @@
 .card {
     border: 1px solid lightgrey;
     margin: 1.5em;
-    /* background-color: aliceblue; */
     border-radius: 10%;
+    padding: 2em 0.4em;
 }
 
 .card-content {
-    /* border: 1px solid green; */
     margin: 1em 3em;
 }
 
 .heading-section {
-    /* border: 1px solid green; */
-    /* position: absolute; */
-    /* display: flex; */
-    /* justify-content: flex-end; */
 }
 
 .labels-section {
     display: flex;
-    /* border: 1px solid red; */
     justify-content: center;
 }
 
 .progress-bar-section {
-    /* border: 1px solid red; */
-    /* border-radius: 10px; */
-    /* margin: 0px 2em; */
 }
 
 .subtasks-section {

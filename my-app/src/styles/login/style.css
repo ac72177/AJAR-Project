@@ -43,7 +43,7 @@ label {
   font-size: 20px;
 }
 
-input {
+.auth-input {
   margin-top: 6px;
   min-width: 18em;
   height: 37px;

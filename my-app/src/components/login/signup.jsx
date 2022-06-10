@@ -32,15 +32,15 @@ export default class Signup extends React.Component {
                     <div className="LoginSingupForm">
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
-                            <input type="text" name="name" placeholder="name" onChange={this.onChange}/>
+                            <input className="auth-input" type="text" name="name" placeholder="name" onChange={this.onChange}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" placeholder="email" onChange={this.onChange} />
+                            <input className="auth-input" type="text" name="email" placeholder="email" onChange={this.onChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input type="text" name="password" placeholder="password" onChange={this.onChange}/>
+                            <input className="auth-input" type="text" name="password" placeholder="password" onChange={this.onChange}/>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,18 @@
+.row {
+    display: flex;
+    align-items: center;
+    max-height: 5px;
+    height: 100%;
+}
+
+.column {
+    margin: 0.5em;
+}
+
+.subtask {
+    margin-left: 10px;
+}
+
+hr {
+    border-color: lightgrey;
+}

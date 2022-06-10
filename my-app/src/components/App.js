@@ -1,38 +1,23 @@
-import "../styles/App.css";
-import Filter from "./Filter";
-import MiniPlanCard from "./MiniPlanCard";
-import Sort from "./Sort";
+import { Routes, Route } from "react-router-dom"
+import Navbar from './navBar/Navbar'
+import GardenView from "./../pages/GardenView";
+import Overview from "./../pages/Overview";
+import CalendarView from "./../pages/CalendarView"
+import TestPage from "./../pages/TestPage"
+import dummyData from "../dummyData.json"; // todo remove
 
-function App(props) {
-    const cards = [];
-    const userPlans = props.data.plans;
-    for (let i = 0; i < userPlans.length; i++) {
-        cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
-    }
-    return (
-        <div className="App">
-            <div className="section options-container">
-                <div className="option new-plan-button">
-                    <button
-                        id="new-plan-button"
-                        className=""
-                        onClick={() => alert("TODO: open create plan modal")}
-                    >
-                        New Plan
-                    </button>
-                </div>
-                <div className="option sort-button">
-                    <Sort />
-                </div>
-
-                <div className="option filter-button">
-                    <Filter />
-                </div>
-            </div>
-
-            <div className="section grid-container">{cards}</div>
-        </div>
-    );
+function App() {
+  return (
+    <div className="App"  style={{display: "flex"}}>
+      <Navbar />
+      <Routes>
+        <Route path='/calendar' element={<CalendarView />}/> 
+        <Route path='/overview' element={<Overview data={dummyData}/>}/>  
+        <Route path='/test' element={<TestPage />}/>    
+        <Route path='/home' exact-to element={<GardenView />}/>            
+      </Routes>
+    </div>
+  )
 }
 
 export default App;

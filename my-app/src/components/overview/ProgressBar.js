@@ -1,4 +1,4 @@
-import "../styles/ProgressBar.css";
+import "./../../styles/overview/ProgressBar.css";
 
 function ProgressBar(props) {
     return (

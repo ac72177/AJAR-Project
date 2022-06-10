@@ -1,7 +1,7 @@
 import Label from "./Label";
-import Subtask from "./Subtask";
+import Subtask from "./MiniTask";
 import ProgressBar from "./ProgressBar";
-import "../styles/MiniPlan.css";
+import "./../../styles/overview/MiniPlan.css";
 
 function MiniPlan(props) {
     const thisMiniPlan = props.data.plans[props.id];

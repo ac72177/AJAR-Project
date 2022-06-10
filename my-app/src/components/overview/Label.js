@@ -1,4 +1,4 @@
-import "../styles/Label.css";
+import "./../../styles/overview/Label.css";
 
 function Label(props) {
     return (

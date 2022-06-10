@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 function GridItem({classes}) {
     return (
-           <Grid item xs={15}>
-               <Paper className={classes.paper}>item</Paper>
-            </Grid>
+        <Grid item xs={15}>
+            <Paper className={classes.paper}>item</Paper>
+        </Grid>
 
     )
 }

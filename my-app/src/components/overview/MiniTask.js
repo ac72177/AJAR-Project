@@ -1,4 +1,4 @@
-import "../styles/MiniTask.css";
+import "./../../styles/overview/MiniTask.css";
 
 function MiniTask(props) {
     return (

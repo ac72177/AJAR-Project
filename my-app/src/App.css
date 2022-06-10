@@ -109,3 +109,15 @@ input:focus {
     padding: 10px 30px;
   }
 }
+
+.paper {
+  padding:3px;
+}
+.garden_view {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  padding: 30px;
+  background-image: url("img/garden.png");
+  background-size: cover;
+}

@@ -1,0 +1,72 @@
+{
+    "_id": "u1",
+    "user": "Bob",
+    "password": "password123",
+    "email": "hello@hello.com",
+    "plans": [
+        {
+            "_id": "p1",
+            "name": "Learn Spanish",
+            "startDate": "2022-05-05",
+            "dueDate": "2022-07-30",
+            "isComplete": false,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+            "parent": "root",
+            "plans": [
+                {
+                    "_id": "p1p1",
+                    "name": "SubPlan 1",
+                    "startDate": "2022-05-05",
+                    "dueDate": "2022-07-30",
+                    "isComplete": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+                    "parent": "Learn Spanish",
+                    "plans": []
+                },
+                {
+                    "_id": "p1p2",
+                    "name": "SubPlan 2",
+                    "startDate": "2022-05-05",
+                    "dueDate": "2022-07-30",
+                    "isComplete": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+                    "parent": "Learn Spanish",
+                    "plans": []
+                }
+            ]
+        },
+        {
+            "_id": "p2",
+            "name": "Work out",
+            "startDate": "2022-05-05",
+            "dueDate": "2022-07-30",
+            "isComplete": false,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+            "parent": "root",
+            "plans": [
+                {
+                    "_id": "p2p1",
+                    "name": "Watch Youtube Video",
+                    "startDate": "2022-05-05",
+                    "dueDate": "2022-07-30",
+                    "isComplete": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+                    "parent": "Learn Spanish",
+                    "plans": []
+                },
+                {
+                    "_id": "p2p2",
+                    "name": "Watch Youtube Video",
+                    "startDate": "2022-05-05",
+                    "dueDate": "2022-07-30",
+                    "isComplete": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+                    "parent": "Learn Spanish",
+                    "plans": []
+                }
+            ]
+        }
+        
+    ],
+    "attachments": []
+}

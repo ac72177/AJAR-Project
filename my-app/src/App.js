@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+<<<<<<< Updated upstream
 import { PlanContainer } from './components/PlanContainer';
 import React from "react";
 import "./App.css";
@@ -34,6 +34,19 @@ function App() {
             </Routes>
         </BrowserRouter>
     </div>
+=======
+import Navbar from './features/navBar/Navbar'
+import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+    </Router>
+>>>>>>> Stashed changes
   );
 }
 

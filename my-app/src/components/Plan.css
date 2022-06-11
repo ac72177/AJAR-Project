@@ -1,0 +1,44 @@
+.Plan h1 {
+    /* Learn Spanish */
+    width: 279px;
+    height: 49px;
+    left: 374px;
+    top: 121px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+
+}
+
+.summaryContainer {
+    display: flex;
+    justify-content: row;
+}
+
+.Plan h3 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.Plan p {
+    font-weight: 400;
+    font-size: 14px;
+}
+/* September 15, 2022
+
+position: absolute;
+width: 134px;
+height: 17px;
+left: 451px;
+top: 189px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+

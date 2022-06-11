@@ -1,0 +1,14 @@
+.progressBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    width: 451px;
+    height: 123px;
+    left: 998px;
+    top: 104px;
+
+    background: #FFFFFF;
+    border: 1px solid #D4D2D2;
+    border-radius: 20px;
+ }

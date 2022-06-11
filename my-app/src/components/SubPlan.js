@@ -3,7 +3,7 @@ export default function SubPlan(props) {
     return (
         <div>
             <h3>{subPlan.name}</h3>
-            <h4> {subPlan.description} </h4>
+            <p> {subPlan.description} </p>
             <h4> {subPlan.dueDate} </h4>
         </div>
     )

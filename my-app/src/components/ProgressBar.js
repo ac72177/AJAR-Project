@@ -1,3 +1,5 @@
+import './ProgressBar.css';
+
 export default function ProgressBar(props) {
     const plan = props.plan;
 
@@ -18,7 +20,7 @@ export default function ProgressBar(props) {
         }
     }
     return (
-        <div>
+        <div className="progressBar">
             {/* total tasks */}
             <div>
                 <h1>{completedTasks} / {totalTasks}</h1>

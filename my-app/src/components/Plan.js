@@ -7,34 +7,26 @@ export default function Plan(props) {
     let planName = plan['name'];
     return (
         <div className='Plan'>
-            <div>
+
+            <div className='titleContainer'>
                 <h1> {planName} </h1>
-
-                <div>
-                    <h3> Started:</h3>
-                    <p>{plan.startDate}</p>
-                </div>
-
-                <div>
-                    <h3> Due Date:</h3>
-                    <p>{plan.dueDate}</p>
-                </div>
-
-                <div>
-                    <h3> Labels: </h3>
-                </div>
-
-                <div>
-                    <h3> Description:</h3><br />
-                    <p>{plan.description}</p>
-                </div>
-
-                <div>
-                    <h3> Attachments: </h3>
-                    <p>{pullAttachments()}</p>
-                </div>
-
                 <ProgressBar plan={plan} />
+            </div>
+
+
+            <div className='planSummary'>
+                <h3> <strong>Started:</strong> {plan.startDate} </h3>
+
+                <h3> <strong>Due Date:</strong> {plan.dueDate} </h3>
+
+                <div>
+                    <h3> <strong>Labels:</strong> </h3>
+                </div>
+
+                <h3> <strong>Description:</strong><br />
+                    {plan.description}</h3>
+
+                <h3> <strong>Attachments:</strong> {pullAttachments()}</h3>
             </div>
 
             <div>

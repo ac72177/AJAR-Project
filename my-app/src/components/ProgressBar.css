@@ -1,14 +1,24 @@
 .progressBar {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
+    justify-content: space-around;
+    align-items: center;
+
     width: 451px;
     height: 123px;
-    left: 998px;
-    top: 104px;
+    padding: 20px;
 
-    background: #FFFFFF;
-    border: 1px solid #D4D2D2;
-    border-radius: 20px;
- }
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.dataPoint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: auto;
+    height: auto;
+}

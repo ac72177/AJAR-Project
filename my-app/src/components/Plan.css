@@ -1,24 +1,26 @@
-.Plan h1 {
-    /* Learn Spanish */
-    width: 279px;
-    height: 49px;
-    left: 374px;
-    top: 121px;
-
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
-
+.Plan {
+    justify-content: center;
+    align-items: center;
 }
 
-.summaryContainer {
+.titleContainer {
     display: flex;
-    justify-content: row;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.planSummary {
+    align-items: flex-start;
+}
+
+.Plan h1 {
+    font-weight: 700;
+    font-size: 40px;
 }
 
 .Plan h3 {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 14px;
 }
 
@@ -26,19 +28,4 @@
     font-weight: 400;
     font-size: 14px;
 }
-/* September 15, 2022
-
-position: absolute;
-width: 134px;
-height: 17px;
-left: 451px;
-top: 189px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
 

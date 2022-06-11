@@ -22,15 +22,15 @@ export default function ProgressBar(props) {
     return (
         <div className="progressBar">
             {/* total tasks */}
-            <div>
+            <div className='dataPoint'>
                 <h1>{completedTasks} / {totalTasks}</h1>
-                <h3> Total Tasks Completed </h3>
+                <h3> <strong> Total Tasks Completed </strong></h3>
             </div>
 
             {/* tasks due this month */}
-            <div>
+            <div className='dataPoint'>
                 <h1>{dueThisMonth}</h1>
-                <h3>Tasks Due This Month</h3>
+                <h3> <strong> Tasks Due This Month </strong></h3>
             </div>
         </div>
     );

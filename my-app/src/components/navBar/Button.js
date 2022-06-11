@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-// import Form from 'features/Form.js'
 
 export default function Button() {
     const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
-import './Plan.css'
+import './../../styles/planDetails/Plan.css'
 
 export default function Plan(props) {
     const plan = props.plan;

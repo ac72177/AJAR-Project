@@ -1,4 +1,4 @@
-import './ProgressBar.css';
+import './../../styles/planDetails/ProgressBar.css';
 
 export default function ProgressBar(props) {
     const plan = props.plan;

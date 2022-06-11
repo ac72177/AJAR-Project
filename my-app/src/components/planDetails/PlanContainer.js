@@ -1,5 +1,5 @@
 import Plan from './Plan.js';
-import './PlanContainer.css'
+import './../../styles/planDetails/PlanContainer.css'
 
 export default function PlanContainer() {
     let data = require('../../dummyData.json');;

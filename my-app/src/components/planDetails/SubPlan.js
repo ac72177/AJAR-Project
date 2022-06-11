@@ -1,4 +1,4 @@
-import './SubPlan.css'
+import './../../styles/planDetails/SubPlan.css'
 
 export default function SubPlan(props) {
     let subPlan = props.subPlan; 

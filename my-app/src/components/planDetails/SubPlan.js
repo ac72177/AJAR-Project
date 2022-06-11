@@ -1,10 +1,11 @@
+import './SubPlan.css'
+
 export default function SubPlan(props) {
     let subPlan = props.subPlan; 
     return (
-        <div>
+        <div className="SubPlan">
             <h3>{subPlan.name}</h3>
-            <h4> {subPlan.description} </h4>
-            <h4> </h4>
+            <p> {subPlan.description} </p>       
         </div>
     )
 }

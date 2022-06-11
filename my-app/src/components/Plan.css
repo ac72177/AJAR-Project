@@ -1,0 +1,31 @@
+.Plan {
+    justify-content: center;
+    align-items: center;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.planSummary {
+    align-items: flex-start;
+}
+
+.Plan h1 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.Plan h3 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.Plan p {
+    font-weight: 400;
+    font-size: 14px;
+}
+

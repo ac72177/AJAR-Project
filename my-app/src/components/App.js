@@ -5,10 +5,11 @@ import Overview from "./../pages/Overview";
 import CalendarView from "./../pages/CalendarView"
 import TestPage from "./../pages/TestPage"
 import dummyData from "../dummyData.json"; // todo remove
+import "./../styles/App.css"
 
 function App() {
   return (
-    <div className="App"  style={{display: "flex"}}>
+    <div className="App">
       <Navbar />
       <Routes>
         <Route path='/calendar' element={<CalendarView />}/> 

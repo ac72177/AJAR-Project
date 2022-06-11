@@ -1,0 +1,9 @@
+.layout {
+    display: flex;
+    position: fixed;
+    height: 100vh;
+}
+
+.page {
+    overflow-y: scroll;
+}

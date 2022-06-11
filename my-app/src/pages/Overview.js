@@ -11,7 +11,7 @@ function Overview(props) {
         cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
     }
     return (
-        <div className="App">
+        <div className="Overview">
             <div className="section options-container">
                 <div className="option new-plan-button">
                     <button

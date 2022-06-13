@@ -1,16 +1,10 @@
 import "./../styles/overview/Overview.css";
 import Filter from "../components/overview/Filter";
-import { useState } from 'react'
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
-import PopupForm from "../components/planCreation/PopupForm"
-
+import PlanButton from '../components/planCreation/PlanButton'
 
 function Overview(props) {
-    const [isOpen, setIsOpen] = useState(false);
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
 
     const cards = [];
     const userPlans = props.data.plans;
@@ -20,15 +14,8 @@ function Overview(props) {
     return (
         <div className="Overview">
             <div className="section options-container">
-                {isOpen && <PopupForm />}
                 <div className="option new-plan-button">
-                    <button
-                        id="new-plan-button"
-                        className=""
-                        onClick={togglePopup}
-                    >
-                        New Plan
-                    </button>
+                    <PlanButton />
                 </div>
                 <div className="option sort-button">
                     <Sort />

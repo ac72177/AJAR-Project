@@ -13,7 +13,7 @@ export default function PlanButton() {
     return (
         <div>
             {isOpen && <PopupForm handleClose={togglePopup}/> }
-            <button id="new-plan-button" className="" onClick={togglePopup}>
+            <button className="button" onClick={togglePopup}>
                 New Plan
             </button>
         </div>

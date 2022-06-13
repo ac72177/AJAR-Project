@@ -16,8 +16,40 @@
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
     background: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    border: 1px solid #999;
+    border-radius: 17px;
+    padding: 30px;
+    border: 1px solid rgb(0, 0, 0);
+    border-width: 3px;
     overflow: auto;
+}
+
+.form label {
+    font-weight: bold;
+    /* display: flex; */
+    display: -webkit-flex;
+}
+
+.form label input {
+    /* font-weight: bold; */
+    display: auto;
+    -webkit-flex: 1;
+    margin-left: 10px;
+}
+
+.buttons input {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid darkslategrey;
+    border-radius: 17px;
+    color:white;
+    font-weight: bold;
+    padding: 10px 50px;
+    background-color: darkslategrey;
+    font-size: 1em;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

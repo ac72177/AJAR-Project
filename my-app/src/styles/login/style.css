@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Open+Sans:wght@300;600;700;800&display=swap');
 .base-container {
   width: 100%;
@@ -110,14 +109,3 @@ input:focus {
   }
 }
 
-.paper {
-  padding:3px;
-}
-.garden_view {
-  position: relative;
-  width: 800px;
-  height: 400px;
-  padding: 30px;
-  background-image: url("./../../img/garden.png");
-  background-size: cover;
-}

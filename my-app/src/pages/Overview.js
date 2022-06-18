@@ -2,9 +2,10 @@ import "./../styles/overview/Overview.css";
 import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
-
+import PlanButton from '../components/planCreation/PlanButton'
 
 function Overview(props) {
+
     const cards = [];
     const userPlans = props.data.plans;
     for (let i = 0; i < userPlans.length; i++) {
@@ -14,13 +15,7 @@ function Overview(props) {
         <div className="Overview">
             <div className="section options-container">
                 <div className="option new-plan-button">
-                    <button
-                        id="new-plan-button"
-                        className=""
-                        onClick={() => alert("TODO: open create plan modal")}
-                    >
-                        New Plan
-                    </button>
+                    <PlanButton />
                 </div>
                 <div className="option sort-button">
                     <Sort />

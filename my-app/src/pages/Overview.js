@@ -7,13 +7,14 @@ import PlanButton from '../components/planCreation/PlanButton'
 function Overview(props) {
 
     const cards = [];
-    const userPlans = props.data.plans;
-    for (let i = 0; i < userPlans.length; i++) {
-        cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
-    }
+    // const userPlans = props.data.plans;
+    // for (let i = 0; i < userPlans.length; i++) {
+    //     cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
+    // }
     return (
         <div className="Overview">
-            <div className="section options-container">
+            I am broken please fix (Overview)
+            {/* <div className="section options-container">
                 <div className="option new-plan-button">
                     <PlanButton />
                 </div>
@@ -26,7 +27,7 @@ function Overview(props) {
                 </div>
             </div>
 
-            <div className="section grid-container">{cards}</div>
+            <div className="section grid-container">{cards}</div> */}
         </div>
     );
 }

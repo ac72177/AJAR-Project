@@ -1,10 +1,16 @@
 const addPlan = async (plan) => {
     const body = {
-        planName: plan.planName,
-        ingredients: plan.ingredients.split(","),
-        steps: plan.steps.split(",")
+        name: plan.planName,
+        labels: plan.labels.split(","),
+        startDate: plan.start,
+        dueDate: plan.end,
+        description: plan.description,
+        belongsTo: plan.parent, 
+        // list of subPlan IDs 
+        plans: plan.subPlans.split(""),
+        attachments: plan.attachments.split("")
     }
-    const response = await fetch('http://localhost:3001/plans', {
+    const response = await fetch('api/plans', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -22,7 +28,7 @@ const addPlan = async (plan) => {
 };
 
 const deletePlan = async (id) => {
-    const response = await fetch('http://localhost:3001/plans/' + id, {
+    const response = await fetch('api/plans/' + id, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'
@@ -39,38 +45,44 @@ const deletePlan = async (id) => {
 };
 
 const getPlans = async () => {
-    const response = await fetch('http://localhost:3001/plans', {
+    const response = await fetch('api/plans', {
         method: 'GET'
     });
     return response.json();
 };
 
-const putPlan = async (plan) => {
-    const body = {
-        planName: plan.planName,
-        ingredients: plan.ingredients.split(","),
-        steps: plan.steps.split(",")
-    }
-    const response = await fetch('http://localhost:3001/plans/' + plan.id, {
-        method: 'PUT',
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    });
+// const putPlan = async (plan) => {
+//     const body = {
+//         name: plan.planName,
+//         labels: plan.labels.split(","),
+//         startDate: plan.start,
+//         dueDate: plan.end,
+//         description: plan.description,
+//         belongsTo: plan.parent, 
+//         list of subPlan IDs 
+//         plans: plan.subPlans.split(""),
+//         attachments: plan.attachments.split("")
+//     }
+//     const response = await fetch('api/plans/' + plan.id, {
+//         method: 'PUT',
+//         headers: {
+//         'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(body)
+//     });
 
-    const data = await response.json();
-    if (!response.ok) {
-        const errorMsg = data?.message;
-        throw new Error(errorMsg)
-    }
+//     const data = await response.json();
+//     if (!response.ok) {
+//         const errorMsg = data?.message;
+//         throw new Error(errorMsg)
+//     }
     
-    return data;
-};
+//     return data;
+// };
 
 export default {
     addPlan,
     deletePlan,
     getPlans,
-    putPlan
+    // putPlan
 };

@@ -23,9 +23,9 @@ export const getPlanAsync = createAsyncThunk(
     }
 );
 
-export const putPlanAsync = createAsyncThunk(
-    actionTypes.PUT_PLAN,
-    async (data) => {
-        return await PlanService.putPlan(data);
-    }
-);
+// export const putPlanAsync = createAsyncThunk(
+//     actionTypes.PUT_PLAN,
+//     async (data) => {
+//         return await PlanService.putPlan(data);
+//     }
+// );

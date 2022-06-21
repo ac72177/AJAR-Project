@@ -29,7 +29,7 @@ export default class Signup extends React.Component {
             <div className="base-container">
                 <div className="LoginSignup_header">Sign Up</div>
                 <div className="content">
-                    <div className="LoginSingupForm">
+                    <div className="LoginSignupForm">
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input className="auth-input" type="text" name="name" placeholder="name" onChange={this.onChange}/>

@@ -26,7 +26,7 @@ export default class Login extends React.Component {
             <div className="base-container">
                 <div className="LoginSignup_header">Login</div>
                 <div className="content">
-                    <div className="LoginSingupForm">
+                    <div className="LoginSignupForm">
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input className="auth-input" type="text" name="email" placeholder="email" onChange={this.onChange}/>

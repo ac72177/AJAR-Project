@@ -1,14 +1,23 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors')
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors')
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var plansRouter = require('./routes/plans');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const plansRouter = require('./routes/api/plans');
 
-var app = express();
+const app = express();
+
+//DB config
+const db = require('./config/keys').mongoURI;
+// connect to Mongo
+mongoose
+    .connect(db)
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
 
 app.use(cors())
 app.use(logger('dev'));
@@ -17,8 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Use Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/plans', plansRouter)
+app.use('/api/plans', plansRouter)
 
 module.exports = app;

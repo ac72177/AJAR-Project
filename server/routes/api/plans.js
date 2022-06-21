@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { v4: uuid } = require('uuid');
+const auth = require('../../middleware/auth')
 
 // Plan Model 
 const Plan = require('../../models/Plan');
@@ -32,8 +33,8 @@ const plans = [{
 
 // @route DELETE api/plans/:id
 // @desc Delete a plan
-// @access Public
-router.delete('/:id', function (req, res, next) {
+// @access Private
+router.delete('/:id', auth, function (req, res, next) {
     Plan.findById(req.params.id)
         .then(
             plan => plan.remove().then(() => res.send({success: true}))
@@ -44,8 +45,8 @@ router.delete('/:id', function (req, res, next) {
 
 // @route GET api/plans
 // @desc Get All Plans
-// @access Public
-router.get('/', function(req, res, next) {
+// @access Private
+router.get('/', auth, function(req, res, next) {
     Plan.find()
         .sort({ date: -1 })
         .then(plans => res.send(plans))
@@ -53,8 +54,8 @@ router.get('/', function(req, res, next) {
 
 // @route POST api/plans
 // @desc POST a Plan
-// @access Public
-router.post('/', function (req, res, next) {
+// @access Private
+router.post('/', auth, function (req, res, next) {
     const newPlan = new Plan({
         "_id": uuid(),
         "name": req.body.name,

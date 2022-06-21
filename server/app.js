@@ -4,15 +4,17 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors')
 const mongoose = require('mongoose');
+const config = require('config');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/api/users');
 const plansRouter = require('./routes/api/plans');
+const authRouter = require('./routes/api/auth');
 
 const app = express();
 
 //DB config
-const db = require('./config/keys').mongoURI;
+const db = config.get('mongoURI');
 // connect to Mongo
 mongoose
     .connect(db)
@@ -28,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/plans', plansRouter)
+app.use('/api/users', usersRouter);
+app.use('/api/plans', plansRouter);
+app.use('/api/auth', authRouter);
 
 module.exports = app;

@@ -13,9 +13,6 @@ export default function Form(props) {
     // const [attachments, setAttachments] = useState('');
     const dispatch = useDispatch();
 
-
-    const handleChange = (e, func) => func(e.target.value);
-
     const savePlan = (e) => {
         e.preventDefault();
         const data = {
@@ -35,28 +32,25 @@ export default function Form(props) {
         }
     }
 
-
-    const dummyFunction = () => {
-    }
-
     return (
     <div className="form">
         
-        <label>Name: <input type="text" name="title" value={planName} onChange={(e) => {handleChange(e, setName)}}></input></label>
+        <label>Name: <input type="text" name="title" value={planName} onChange={(e) => {setName(e.target.value)}}></input></label>
         <br></br>
 
-        <label>Belongs to: <input type="text" name="belongsTo" value={belongsTo} onChange={handleChange(setBelongsTo)}></input> </label>
+        <label>Belongs to: <input type="text" name="belongsTo" value={belongsTo} onChange={(e) => {setBelongsTo(e.target.value)}}></input> </label>
         <br></br>
 
-        <label>Start date: <input type="text" name="start" value={startDate} onChange={handleChange(setStart)}></input></label>
+        <label>Start date: <input type="text" name="start" value={startDate} onChange={(e) => {setStart(e.target.value)}}></input></label>
         <br></br>
 
-        <label>Due date: <input type="text" name="due" value={dueDate} onChange={handleChange(setEnd)}></input></label>
+        <label>Due date: <input type="text" name="due" value={dueDate} onChange={(e) => {setEnd(e.target.value)}}></input></label>
         <br></br>
 
-        <label>Description: <input type="text" name="description" value={description} onChange={handleChange(setDescription)}></input></label>
+        <label>Description: <input type="text" name="description" value={description} onChange={(e) => {setDescription(e.target.value)}}></input></label>
+        <br></br>
 
-        <label>Labels: <input type="text" name="labels" value={labels} onChange={handleChange(setLabels)}></input></label>
+        <label>Labels: <input type="text" name="labels" value={labels} onChange={(e) => {setLabels(e.target.value)}}></input></label>
 
         <br></br>
         <div className="buttons">

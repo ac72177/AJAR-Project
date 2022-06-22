@@ -16,7 +16,7 @@ export const deletePlanAsync = createAsyncThunk(
     }
 );
 
-export const getPlanAsync = createAsyncThunk(
+export const getPlansAsync = createAsyncThunk(
     actionTypes.GET_PLANS,
     async () => {
         return await PlanService.getPlans();

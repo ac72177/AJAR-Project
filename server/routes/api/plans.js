@@ -7,7 +7,7 @@ const Plan = require('../../models/Plan');
 
 // simpler dummyData not nested
 const plans = [{
-        "_id": uuid(),
+        "_id": 123,
         "name": "Learn MongoDB",
         "labels": ["Summer Project"],
         "startDate": "2022-05-05",
@@ -15,17 +15,17 @@ const plans = [{
         "isComplete": false,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
         "belongsTo": "root", 
-        "plans": [],
+        "plans": [1234],
         "attachments": []
     }, {
-        "_id": uuid(),
+        "_id": 1234,
         "name": "Fly a kite",
         "labels": ["Summer Project"],
         "startDate": "2022-06-21",
         "dueDate": "2022-09-01",
         "isComplete": true,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-        "belongsTo": "root", 
+        "belongsTo": "123", 
         "plans": [],
         "attachments": []
     }]; 

@@ -2,10 +2,10 @@ const addPlan = async (plan) => {
     const body = {
         name: plan.planName,
         labels: plan.labels.split(","),
-        startDate: plan.start,
-        dueDate: plan.end,
+        startDate: plan.startDate,
+        dueDate: plan.dueDate,
         description: plan.description,
-        belongsTo: plan.parent, 
+        belongsTo: plan.belongsTo, 
         // list of subPlan IDs 
         plans: plan.subPlans.split(""),
         attachments: plan.attachments.split("")

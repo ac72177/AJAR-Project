@@ -33,10 +33,12 @@ const PlanSchema = new Schema({
         required: true
     },
     "attachments": {
-        type: Array
+        type: Array,
+        default: []
     },
     "plans": {
-        type: Array
+        type: Array,
+        default: []
     }
 });
 

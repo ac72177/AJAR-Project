@@ -51,6 +51,31 @@ const getPlans = async () => {
     return response.json();
 };
 
+/*
+Calls PUT endpoint. 
+editedFields: body of this req, 
+which is an object with plan id and fieldName: updatedValue for updated fields.
+E.g. { _id: "1", name: "new plan name", isComplete: false }
+*/
+const putPlan = async (editedFields) => {
+    const body = editedFields
+    const response = await fetch('api/plans/' + editedFields._id, {
+        method: 'PUT',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+        const errorMsg = data?.message;
+        throw new Error(errorMsg)
+    }
+    
+    return data;
+}
+
 // const putPlan = async (plan) => {
 //     const body = {
 //         name: plan.planName,
@@ -84,5 +109,5 @@ export default {
     addPlan,
     deletePlan,
     getPlans,
-    // putPlan
+    putPlan
 };

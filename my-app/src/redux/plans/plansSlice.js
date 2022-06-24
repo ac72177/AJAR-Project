@@ -118,10 +118,11 @@ export default function plansSliceReducer(state = initialState, action) {
             return []
         }
         case 'plans/deletePlan': {
+            if (state.length === action.payload) return [...state.slice(0, action.payload - 1)]
             if (state.length === 1) return [];
             return [
-                ...state.slice(0, action.payload),
-                ...state.slice(action.payload + 1)
+                ...state.slice(0, action.payload - 1),
+                ...state.slice(action.payload - 1)
             ]
         }
         //  GET

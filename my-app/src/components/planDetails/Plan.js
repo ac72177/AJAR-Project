@@ -12,8 +12,6 @@ export default function Plan(props) {
                 <h1> {planName} </h1>
                 <ProgressBar plan={plan} />
             </div>
-
-
             <div className='planSummary'>
                 <h3> <strong>Started:</strong> {plan.startDate} </h3>
 

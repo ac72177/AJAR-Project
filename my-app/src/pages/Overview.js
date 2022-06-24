@@ -2,7 +2,7 @@ import "./../styles/overview/Overview.css";
 import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
-import PlanButton from '../components/planCreation/PlanButton'
+import CreatePlanButton from '../components/planModification/CreatePlanButton'
 import { useSelector } from 'react-redux';
 
 function Overview(props) {
@@ -16,7 +16,7 @@ function Overview(props) {
         <div className="Overview">
             <div className="section options-container">
                 <div className="option new-plan-button">
-                    <PlanButton />
+                    <CreatePlanButton />
                 </div>
                 <div className="option sort-button">
                     <Sort />

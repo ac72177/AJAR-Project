@@ -1,9 +1,19 @@
-import Garden from './../components/garden/Garden'
+import React from 'react'
+import { useState } from 'react'
 
-export default function GardenView() {
+
+export default function CreatePlanButton() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
         <div>
-            <Garden />
+            <button className="button" onClick={togglePopup}>
+                Delete
+            </button>
         </div>
     );
 }

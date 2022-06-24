@@ -3,7 +3,7 @@ import PopupForm from './PopupForm'
 import { useState } from 'react'
 
 
-export default function PlanButton() {
+export default function CreatePlanButton() {
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import Form from '../planCreation/Form'
-import "./../../styles/planCreation/popup.css"
+import Form from './Form'
+import "./../../styles/planModification/popup.css"
 
 export default function PopupForm(props) {
     return (

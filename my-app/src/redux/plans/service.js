@@ -2,13 +2,12 @@ const addPlan = async (plan) => {
     const body = {
         name: plan.planName,
         labels: plan.labels.split(","),
-        startDate: plan.start,
-        dueDate: plan.end,
+        startDate: plan.startDate,
+        dueDate: plan.dueDate,
         description: plan.description,
-        belongsTo: plan.parent, 
-        // list of subPlan IDs 
+        // Array<String> where String is subplan title
         plans: plan.subPlans.split(""),
-        attachments: plan.attachments.split("")
+        // attachments: plan.attachments.split("")
     }
     const response = await fetch('api/plans', {
         method: 'POST',

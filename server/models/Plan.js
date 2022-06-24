@@ -28,15 +28,13 @@ const PlanSchema = new Schema({
     "description": {
         type: String
     },
-    "belongsTo": {
-        type: String,
-        required: true
-    },
     "attachments": {
-        type: Array
+        type: Array,
+        default: []
     },
     "plans": {
-        type: Array
+        type: Array,
+        default: []
     }
 });
 

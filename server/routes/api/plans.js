@@ -71,7 +71,7 @@ router.post('/', function (req, res, next) {
     );
 });
 
-// @route POST api/plans
+// @route PUT api/plans/planID
 // @desc PUT a Plan
 // @access Public
 router.put('/:planID', function (req, res, next) {

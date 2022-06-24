@@ -14,20 +14,36 @@ export default function Form(props) {
 
     const savePlan = (e) => {
         e.preventDefault();
-        const data = {
-            planName: planName,
-            labels: labels,
-            startDate: startDate,
-            dueDate: dueDate,
-            description: description,
-            subPlans: tasks,
-            // attachments: attachments
-        }
-        if (props.put) {
-            // dispatch(putPlanAsync(data)); TODO @ jun
-        } else {
-            dispatch(addPlanAsync(data));
-        }
+
+        // const data = {
+        //     planName: planName,
+        //     labels: labels,
+        //     startDate: startDate,
+        //     dueDate: dueDate,
+        //     description: description,
+        //     subPlans: tasks,
+        //     // attachments: attachments
+        // }
+        // if (props.put) {
+        //     // dispatch(putPlanAsync(data)); TODO @ jun
+        // } else {
+        //     dispatch(addPlanAsync(data));
+        // }
+        dispatch(
+            {   
+                type: 'plans/addPlan', 
+                payload: {
+                    name: planName, 
+                    label: labels.split(","), 
+                    startDate: startDate,
+                    dueDate: dueDate,
+                    isComplete: false,
+                    description, description,
+                    plans: tasks.split(","),
+                    attachments: []
+                }
+            }
+        )
     }
 
     return (

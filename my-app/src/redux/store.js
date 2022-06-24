@@ -1,9 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
-import plansReducer from './plans/reducer';
+import { createStore } from '@reduxjs/toolkit'
+import rootReducer from './plans/reducer';
 
-export const store = configureStore({
-    reducer: {
-        plans: plansReducer
-    },
-    devTools: true
-});
+const store = createStore(rootReducer)
+
+export default store

@@ -4,8 +4,6 @@ export default function SummaryBar(props) {
     const plans = props.plans;
 
     let currDate = new Date();
-    console.log(currDate);
-
     let totalPlans = plans.length;
     let activePlans = plans.length;
     let plansCompleted = 0;
@@ -17,17 +15,17 @@ export default function SummaryBar(props) {
         for (const subPlan of plan.plans) {
             if (subPlan.isComplete) {
                 completedTasks++;
-            } else {
-                let dueDate = new Date(subPlan.dueDate);
-                if (dueDate.getMonth() === currDate.getMonth()) {
-                    dueThisMonth++;
-                }
-            }
+            } 
             totalTasks++;
         }
         if (plan.isComplete) {
             plansCompleted++;
             activePlans--;
+        }  else {
+            let dueDate = new Date(plan.dueDate);
+            if (dueDate.getMonth() === currDate.getMonth()) {
+                dueThisMonth++;
+            }
         }
     }
 

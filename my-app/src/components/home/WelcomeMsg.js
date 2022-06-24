@@ -1,11 +1,10 @@
 
 export default function WelcomeMsg() {
-    let data = require('../../dummyData.json');
-    let userName = data.user;
+    // TODO, read in user's name 
 
     return (
         <div className='Welcome-message'>
-            <h1> <strong> Hi {userName}! </strong> </h1>
+            <h1> <strong> Hi Bob! </strong> </h1>
         </div>
     );
 }

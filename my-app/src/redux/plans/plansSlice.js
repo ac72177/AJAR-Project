@@ -11,7 +11,7 @@ const initialState = [
         plans: [
             {
                 name: "walk the dog",
-                isComplete: false,
+                isComplete: true,
             }, {
                 name: "Go camping",
                 isComplete: false
@@ -22,15 +22,15 @@ const initialState = [
         _id: 2,
         name: "Job hunt",
         labels: ["Summer", "Fall"],
-        startDate: "2022-07-02",
-        dueDate: "2022-09-03",
+        startDate: "2022-06-02",
+        dueDate: "2022-06-30",
         isComplete: false,
         attachments: [],
         description: "Something to do in the summer",
         plans: [
             {
                 name: "write a cover letter",
-                isComplete: false
+                isComplete: true
             },
             {
                 name: "write resume",
@@ -44,7 +44,7 @@ const initialState = [
         labels: ["Summer", "Fall"],
         startDate: "2022-07-02",
         dueDate: "2022-09-03",
-        isComplete: false,
+        isComplete: true,
         attachments: [],
         description: "Something to do in the summer",
         plans: []

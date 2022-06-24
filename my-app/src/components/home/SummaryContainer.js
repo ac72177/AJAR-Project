@@ -1,14 +1,13 @@
 import SummaryBar from "./SummaryBar";
 import './../../styles/home/SummaryBar.css';
+import { useSelector } from 'react-redux';
 
 export default function SummaryBarContainer() {
-    let data = require('../../dummyData.json');
-    let plan = data.plans;
-    // console.log(data);
+    const plans = useSelector(state => state.plans);
 
     return (
         <div className='SummaryBarContainer'>
-            <SummaryBar plans={plan}/>
+            <SummaryBar plans={plans}/>
         </div>
     );
 }

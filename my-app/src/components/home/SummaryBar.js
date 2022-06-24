@@ -1,0 +1,61 @@
+import './../../styles/home/SummaryBar.css';
+
+export default function SummaryBar(props) {
+    const plans = props.plans;
+
+    let currDate = new Date();
+    console.log(currDate);
+
+    let totalPlans = plans.length;
+    let activePlans = plans.length;
+    let plansCompleted = 0;
+    let totalTasks = 0;
+    let completedTasks = 0;
+    let dueThisMonth = 0;
+
+    for (const plan of plans) {
+        for (const subPlan of plan.plans) {
+            if (subPlan.isComplete) {
+                completedTasks++;
+            } else {
+                let dueDate = new Date(subPlan.dueDate);
+                if (dueDate.getMonth() === currDate.getMonth()) {
+                    dueThisMonth++;
+                }
+            }
+            totalTasks++;
+        }
+        if (plan.isComplete) {
+            plansCompleted++;
+            activePlans--;
+        }
+    }
+
+    return (
+        <div className="summaryBar">
+            {/* active plans */}
+            <div className='summaryData'>
+                <h1> <strong> {activePlans} / {totalPlans} </strong></h1>
+                <h3> <strong> Active Plans </strong></h3>
+            </div>
+
+            {/* total tasks */}
+            <div className='summaryData'>
+                <h1> <strong> {completedTasks} / {totalTasks} </strong> </h1>
+                <h3> <strong> Total Tasks Completed </strong></h3>
+            </div>
+
+            {/* tasks due this month */}
+            <div className='summaryData'>
+                <h1> <strong> {dueThisMonth} </strong> </h1>
+                <h3> <strong> Tasks Due This Month </strong></h3>
+            </div>
+
+            {/* plans completed */}
+            <div className='summaryData'>
+                <h1> <strong> {plansCompleted}</strong> </h1>
+                <h3> <strong> Plans Completed </strong></h3>
+            </div>
+        </div>
+    );
+}

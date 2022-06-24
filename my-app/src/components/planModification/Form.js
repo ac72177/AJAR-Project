@@ -29,6 +29,15 @@ export default function Form(props) {
         // } else {
         //     dispatch(addPlanAsync(data));
         // }
+        let subplans = tasks.split(","); 
+        let subplanObjects = []
+        for (let i = 0; i < subplans.length; i++ ) {
+            let subplanObject = {
+                name: subplans[i],
+                isComplete: false
+            }
+            subplanObjects.push(subplanObject)
+        }
         dispatch(
             {   
                 type: 'plans/addPlan', 
@@ -39,7 +48,7 @@ export default function Form(props) {
                     dueDate: dueDate,
                     isComplete: false,
                     description, description,
-                    plans: tasks.split(","),
+                    plans: subplanObjects,
                     attachments: []
                 }
             }

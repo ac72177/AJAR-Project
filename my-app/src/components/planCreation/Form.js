@@ -4,12 +4,11 @@ import { addPlanAsync } from '../../redux/plans/thunks';
 
 export default function Form(props) {
     const [planName, setName] = useState('');
-    const [belongsTo, setBelongsTo] = useState('');
     const [labels, setLabels] = useState('');
     const [startDate, setStart] = useState('');
     const [dueDate, setEnd] = useState('');
     const [description, setDescription] = useState('');
-    // const [plans, setPlans] = useState('');
+    const [tasks, setTasks] = useState('');
     // const [attachments, setAttachments] = useState('');
     const dispatch = useDispatch();
 
@@ -21,12 +20,11 @@ export default function Form(props) {
             startDate: startDate,
             dueDate: dueDate,
             description: description,
-            belongsTo: belongsTo, 
-            // subPlans: plans,
+            subPlans: tasks,
             // attachments: attachments
         }
         if (props.put) {
-            // dispatch(putPlanAsync(data));
+            // dispatch(putPlanAsync(data)); TODO @ jun
         } else {
             dispatch(addPlanAsync(data));
         }
@@ -36,9 +34,6 @@ export default function Form(props) {
     <div className="form">
         
         <label>Name: <input type="text" name="title" value={planName} onChange={(e) => {setName(e.target.value)}}></input></label>
-        <br></br>
-
-        <label>Belongs to: <input type="text" name="belongsTo" value={belongsTo} onChange={(e) => {setBelongsTo(e.target.value)}}></input> </label>
         <br></br>
 
         <label>Start date: <input type="text" name="start" value={startDate} onChange={(e) => {setStart(e.target.value)}}></input></label>
@@ -51,6 +46,9 @@ export default function Form(props) {
         <br></br>
 
         <label>Labels: <input type="text" name="labels" value={labels} onChange={(e) => {setLabels(e.target.value)}}></input></label>
+        <br></br>
+
+        <label>Tasks: <input type="text" name="tasks" value={tasks} onChange={(e) => {setTasks(e.target.value)}}></input></label>
 
         <br></br>
         <div className="buttons">

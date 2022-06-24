@@ -5,31 +5,6 @@ const { v4: uuid } = require('uuid');
 // Plan Model 
 const Plan = require('../../models/Plan');
 
-// simpler dummyData not nested
-const plans = [{
-    "_id": uuid(),
-    "name": "Learn MongoDB",
-    "labels": ["Summer Project"],
-    "startDate": "2022-05-05",
-    "dueDate": "2022-07-30",
-    "isComplete": false,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    "belongsTo": "root",
-    "plans": [],
-    "attachments": []
-}, {
-    "_id": uuid(),
-    "name": "Fly a kite",
-    "labels": ["Summer Project"],
-    "startDate": "2022-06-21",
-    "dueDate": "2022-09-01",
-    "isComplete": true,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    "belongsTo": "root",
-    "plans": [],
-    "attachments": []
-}];
-
 // @route DELETE api/plans/:id
 // @desc Delete a plan
 // @access Public

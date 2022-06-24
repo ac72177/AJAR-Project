@@ -52,7 +52,7 @@ const INITIAL_STATE = {
         .addCase(getPlansAsync.rejected, (state, action) => {
             state.getPlans = REQUEST_STATE.REJECTED;
             state.error = action.error;
-        // })
+        // }) TODO @ jun
         // .addCase(putPlanAsync.pending, (state) => {
         //     state.putPlan = REQUEST_STATE.PENDING;
         //     state.error = null;

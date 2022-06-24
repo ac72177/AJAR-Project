@@ -9,7 +9,7 @@ function Overview(props) {
     const userPlans = useSelector(state => state.plans)
     const cards = [];
     for (let i = 0; i < userPlans.length; i++) {
-        // might be able to use userPlans[i]._id for id? 
+        // Todo @Andrea might be able to use userPlans[i]._id for id? 
         cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
     }
     return (

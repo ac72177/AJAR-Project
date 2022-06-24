@@ -7,11 +7,15 @@ import CreatePlanButton from "../components/planModification/CreatePlanButton"
 export default function TestPage() {
     return (
         <div>
-            Optionally Test your Components here
+            Coming Soon
             <br></br>
             <CreatePlanButton />
             <br></br>
             <PlanContainer />
+            <br></br>
+            <br></br>
+            <br></br>
+            <Login /> <Signup />
         </div>
     );
 }

@@ -9,8 +9,6 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 import './../../styles/navBar/style.css'
-// import Button from './Button';
-// import Plan from './Plan';
 
 export default function Navbar(props) {
 

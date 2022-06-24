@@ -9,15 +9,9 @@
     margin: 1em 3em;
 }
 
-.heading-section {
-}
-
 .labels-section {
     display: flex;
     justify-content: center;
-}
-
-.progress-bar-section {
 }
 
 .subtasks-section {

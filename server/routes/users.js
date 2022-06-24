@@ -6,7 +6,7 @@ const dummyData = require('../dummyData.json')
 // Endpoint for retrieving a single user.
 // *Set for dummy data for now.
 
-//TODO need to make redux/users/ folder similar to redux/plans 
+//TODO @Unassigned to make redux/users/ folder similar to redux/plans this api endpoint is deprecated
 router.get('/:user', function(req, res, next) {
     console.log('got here');
     res.send(dummyData);

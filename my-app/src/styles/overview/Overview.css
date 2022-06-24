@@ -27,7 +27,7 @@
 .sort-button {
 }
 
-#new-plan-button {
+.button {
     border: 1px solid lightgrey;
     border-radius: 5px;
     /* padding: 20px; */

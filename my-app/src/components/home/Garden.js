@@ -2,24 +2,24 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import plant3 from "../../img/plant3.png"
-import {blue} from "@material-ui/core/colors";
 
 
 const useStyles = makeStyles((theme) => ({
-    paper: {
-        padding: theme.spacing(3.5),
-        backgroundImage: `url(${plant3})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-    }
+        paper: {
+            backgroundColor: "transparent",
+            padding: theme.spacing(4),
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundImage: `url(${plant3})`,
+        }
 }))
+
 function GridItem({classes}) {
     return (
-        <Grid item xs={15}>
-            <Paper className={classes.paper}>item</Paper>
+        <Grid plant xs={20}>
+            <Paper className={classes.paper}> </Paper>
         </Grid>
-
     )
 }
 
@@ -27,9 +27,14 @@ export default function Garden() {
     const classes = useStyles();
 
     return (
-        <div>
-            <div className={"garden_view"}>
-                <Grid container spacing={1} >
+        <div className={"garden"}>
+            <div className={"garden_background"}>
+                <Grid container spacing={2.5} >
+                    <GridItem classes = {classes} />
+                    <GridItem classes = {classes} />
+                    <GridItem classes = {classes} />
+                    <GridItem classes = {classes} />
+                    <GridItem classes = {classes} />
                     <GridItem classes = {classes} />
                     <GridItem classes = {classes} />
                     <GridItem classes = {classes} />
@@ -75,4 +80,3 @@ export default function Garden() {
         </div>
     )
 }
-

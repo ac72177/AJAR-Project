@@ -1,19 +1,19 @@
-import React from 'react'
-import { useState } from 'react'
+import "../styles/home/Garden.css";
+import Garden from '../components/home/Garden'
+import SummaryBarContainer from "../components/home/SummaryContainer";
+import WelcomeMsg from "../components/home/WelcomeMsg";
+import '../styles/home/SummaryBar.css';
 
 
-export default function CreatePlanButton() {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
-
+export default function GardenView() {
     return (
-        <div>
-            <button className="button" onClick={togglePopup}>
-                Delete
-            </button>
+        <div className={"home"}>
+            <WelcomeMsg />
+            <br/>
+
+            <SummaryBarContainer />
+
+            <Garden />
         </div>
     );
 }

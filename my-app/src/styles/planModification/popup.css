@@ -30,7 +30,8 @@
 
 .form label input {
     display: auto;
-    --webkit-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
     margin-left: 10px;
 }
 

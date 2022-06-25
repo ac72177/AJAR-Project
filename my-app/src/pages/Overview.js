@@ -3,10 +3,11 @@ import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
 import CreatePlanButton from '../components/planModification/CreatePlanButton'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 function Overview(props) {
-    const userPlans = useSelector(state => state.plans)
+    // const userPlans = useSelector(state => state.plans)
+    // use getPlansAsync TODO
     const cards = [];
     for (let i = 0; i < userPlans.length; i++) {
         // Todo @Andrea might be able to use userPlans[i]._id for id? 

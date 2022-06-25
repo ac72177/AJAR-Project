@@ -1,6 +1,6 @@
-// export const REQUEST_STATE = {
-//   IDLE: 'IDLE',
-//   PENDING: 'PENDING',
-//   FULFILLED: 'FULFILLED',
-//   REJECTED: 'REJECTED'
-// };
+export const REQUEST_STATE = {
+    IDLE: 'IDLE',
+    PENDING: 'PENDING',
+    FULFILLED: 'FULFILLED',
+    REJECTED: 'REJECTED'
+};

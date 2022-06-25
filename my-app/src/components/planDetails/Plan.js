@@ -11,7 +11,8 @@ export default function Plan(props) {
     let planName = plan['name'];
 
     const markAllComplete = () => {
-        dispatch({type: 'plans/markAllComplete', payload: plan._id});
+        // TODO make an API endpoint in the server folder and redux folder see savePlan() in Form.js for details
+        // dispatch({type: 'plans/markAllComplete', payload: plan._id});
         setIsAllTasksComplete(true);
     }
 

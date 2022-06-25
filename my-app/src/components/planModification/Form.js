@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addPlanAsync } from '../../redux/plans/thunks';
 
-// TODO @Andrea
 export default function Form(props) {
     const [planName, setName] = useState('');
     const [labels, setLabels] = useState('');
@@ -10,26 +9,11 @@ export default function Form(props) {
     const [dueDate, setEnd] = useState('');
     const [description, setDescription] = useState('');
     const [tasks, setTasks] = useState('');
-    // const [attachments, setAttachments] = useState('');
     const dispatch = useDispatch();
 
     const savePlan = (e) => {
         e.preventDefault();
 
-        // const data = {
-        //     planName: planName,
-        //     labels: labels,
-        //     startDate: startDate,
-        //     dueDate: dueDate,
-        //     description: description,
-        //     subPlans: tasks,
-        //     // attachments: attachments
-        // }
-        // if (props.put) {
-        //     // dispatch(putPlanAsync(data)); TODO @ jun
-        // } else {
-        //     dispatch(addPlanAsync(data));
-        // }
         let subplans = tasks.split(","); 
         let subplanObjects = []
         for (let i = 0; i < subplans.length; i++ ) {
@@ -39,21 +23,20 @@ export default function Form(props) {
             }
             subplanObjects.push(subplanObject)
         }
-        dispatch(
-            {   
-                type: 'plans/addPlan', 
-                payload: {
-                    name: planName, 
-                    label: labels.split(","), 
-                    startDate: startDate,
-                    dueDate: dueDate,
-                    isComplete: false,
-                    description, description,
-                    plans: subplanObjects,
-                    attachments: []
-                }
-            }
-        )
+
+        const data = {
+            planName: planName,
+            labels: labels.split(","),
+            startDate: startDate,
+            dueDate: dueDate,
+            description: description,
+            subPlans: subplanObjects
+        }
+        if (props.put) {
+            // dispatch(putPlanAsync(data)); TODO @ jun
+        } else {
+            dispatch(addPlanAsync(data));
+        }
     }
 
     return (

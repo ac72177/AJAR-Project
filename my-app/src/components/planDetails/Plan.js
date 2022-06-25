@@ -1,10 +1,20 @@
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
-import './../../styles/planDetails/Plan.css'
+import './../../styles/planDetails/Plan.css';
+import { useDispatch } from 'react-redux';
+import { useState } from "react";
 
 export default function Plan(props) {
     const plan = props.plan;
+    const dispatch = useDispatch();
+    const [isAllTasksComplete, setIsAllTasksComplete] = useState(false);
     let planName = plan['name'];
+
+    const markAllComplete = () => {
+        dispatch({type: 'plans/markAllComplete', payload: plan._id});
+        setIsAllTasksComplete(true);
+    }
+
     return (
         <div className='Plan'>
 
@@ -29,9 +39,12 @@ export default function Plan(props) {
 
             <div>
                 <h2> Tasks: </h2>
+
+                <button onClick={markAllComplete}>Mark all completed</button>
+
                 {plan.plans.map(subPlan => {
                     return (
-                        <SubPlan subPlan={subPlan} />
+                        <SubPlan subPlan={subPlan} isComplete={subPlan.isComplete}/>
                     )
                 })}
             </div>

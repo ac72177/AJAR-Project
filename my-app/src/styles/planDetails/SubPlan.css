@@ -11,3 +11,7 @@
     font-weight: 700;
     font-size: 20px;
 }
+
+.complete {
+    text-decoration: line-through;
+}

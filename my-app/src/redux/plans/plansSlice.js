@@ -125,6 +125,18 @@ export default function plansSliceReducer(state = initialState, action) {
                 ...state.slice(action.payload - 1)
             ]
         }
+        case 'plans/markAllComplete': {
+            const newState = state;
+            const planCopy = state[action.payload - 1];
+            const subPlans = planCopy.plans;
+            for (let i = 0; i < subPlans.length; i++) {
+                if (!subPlans[i].isComplete) subPlans[i].isComplete = true;
+                console.log(subPlans[i].isComplete);
+            }
+            planCopy.plans = subPlans;
+            newState[action.payload - 1] = planCopy;
+            return newState;
+        }
         //  GET
         default:
             return state;

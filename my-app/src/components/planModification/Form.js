@@ -9,19 +9,28 @@ export default function Form(props) {
     const [dueDate, setEnd] = useState('');
     const [description, setDescription] = useState('');
     const [tasks, setTasks] = useState('');
-    // const [attachments, setAttachments] = useState('');
     const dispatch = useDispatch();
 
     const savePlan = (e) => {
         e.preventDefault();
+
+        let subplans = tasks.split(","); 
+        let subplanObjects = []
+        for (let i = 0; i < subplans.length; i++ ) {
+            let subplanObject = {
+                name: subplans[i],
+                isComplete: false
+            }
+            subplanObjects.push(subplanObject)
+        }
+
         const data = {
             planName: planName,
-            labels: labels,
+            labels: labels.split(","),
             startDate: startDate,
             dueDate: dueDate,
             description: description,
-            subPlans: tasks,
-            // attachments: attachments
+            subPlans: subplanObjects
         }
         if (props.put) {
             // dispatch(putPlanAsync(data)); TODO @ jun

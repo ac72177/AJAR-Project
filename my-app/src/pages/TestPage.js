@@ -1,21 +1,21 @@
 import PlanContainer from "./../components/planDetails/PlanContainer"
-import Login from "./../components/login/login"
-import Signup from "./../components/login/signup"
-import Form from "./../components/planCreation/Form"
+import Login from "./../components/login/Login"
+import Signup from "./../components/login/Signup"
 import "./../styles/login/style.css"
-import PlanButton from "../components/planCreation/PlanButton"
+import CreatePlanButton from "../components/planModification/CreatePlanButton"
 
 export default function TestPage() {
     return (
         <div>
-            Optionally Test your Components here
-            <PlanButton />
-            <Form />
+            Coming Soon
+            <br></br>
+            <CreatePlanButton />
+            <br></br>
             <PlanContainer />
-            
-            <Signup />
-            
-            <Login />
+            <br></br>
+            <br></br>
+            <br></br>
+            <Login /> <Signup />
         </div>
     );
 }

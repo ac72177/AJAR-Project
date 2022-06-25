@@ -2,21 +2,22 @@ import "./../styles/overview/Overview.css";
 import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
-import PlanButton from '../components/planCreation/PlanButton'
+import CreatePlanButton from '../components/planModification/CreatePlanButton'
+// import { useSelector } from 'react-redux';
 
 function Overview(props) {
-
+    // const userPlans = useSelector(state => state.plans)
+    // use getPlansAsync TODO
     const cards = [];
-    // const userPlans = props.data.plans;
-    // for (let i = 0; i < userPlans.length; i++) {
-    //     cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
-    // }
+    for (let i = 0; i < userPlans.length; i++) {
+        // Todo @Andrea might be able to use userPlans[i]._id for id? 
+        cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
+    }
     return (
         <div className="Overview">
-            I am broken please fix (Overview)
-            {/* <div className="section options-container">
+            <div className="section options-container">
                 <div className="option new-plan-button">
-                    <PlanButton />
+                    <CreatePlanButton />
                 </div>
                 <div className="option sort-button">
                     <Sort />
@@ -27,7 +28,7 @@ function Overview(props) {
                 </div>
             </div>
 
-            <div className="section grid-container">{cards}</div> */}
+            <div className="section grid-container">{cards}</div>
         </div>
     );
 }

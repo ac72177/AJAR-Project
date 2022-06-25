@@ -1,13 +1,7 @@
 .row {
     display: flex;
     align-items: center;
-    /* max-height: 5px;
-    height: 100%; */
     border: 1px solid red;
-}
-
-.column {
-    /* margin: 0.5em; */
 }
 
 .subtask {

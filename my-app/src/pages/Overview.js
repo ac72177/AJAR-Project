@@ -2,17 +2,28 @@ import "./../styles/overview/Overview.css";
 import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
-import CreatePlanButton from '../components/planModification/CreatePlanButton'
-// import { useSelector } from 'react-redux';
+import CreatePlanButton from '../components/planModification/CreatePlanButton';
 
-function Overview(props) {
-    // const userPlans = useSelector(state => state.plans)
-    // use getPlansAsync TODO
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPlansAsync } from "../redux/plans/thunks";
+
+function Overview() {
+    const dispatch = useDispatch();
+    const userPlans = useSelector((state) => state.plans.list);
     const cards = [];
+
+    useEffect(() => {
+        dispatch(getPlansAsync());
+    }, []);
+
+
     for (let i = 0; i < userPlans.length; i++) {
-        // Todo @Andrea might be able to use userPlans[i]._id for id? 
-        cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
+        // Todo @Andrea might be able to use userPlans[i]._id for id?
+        cards.push(<MiniPlanCard key={i} id={i} />);
     }
+
+    console.log(userPlans);
     return (
         <div className="Overview">
             <div className="section options-container">
@@ -31,6 +42,7 @@ function Overview(props) {
             <div className="section grid-container">{cards}</div>
         </div>
     );
+
 }
 
 export default Overview;

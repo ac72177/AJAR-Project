@@ -44,7 +44,7 @@ const deletePlan = async (id) => {
 };
 
 const getPlans = async () => {
-    const response = await fetch('api/plans', {
+    const response = await fetch('http://localhost:3001/plans', {
         method: 'GET'
     });
     return response.json();

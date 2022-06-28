@@ -12,7 +12,7 @@ function MyRoutes() {
         <Route path='/calendar' element={<CalendarView />}/> 
         {/* TODO @Andrea dummyData is currently broken, please fix */}
         {/* <Route path='/overview' element={<Overview data={dummyData}/>}/>*/}
-        <Route path='/overview' element={<Overview data={"nothing"}/>}/>
+        <Route path='/overview' element={<Overview />}/>
         <Route path='/test' element={<TestPage />}/>    
         <Route path='/home' exact-to element={<GardenView />}/>            
       </Routes>

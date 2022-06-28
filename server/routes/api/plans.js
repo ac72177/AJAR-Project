@@ -23,7 +23,7 @@ router.delete('/:id', function (req, res, next) {
 router.get('/', function (req, res, next) {
     Plan.find()
         .sort({ date: -1 })
-        .then(plans => res.send(plans))
+        .then(plans => res.send(plans));
 });
 
 // @route POST api/plans

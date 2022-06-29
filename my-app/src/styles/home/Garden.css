@@ -13,3 +13,8 @@
     background-image: url("./../../img/garden.png");
     background-size: cover;
 }
+
+.plant{
+    background-image: url("./../../img/plant1.png");
+    background-size: cover;
+}

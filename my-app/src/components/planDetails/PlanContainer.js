@@ -1,16 +1,22 @@
 import Plan from './Plan.js';
 import DeletePlanButton from './../planModification/DeletePlanButton'
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import './../../styles/planDetails/PlanContainer.css'
 
 export default function PlanContainer() {
-    const plans = useSelector(state => state.plans)
-    // TODO @Jun this is currently a fixed value, access it with a GET instead
-    let plan = plans[plans.length - 1];
+    const { plan_ID } = useParams();
+    console.log(plan_ID)
+    const plans = useSelector(state => state.plans.list)
+    
+    console.log(plans);
+    // let plan = plans[plan_ID];
+    let plan = plans.find(plan => plan._id === plan_ID);
+
     return (
         <div className='PlanContainer'>
             <Plan plan={plan}/>
-            <DeletePlanButton id={plan._id} />
+            <DeletePlanButton id={plan.plan_ID} />
         </div> 
     );
 }

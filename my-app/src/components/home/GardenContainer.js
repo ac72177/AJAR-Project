@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import Garden from "./Garden";
 
 export default function GardenContainer() {
-    const plans = useSelector((state) => state.plans.list);
+    const plans = useSelector((state) => state.plans);
 
     return (
         <div className='garden'>

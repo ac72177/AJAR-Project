@@ -6,28 +6,17 @@ const localizer = momentLocalizer(moment)
 
 
 export default function MyCalendar(props) {
-    // const planList = props.plan;
+    const planList = props.plans;
 
-    const planList = [
-        {
-            'title': 'My event',
-            'startDate': new Date(2022, 6, 1, ),
-            'dueDate': new Date(2022, 6, 10, ),
-        },
-        {
-            'title': 'My second plan',
-            'startDate': new Date(2022, 6, 5, ),
-            'dueDate': new Date(2022, 6, 12, ),
-        }
-    ]
     return (
         <div className={"calendarContainer"}>
             <Calendar
                 localizer={localizer}
                 events={planList}
+                titleAccessor="name"
                 startAccessor="startDate"
                 endAccessor="dueDate"
-                style={{ height: 700, padding: 50 }}
+                style={{ height: 900, padding: 50 }}
             />
         </div>
     )

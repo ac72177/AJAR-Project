@@ -40,10 +40,10 @@ function Plant3({classes}) {
     )
 }
 
-export default function Garden2(props) {
-    // const [plants, setPlants] = useState();
-    // const plans = props.plans;
-    const plans = [{id: 1, title: "plan 1", isComplete: false},{id: 2, title:"plan 2", isComplete: true}, {id: 3, title:"plan 3", isComplete: true}];
+export default function Garden(props) {
+    const plans = props.plan;
+    console.log(plans);
+    // const plans = [{id: 1, title: "plan 1", isComplete: false},{id: 2, title:"plan 2", isComplete: true}, {id: 3, title:"plan 3", isComplete: true}];
 
     const notCompletedPlans = plans.filter(function (el) {
         return el.isComplete === false;

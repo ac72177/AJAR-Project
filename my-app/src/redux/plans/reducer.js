@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { REQUEST_STATE } from '../utils';
-import { addPlanAsync, getPlansAsync, deletePlanAsync } from './thunks'; // todo @ Jun add putPlanAsync
+import { addPlanAsync, getPlansAsync, deletePlanAsync, putPlanAsync } from './thunks'; // todo @ Jun add putPlanAsync
 
 const INITIAL_STATE = {
     list: [],
@@ -52,18 +52,19 @@ const INITIAL_STATE = {
         .addCase(getPlansAsync.rejected, (state, action) => {
             state.getPlans = REQUEST_STATE.REJECTED;
             state.error = action.error;
-        // }) TODO @ jun
-        // .addCase(putPlanAsync.pending, (state) => {
-        //     state.putPlan = REQUEST_STATE.PENDING;
-        //     state.error = null;
-        // })
-        // .addCase(putPlanAsync.fulfilled, (state, action) => {
-        //     state.putPlan = REQUEST_STATE.FULFILLED;
-        //     state.list = action.payload;
-        // })
-        // .addCase(putPlanAsync.rejected, (state, action) => {
-        //     state.putPlan = REQUEST_STATE.REJECTED;
-        //     state.error = action.error;
+        }) 
+        
+        .addCase(putPlanAsync.pending, (state) => {
+            state.putPlan = REQUEST_STATE.PENDING;
+            state.error = null;
+        })
+        .addCase(putPlanAsync.fulfilled, (state, action) => {
+            state.putPlan = REQUEST_STATE.FULFILLED;
+            state.list = action.payload;
+        })
+        .addCase(putPlanAsync.rejected, (state, action) => {
+            state.putPlan = REQUEST_STATE.REJECTED;
+            state.error = action.error;
         });
     }
 });

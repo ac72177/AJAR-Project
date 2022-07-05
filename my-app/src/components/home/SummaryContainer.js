@@ -1,14 +1,20 @@
 import SummaryBar from "./SummaryBar";
 import './../../styles/home/SummaryBar.css';
-// import { useSelector } from 'react-redux';
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {getPlansAsync} from "../../redux/plans/thunks";
 
 export default function SummaryBarContainer() {
-    // const plans = useSelector(state => state.plans);
-    // use getPlansAsync TODO 
-    let plans = [];
+    const dispatch = useDispatch();
+    const userPlans = useSelector((state) => state.plans.list);
+
+    useEffect(() => {
+        dispatch(getPlansAsync());
+    }, []);
+
     return (
         <div className='SummaryBarContainer'>
-            <SummaryBar plans={plans}/>
+            <SummaryBar plans={userPlans}/>
         </div>
     );
 }

@@ -27,23 +27,21 @@ const useStyles = makeStyles((theme) => ({
 }))
 function Plant1({classes}) {
     return (
-        <Grid className={"plant"} xs={10}>
+        <Grid xs={1}>
             <Paper className={classes.plant1}> </Paper>
         </Grid>
     )
 }
 function Plant3({classes}) {
     return (
-        <Grid plant xs={10}>
+        <Grid xs={1}>
             <Paper className={classes.plant3}> </Paper>
         </Grid>
     )
 }
 
 export default function Garden(props) {
-    const plans = props.plan;
-    console.log(plans);
-    // const plans = [{id: 1, title: "plan 1", isComplete: false},{id: 2, title:"plan 2", isComplete: true}, {id: 3, title:"plan 3", isComplete: true}];
+    const plans = props.plans;
 
     const notCompletedPlans = plans.filter(function (el) {
         return el.isComplete === false;
@@ -57,19 +55,22 @@ export default function Garden(props) {
 
     return (
         <div className={"garden"}>
-            <Grid container spacing={2.5} className={"garden_background"}>
-                {notCompletedPlans.map(plan => (
-                    <Grid key={plan.id} item>
-                        <Plant1 classes={classes} />
-                        <p> {plan.title}</p>
-                    </Grid>
-                ))}
-                {completedPlans.map(plan => (
-                    <Grid key={plan.id} item>
-                        <Plant3 classes={classes} />
-                        <p> {plan.title}</p>
-                    </Grid>
-                ))}
+            <Grid container>
+                <div className={"garden_background"}>
+                    {notCompletedPlans.map(plan => (
+                        <Grid key={plan.id} item>
+                            <Plant1 classes={classes} />
+                            {/*<p> {plan.name}</p>*/}
+                        </Grid>
+                    ))}
+                    {completedPlans.map(plan => (
+                        <Grid key={plan.id} item>
+                            <Plant3 classes={classes} />
+                            {/*<p> {plan.name}</p>*/}
+                        </Grid>
+                    ))}
+                </div>
+
             </Grid>
         </div>
     )

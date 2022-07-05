@@ -15,7 +15,6 @@ export default function CalendarView() {
 
 
     for (let i = 0; i < userPlans.length; i++) {
-        // Todo @Andrea might be able to use userPlans[i]._id for id?
         plans.push(userPlans[i]);
     }
     return (

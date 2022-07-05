@@ -4,7 +4,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment)
 
-
 export default function MyCalendar(props) {
     const planList = props.plans;
 

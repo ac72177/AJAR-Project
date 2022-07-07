@@ -3,6 +3,7 @@ import Label from "./Label";
 import Subtask from "./MiniTask";
 import ProgressBar from "./ProgressBar";
 import DeletePlanButton from "../planModification/DeletePlanButton";
+import EditPlanButton from "../planModification/EditPlanButton";
 import "./../../styles/overview/MiniPlan.css";
 import { Route, Link, useNavigate } from "react-router-dom"
 import PlanContainer from "../planDetails/PlanContainer";
@@ -50,17 +51,14 @@ function MiniPlan(props) {
             <div className="card-content" >
                 <div className="heading-section">
                     <h2>{currPlan.name}</h2>
-                    <div className="buttons">
-                        <i
-                            className="fa-solid fa-pen-to-square"
-                            onClick={() => alert("TODO: open editing modal")}
-                        ></i>
+                    <span>
+                        <EditPlanButton id={currPlan._id}/>
                         <DeletePlanButton id={currPlan._id} />
                         <i
                             className="fa-solid fa-eye"
                             onClick={() => {navigate("/plans/" + currPlan._id)}}
                         ></i>
-                    </div>
+                    </span>
                     <h6>Due: {currPlan.dueDate}</h6>
                 </div>
 

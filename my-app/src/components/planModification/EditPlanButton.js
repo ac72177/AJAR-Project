@@ -3,7 +3,7 @@ import PopupForm from './PopupForm'
 import { useState } from 'react'
 
 
-export default function CreatePlanButton() {
+export default function EditPlanButton(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {
@@ -12,10 +12,11 @@ export default function CreatePlanButton() {
 
     return (
         <div>
-            {isOpen && <PopupForm put={false} handleClose={togglePopup}/> }
-            <button className="button" onClick={togglePopup}>
-                New Plan
-            </button>
+            {isOpen && <PopupForm put={true} handleClose={togglePopup}/> }
+            <i
+                className="fa-solid fa-pen-to-square"
+                onClick={togglePopup}
+            ></i>
         </div>
     );
 }

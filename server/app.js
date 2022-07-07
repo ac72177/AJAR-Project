@@ -29,6 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use Routes
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/plans', plansRouter)
+app.use('/api/plans', plansRouter)
 
 module.exports = app;

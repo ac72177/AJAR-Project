@@ -25,7 +25,7 @@ export default function Form(props) {
         }
 
         const data = {
-            planName: planName,
+            name: planName,
             labels: labels.split(","),
             startDate: startDate,
             dueDate: dueDate,
@@ -35,6 +35,7 @@ export default function Form(props) {
         if (props.put) {
             // dispatch(putPlanAsync(data)); TODO @ jun
         } else {
+            console.log(data);
             dispatch(addPlanAsync(data));
         }
     }

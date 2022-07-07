@@ -1,4 +1,6 @@
 function Sort(props) {
+    const plans = props.plans;
+    console.log(plans);
     return (
         <div>
             <i

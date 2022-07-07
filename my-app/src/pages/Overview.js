@@ -3,6 +3,7 @@ import Filter from "../components/overview/Filter";
 import MiniPlanCard from "../components/overview/MiniPlanCard";
 import Sort from "../components/overview/Sort";
 import CreatePlanButton from '../components/planModification/CreatePlanButton';
+import SummaryContainer from "../components/home/SummaryContainer"
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,6 +27,7 @@ function Overview() {
     console.log(userPlans);
     return (
         <div className="Overview">
+            <SummaryContainer />
             <div className="section options-container">
                 <div className="option new-plan-button">
                     <CreatePlanButton />

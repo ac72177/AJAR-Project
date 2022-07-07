@@ -35,9 +35,6 @@ export default function Navbar(props) {
                         <NavLink to="/overview" className="isActive">
                             <CDBSidebarMenuItem icon="th-large">Plans</CDBSidebarMenuItem>
                         </NavLink>
-                        <CDBSidebarMenuItem icon="plus">
-                            Create Plan
-                        </CDBSidebarMenuItem>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
 

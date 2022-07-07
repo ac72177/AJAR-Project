@@ -35,7 +35,6 @@ export default function Form(props) {
         if (props.put) {
             // dispatch(putPlanAsync(data)); TODO @ jun
         } else {
-            console.log(data);
             dispatch(addPlanAsync(data));
         }
     }

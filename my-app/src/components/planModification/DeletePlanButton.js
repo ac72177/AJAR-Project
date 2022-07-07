@@ -13,9 +13,10 @@ export default function DeletePlanButton(props) {
 
     return (
         <div>
-            <button className="button" onClick={deletePlan}>
-                Delete
-            </button>
+            <i
+                className="fa-solid fa-trash"
+                onClick={deletePlan}
+            ></i>
         </div>
     );
 }

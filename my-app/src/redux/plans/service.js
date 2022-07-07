@@ -22,7 +22,6 @@ const addPlan = async (plan) => {
         const errorMsg = data?.message;
         throw new Error(errorMsg)
     }
-    console.log(data)
     return data;
 };
 

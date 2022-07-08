@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { REQUEST_STATE } from '../utils';
-import { addPlanAsync, getPlansAsync, deletePlanAsync, putPlanAsync } from './thunks'; // todo @ Jun add putPlanAsync
+import { addPlanAsync, getPlansAsync, deletePlanAsync, putPlanAsync } from './thunks'; 
 
 const INITIAL_STATE = {
     list: [],

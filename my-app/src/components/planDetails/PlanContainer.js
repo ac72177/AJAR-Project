@@ -6,7 +6,6 @@ import './../../styles/planDetails/PlanContainer.css'
 
 export default function PlanContainer() {
     const { plan_ID } = useParams();
-    console.log(plan_ID)
     const plans = useSelector(state => state.plans.list)
     let plan = plans.find(plan => plan._id === plan_ID);
 

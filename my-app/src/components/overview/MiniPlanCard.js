@@ -3,6 +3,8 @@ import Label from "./Label";
 import Subtask from "./MiniTask";
 import ProgressBar from "./ProgressBar";
 import "./../../styles/overview/MiniPlan.css";
+import { Route, Link, useNavigate } from "react-router-dom"
+import PlanContainer from "../planDetails/PlanContainer";
 
 function MiniPlan(props) {
     const userPlans = useSelector((state) => state.plans.list);
@@ -38,17 +40,20 @@ function MiniPlan(props) {
         );
     }
 
-
+    // React route onClick: https://stackoverflow.com/questions/71540485/how-to-navigate-through-routing-on-button-click-in-react-react-router-6-2-1
+    const navigate = useNavigate();
 
     return (
         <div className="card">
-            <div className="card-content">
+            
+            <div className="card-content" >
                 <div className="heading-section">
                     <h2>{currPlan.name}</h2>
                     <i
                         className="fa-solid fa-pen-to-square"
                         onClick={() => alert("TODO: open editing modal")}
                     ></i>
+                    <button onClick={() => {navigate("/plans/" + currPlan._id)}}> Details </button>
                     <h6>Due: {currPlan.dueDate}</h6>
                 </div>
 

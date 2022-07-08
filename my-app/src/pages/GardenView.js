@@ -1,5 +1,5 @@
 import "../styles/home/Garden.css";
-import Garden from '../components/home/Garden'
+import GardenContainer from '../components/home/GardenContainer'
 import SummaryBarContainer from "../components/home/SummaryContainer";
 import WelcomeMsg from "../components/home/WelcomeMsg";
 import '../styles/home/SummaryBar.css';
@@ -13,7 +13,7 @@ export default function GardenView() {
 
             <SummaryBarContainer />
 
-            <Garden />
+            <GardenContainer />
         </div>
     );
 }

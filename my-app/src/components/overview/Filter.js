@@ -1,4 +1,17 @@
 function Filter(props) {
+    const plans = props.plans;
+
+    let allLabels = [];
+
+    // for (const plan in plans){
+    //     for (let i=0; i < plan.labels.length; i++){
+    //         if(allLabels.findIndex(plan.labels[i]) === -1){
+    //             allLabels.push(plan.labels[i]);
+    //         }
+    //     }
+    // }
+    // console.log(allLabels);
+
     return (
         <div>
             <i

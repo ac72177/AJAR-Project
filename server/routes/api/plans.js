@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
 });
 
 // @route POST api/plans
-// @desc POST a Plan
+// @desc Create a Plan
 // @access Public
 router.post('/', function (req, res, next) {
     const newPlan = new Plan({
@@ -37,12 +37,13 @@ router.post('/', function (req, res, next) {
         "startDate": req.body.startDate,
         "dueDate": req.body.dueDate,
         "description": req.body.desc,
-        "belongsTo": req.body.parent,
         "plans": req.body.plans,
         "attachments": req.body.attachments,
     });
     newPlan.save().then(
         plan => res.send(plan)
+    ).catch(
+        error => console.error(error)
     );
 });
 

@@ -1,13 +1,13 @@
 const addPlan = async (plan) => {
     const body = {
-        name: plan.planName,
-        labels: plan.labels.split(","),
+        name: plan.name,
+        labels: plan.labels,
         startDate: plan.startDate,
         dueDate: plan.dueDate,
         description: plan.description,
-        // Array<String> where String is subplan title
-        plans: plan.subPlans.split(""),
+        plans: plan.subPlans,
         // attachments: plan.attachments.split("")
+        attachments: []
     }
     const response = await fetch('api/plans', {
         method: 'POST',
@@ -22,7 +22,6 @@ const addPlan = async (plan) => {
         const errorMsg = data?.message;
         throw new Error(errorMsg)
     }
-    
     return data;
 };
 
@@ -44,7 +43,7 @@ const deletePlan = async (id) => {
 };
 
 const getPlans = async () => {
-    const response = await fetch('http://localhost:3001/plans', {
+    const response = await fetch('api/plans', {
         method: 'GET'
     });
     return response.json();

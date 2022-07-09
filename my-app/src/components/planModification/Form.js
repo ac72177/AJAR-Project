@@ -25,7 +25,7 @@ export default function Form(props) {
         }
 
         const data = {
-            planName: planName,
+            name: planName,
             labels: labels.split(","),
             startDate: startDate,
             dueDate: dueDate,

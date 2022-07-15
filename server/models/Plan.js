@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const PlanSchema = new Schema({
-    "_id": {
-        type: String,
-        required: true
-    },
     "name": {
         type: String,
         required: true
@@ -32,6 +28,7 @@ const PlanSchema = new Schema({
         type: Array,
         default: []
     },
+    // Arr of ids of child plans
     "plans": {
         type: Array,
         default: []

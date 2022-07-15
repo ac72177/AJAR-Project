@@ -35,7 +35,7 @@ const INITIAL_STATE = {
         })
         .addCase(deletePlanAsync.fulfilled, (state, action) => {
             state.deletePlan = REQUEST_STATE.FULFILLED;
-            state.list = [];
+            state.list = state.list.filter(recipe => recipe._id !== action.payload._id);
         })
         .addCase(deletePlanAsync.rejected, (state, action) => {
             state.deletePlan = REQUEST_STATE.REJECTED;

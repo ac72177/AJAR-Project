@@ -6,7 +6,7 @@ export default function PopupForm(props) {
     return (
         <div className="popup-box">
         <div className="box">
-            <Form put={props.put} handleClose={props.handleClose} />
+            <Form id={props.id} put={props.put} handleClose={props.handleClose} />
         </div>
         </div>
     );

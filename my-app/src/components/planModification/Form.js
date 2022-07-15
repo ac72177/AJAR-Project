@@ -23,8 +23,9 @@ export default function Form(props) {
             }
             subplanObjects.push(subplanObject)
         }
-
+        console.log(props.id)
         const data = {
+            _id: props.id,
             name: planName,
             labels: labels.split(","),
             startDate: startDate,

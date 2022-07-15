@@ -60,6 +60,7 @@ const INITIAL_STATE = {
         })
         .addCase(putPlanAsync.fulfilled, (state, action) => {
             state.putPlan = REQUEST_STATE.FULFILLED;
+            let index = state.list.findIndex(plan => plan._id === action.payload._id)
             state.list = action.payload;
         })
         .addCase(putPlanAsync.rejected, (state, action) => {

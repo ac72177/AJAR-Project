@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addPlanAsync } from '../../redux/plans/thunks';
+import { addPlanAsync, putPlanAsync } from '../../redux/plans/thunks';
 
 export default function Form(props) {
     const [planName, setName] = useState('');
@@ -23,8 +23,9 @@ export default function Form(props) {
             }
             subplanObjects.push(subplanObject)
         }
-
+        console.log(props.id)
         const data = {
+            _id: props.id,
             name: planName,
             labels: labels.split(","),
             startDate: startDate,
@@ -33,7 +34,7 @@ export default function Form(props) {
             subPlans: subplanObjects
         }
         if (props.put) {
-            // dispatch(putPlanAsync(data)); TODO @ jun
+            dispatch(putPlanAsync(data));
         } else {
             dispatch(addPlanAsync(data));
         }

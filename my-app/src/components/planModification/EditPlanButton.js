@@ -12,7 +12,7 @@ export default function EditPlanButton(props) {
 
     return (
         <div>
-            {isOpen && <PopupForm put={true} handleClose={togglePopup}/> }
+            {isOpen && <PopupForm id={props.id} put={true} handleClose={togglePopup}/> }
             <i
                 className="fa-solid fa-pen-to-square"
                 onClick={togglePopup}

@@ -9,23 +9,26 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 import './../../styles/navBar/style.css'
+import AuthNav from '../auth/AuthNav';
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function Navbar(props) {
+    const { isAuthenticated } = useAuth0();
 
-    return (
+    return isAuthenticated && (
         <div className="sidebar">
             <CDBSidebar textColor="#fff" backgroundColor="#013220">
-                <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-                <a
-                    href="/home"
-                    className="sidebar-header"
-                >
-                    My Garden
-                </a>
-                </CDBSidebarHeader>
 
                 <CDBSidebarContent className="sidebar-content">
                     <CDBSidebarMenu>
+                        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+                            <a
+                                href="/home"
+                                className="sidebar-header"
+                            >
+                                My Garden
+                            </a>
+                        </CDBSidebarHeader>
                         <NavLink to="/calendar" className="isActive">
                             <CDBSidebarMenuItem icon="table">Calendar</CDBSidebarMenuItem>
                         </NavLink>
@@ -35,15 +38,18 @@ export default function Navbar(props) {
                         <NavLink to="/overview" className="isActive">
                             <CDBSidebarMenuItem icon="th-large">Plans</CDBSidebarMenuItem>
                         </NavLink>
+                        <NavLink to="/profile" className="isActive">
+                            <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+                        </NavLink>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
 
+
                 <CDBSidebarFooter>
-                <NavLink to="/profile" className="isActive">
-                    <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-                    </NavLink>
+                    <AuthNav />
                 </CDBSidebarFooter>
             </CDBSidebar>
+
         </div>
     );
 }

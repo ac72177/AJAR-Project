@@ -1,14 +1,15 @@
+
 .home {
-    padding: 50px;
+    padding: 40px;
 }
 .garden {
-    padding-top: 30px;
+    padding-top: 10px;
     position: center;
 }
 .garden_background{
     position: relative;
-    width: 840px;
-    height: 450px;
+    width: 940px;
+    height: 500px;
     padding: 30px;
     background-image: url("./../../img/garden.png");
     background-size: cover;

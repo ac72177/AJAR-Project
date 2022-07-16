@@ -1,10 +1,11 @@
-import MyCalendar from "../components/calendar/MyCalendar"
+// import Garden from "./Garden";
+import './../../styles/home/Garden.css';
 import {useDispatch, useSelector} from "react-redux";
+import Garden from "./Garden";
 import {useEffect} from "react";
-import {getPlansAsync} from "../redux/plans/thunks";
-import MiniPlanCard from "../components/overview/MiniPlanCard";
+import {getPlansAsync} from "../../redux/plans/thunks";
 
-export default function CalendarView() {
+export default function GardenContainer() {
     const dispatch = useDispatch();
     const userPlans = useSelector((state) => state.plans.list);
     const plans = [];
@@ -17,9 +18,10 @@ export default function CalendarView() {
     for (let i = 0; i < userPlans.length; i++) {
         plans.push(userPlans[i]);
     }
+
     return (
-        <div>
-            <MyCalendar plans={plans} />
+        <div className='garden'>
+            <Garden plans={plans}/>
         </div>
     );
 }

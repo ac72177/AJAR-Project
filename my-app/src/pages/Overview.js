@@ -24,7 +24,6 @@ function Overview() {
         cards.push(<MiniPlanCard key={i} id={i} />);
     }
 
-    console.log(userPlans);
     return (
         <div className="Overview">
             <SummaryContainer />
@@ -33,11 +32,11 @@ function Overview() {
                     <CreatePlanButton />
                 </div>
                 <div className="option sort-button">
-                    <Sort />
+                    <Sort plans={userPlans}/>
                 </div>
 
                 <div className="option filter-button">
-                    <Filter />
+                    <Filter plans={userPlans}/>
                 </div>
             </div>
 

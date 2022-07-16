@@ -50,7 +50,7 @@ router.post('/', function (req, res, next) {
 });
 
 // @route PUT api/plans/planID
-// @desc PUT a Plan
+// @desc Modify a Plan
 // @access Public
 router.put('/:planID', function (req, res, next) {
     // tutorial: https://www.youtube.com/watch?v=M2u1W2CzXdE&ab_channel=LarsBilde
@@ -63,6 +63,5 @@ router.put('/:planID', function (req, res, next) {
         })
         .catch(error => console.error(error));
 });
-
 
 module.exports = router;

@@ -1,8 +1,10 @@
+import { unstable_createMuiStrictModeTheme } from '@material-ui/core';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addPlanAsync, putPlanAsync } from '../../redux/plans/thunks';
 
 export default function Form(props) {
+    const { v4: uuid } = require('uuid');
     const [planName, setName] = useState('');
     const [labels, setLabels] = useState('');
     const [startDate, setStart] = useState('');
@@ -18,12 +20,12 @@ export default function Form(props) {
         let subplanObjects = []
         for (let i = 0; i < subplans.length; i++ ) {
             let subplanObject = {
+                _id: uuid(),
                 name: subplans[i],
                 isComplete: false
             }
             subplanObjects.push(subplanObject)
         }
-        console.log(props.id)
         const data = {
             _id: props.id,
             name: planName,
@@ -31,7 +33,7 @@ export default function Form(props) {
             startDate: startDate,
             dueDate: dueDate,
             description: description,
-            subPlans: subplanObjects
+            plans: subplanObjects
         }
         if (props.put) {
             dispatch(putPlanAsync(data));

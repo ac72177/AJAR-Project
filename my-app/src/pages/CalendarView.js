@@ -2,7 +2,6 @@ import MyCalendar from "../components/calendar/MyCalendar"
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getPlansAsync} from "../redux/plans/thunks";
-import MiniPlanCard from "../components/overview/MiniPlanCard";
 
 export default function CalendarView() {
     const dispatch = useDispatch();

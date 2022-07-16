@@ -4,7 +4,6 @@ export default function ProgressBar(props) {
     const plan = props.plan;
 
     let currDate = new Date();
-    console.log(currDate);
     let totalTasks = plan.plans.length;
     let completedTasks = 0;
     let dueThisMonth = 0;

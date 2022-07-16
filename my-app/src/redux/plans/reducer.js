@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { REQUEST_STATE } from '../utils';
-import { addPlanAsync, getPlansAsync, deletePlanAsync, putPlanAsync } from './thunks'; 
+import { addPlanAsync, getPlansAsync, deletePlanAsync, putPlanAsync, checkTaskAsync } from './thunks'; 
 
 const INITIAL_STATE = {
     list: [],
@@ -29,10 +29,6 @@ const INITIAL_STATE = {
             state.addPlan = REQUEST_STATE.REJECTED;
             state.error = action.error;
         })
-        .addCase(deletePlanAsync.pending, (state) => {
-            state.deletePlan = REQUEST_STATE.PENDING;
-            state.error = null;
-        })
         .addCase(deletePlanAsync.fulfilled, (state, action) => {
             state.deletePlan = REQUEST_STATE.FULFILLED;
             state.list = action.payload;
@@ -53,14 +49,12 @@ const INITIAL_STATE = {
             state.getPlans = REQUEST_STATE.REJECTED;
             state.error = action.error;
         }) 
-        
         .addCase(putPlanAsync.pending, (state) => {
             state.putPlan = REQUEST_STATE.PENDING;
             state.error = null;
         })
         .addCase(putPlanAsync.fulfilled, (state, action) => {
             state.putPlan = REQUEST_STATE.FULFILLED;
-            let index = state.list.findIndex(plan => plan._id === action.payload._id)
             state.list = action.payload;
         })
         .addCase(putPlanAsync.rejected, (state, action) => {

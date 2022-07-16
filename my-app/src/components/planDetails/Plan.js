@@ -2,20 +2,19 @@ import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
 import './../../styles/planDetails/Plan.css';
 import { useDispatch } from 'react-redux';
-import { useState } from "react";
 
 export default function Plan(props) {
     const plan = props.plan;
     const dispatch = useDispatch();
-    const [isAllTasksComplete, setIsAllTasksComplete] = useState(false);
     let planName = plan['name'];
-    console.log("individual")
-    console.log(plan);
 
     const markAllComplete = () => {
-        // TODO make an API endpoint in the server folder and redux folder see savePlan() in Form.js for details
-        // dispatch({type: 'plans/markAllComplete', payload: plan._id});
-        setIsAllTasksComplete(true);
+        // TODO
+        // console.log(plan);
+        // for (let i = 0; i < plan.plans.length(); i++) {
+        //     plan.plans[i].isComplete = true; 
+        // }
+        // dispatch(putPlanAsync(plan));
     }
 
     return (

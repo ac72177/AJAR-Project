@@ -5,8 +5,7 @@ import ProgressBar from "./ProgressBar";
 import DeletePlanButton from "../planModification/DeletePlanButton";
 import EditPlanButton from "../planModification/EditPlanButton";
 import "./../../styles/overview/MiniPlan.css";
-import { Route, Link, useNavigate } from "react-router-dom"
-import PlanContainer from "../planDetails/PlanContainer";
+import { useNavigate } from "react-router-dom"
 
 function MiniPlan(props) {
     const userPlans = useSelector((state) => state.plans.list);
@@ -31,11 +30,12 @@ function MiniPlan(props) {
             <Subtask
                 key={i.toString()}
                 taskNumber={i}
+                plan={currPlan}
                 data={currPlan.plans[i]}
             />
         );
     }
-
+    // TODO
     for (let i = 0; i < currPlan.plans.length; i++) {
         dueTasks.push(
             // push subtask 

@@ -9,6 +9,13 @@ export const addPlanAsync = createAsyncThunk(
     }
 );
 
+export const checkTaskAsync = createAsyncThunk(
+    actionTypes.CHECK_TASK,
+    async (data) => {
+        return await PlanService.checkTask(data);
+    }
+)
+
 export const deletePlanAsync = createAsyncThunk(
     actionTypes.DELETE_PLAN,
     async (id) => {

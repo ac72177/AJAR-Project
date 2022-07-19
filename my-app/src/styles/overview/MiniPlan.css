@@ -21,3 +21,8 @@
 h2 {
     font-weight: bold;
 }
+
+.ButtonContainer{
+    flex-direction: row;
+    align-items: center;
+}

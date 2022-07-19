@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom"
 
 function MiniPlan(props) {
     const userPlans = useSelector((state) => state.plans.list);
-    const currPlan = userPlans[props.id];
+    const currPlan = props.id;
+    console.log(currPlan);
 
     const labels = [];
     const subTasks = [];
@@ -51,14 +52,14 @@ function MiniPlan(props) {
             <div className="card-content" >
                 <div className="heading-section">
                     <h2>{currPlan.name}</h2>
-                    <span>
+                    <div className={"ButtonContainer"}>
                         <EditPlanButton id={currPlan._id}/>
                         <DeletePlanButton id={currPlan._id} />
                         <i
                             className="fa-solid fa-eye"
                             onClick={() => {navigate("/plans/" + currPlan._id)}}
                         ></i>
-                    </span>
+                    </div>
                     <h6>Due: {currPlan.dueDate}</h6>
                 </div>
 

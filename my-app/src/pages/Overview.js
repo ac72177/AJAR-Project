@@ -14,8 +14,6 @@ function Overview() {
         dispatch(getPlansAsync());
     }, []);
 
-    console.log("userplans =" + userPlans);
-
     return (
         <div className="Overview">
             <SummaryContainer />

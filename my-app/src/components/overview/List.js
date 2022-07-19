@@ -5,29 +5,45 @@ import CreatePlanButton from "../planModification/CreatePlanButton";
 import Filter from "./Filter";
 
 function List (props) {
-    console.log(props.sampleData);
+    console.log("props.sampleData at beginning = " + props.sampleData);
     const [data, setData] = useState([]);
 
     useEffect(() => {
         console.log("trigger");
-        console.log(props.sampleData);
+        console.log("props.sampleData in useEffect = " +props.sampleData);
         setData(props.sampleData)
     }, [])
-    console.log(data);
+    console.log("after setting data to props.sampleData = " + data);
+
 
     function handleSort() {
         const sortedData = [...data].sort((a, b) =>
             a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1,
         );
         setData(sortedData);
-        console.log(data);
+    }
+
+    function handleFilter(chosenLabel) {
+        if (chosenLabel !== 'All') {
+            console.log(chosenLabel);
+            const filteredData = data.filter( (value) => {
+                console.log(value);
+                for (let i=0; i<value.labels.length; i++){
+                    console.log(value.labels[i]);
+                    if (value.labels[i] === chosenLabel) return true;
+                }
+                return false;
+            })
+            console.log(filteredData);
+            setData(filteredData);
+        } else {
+            setData(data);
+        }
     }
 
     const listComponents = data.map((object, index) => {
         return <MiniPlanCard key={index} id={object}/>
     })
-
-
 
     return (
         <>
@@ -42,8 +58,13 @@ function List (props) {
                 </div>
 
                 <div className="option filter-button">
-                    <i className="fa-solid fa-arrow-up-a-z" onClick={() => alert("TODO: open filter by label")}> </i>
+                    <i className="fa-solid fa-arrow-up-a-z"/>
                     <p className="help-text">Filter</p>
+                    <select onChange={(event) => handleFilter(event.target.value)}>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="fun">Fun</option>
+                    </select>
+
                 </div>
             </div>
 

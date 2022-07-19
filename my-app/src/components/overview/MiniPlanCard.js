@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom"
 function MiniPlan(props) {
     const userPlans = useSelector((state) => state.plans.list);
     const currPlan = props.id;
-    console.log(currPlan);
 
     const labels = [];
     const subTasks = [];

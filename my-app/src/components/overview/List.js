@@ -5,21 +5,25 @@ import CreatePlanButton from "../planModification/CreatePlanButton";
 import Filter from "./Filter";
 
 function List (props) {
-    const [sampleData, setSampleData] = useState([]);
+    console.log(props.sampleData);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
+        console.log("trigger");
         console.log(props.sampleData);
-        setSampleData(props.sampleData)
+        setData(props.sampleData)
     }, [])
+    console.log(data);
 
     function handleSort() {
-        const sortedData = [...props.sampleData].sort((a, b) =>
+        const sortedData = [...data].sort((a, b) =>
             a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1,
         );
-        setSampleData(sortedData);
+        setData(sortedData);
+        console.log(data);
     }
 
-    const listComponents = sampleData.map((object, index) => {
+    const listComponents = data.map((object, index) => {
         return <MiniPlanCard key={index} id={object}/>
     })
 

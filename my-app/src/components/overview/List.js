@@ -11,10 +11,11 @@ function List (props) {
     useEffect(() => {
         console.log("trigger");
         console.log("props.sampleData in useEffect = " +props.sampleData);
-        setData(props.sampleData)
+        if (props.sampleData !== null){
+            setData(props.sampleData)
+        }
     }, [])
     console.log("after setting data to props.sampleData = " + data);
-
 
     function handleSort() {
         const sortedData = [...data].sort((a, b) =>
@@ -45,6 +46,21 @@ function List (props) {
         return <MiniPlanCard key={index} id={object}/>
     })
 
+    const [labels, setLabels] = useState(['All']);
+
+    function getAllLabels () {
+        const allLabels = [];
+        for (let i = 0; i < data.length; i++){
+            for (let x=0; x < data[i].labels.length; x++){
+                let currLabel = data[i].labels[x];
+                if (!allLabels.includes(currLabel)){
+                    allLabels.push(currLabel);
+                }
+            }
+        } setLabels(allLabels);
+    }
+
+
     return (
         <>
             <div className="section options-container">
@@ -61,8 +77,13 @@ function List (props) {
                     <i className="fa-solid fa-arrow-up-a-z"/>
                     <p className="help-text">Filter</p>
                     <select onChange={(event) => handleFilter(event.target.value)}>
-                        <option value="outdoor">Outdoor</option>
-                        <option value="fun">Fun</option>
+                        {/*<option value="outdoor">Outdoor</option>*/}
+                        {/*<option value="fun">Fun</option>*/}
+                        <option className={"optionList"}>
+                            {labels.map((value, index) => (
+                                <li className={"optionItem"} key={index}> {value} </li>
+                            ))}
+                        </option>
                     </select>
 
                 </div>

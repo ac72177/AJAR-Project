@@ -18,7 +18,7 @@ function List (props) {
                 plans.push(props.sampleData[i]);
             } setData(plans);
         }
-    }, [])
+    }, [data])
 
     console.log("after setting data to props.sampleData = " + data);
 
@@ -85,8 +85,11 @@ function List (props) {
                 </div>
 
                 <div className="option filter-button">
-                    <i className="fa-solid fa-arrow-up-a-z"/>
+                    <i className="fa-solid fa-filter"/>
                     <p className="help-text">Filter</p>
+                </div>
+
+                <div>
                     <select onChange={(event) => handleFilter(event.target.value)}>
                         {/*<option value="outdoor">Outdoor</option>*/}
                         {/*<option value="fun">Fun</option>*/}
@@ -95,7 +98,6 @@ function List (props) {
                                 return <option key={index}> {e} </option>
                             })}
                     </select>
-
                 </div>
             </div>
 

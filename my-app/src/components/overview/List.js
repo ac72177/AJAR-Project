@@ -3,19 +3,24 @@ import {useEffect, useState} from "react";
 import {Button} from "react-bootstrap";
 import CreatePlanButton from "../planModification/CreatePlanButton";
 import Filter from "./Filter";
+import {useDispatch, useSelector} from "react-redux";
+import {getPlansAsync} from "../../redux/plans/thunks";
 
 function List (props) {
-    // console.log("props.sampleData at beginning = " + props.sampleData);
-    const [data, setData] = useState([]);
+    const plans = [];
+    const [data, setData] = useState(props.sampleData);
 
     useEffect(() => {
-        // console.log("trigger");
-        // console.log("props.sampleData in useEffect = " +props.sampleData);
-        if (props.sampleData !== null){
-            setData(props.sampleData)
+        console.log("trigger");
+        // console.log("props.sampleData in useEffect = " +sampleData);
+        if (props.sampleData !== null) {
+            for (let i =0; i< props.sampleData.length; i++){
+                plans.push(props.sampleData[i]);
+            } setData(plans);
         }
     }, [])
-    // console.log("after setting data to props.sampleData = " + data);
+
+    console.log("after setting data to props.sampleData = " + data);
 
     function handleSort() {
         const sortedData = [...data].sort((a, b) =>
@@ -24,26 +29,25 @@ function List (props) {
         setData(sortedData);
     }
 
-
-
     const listComponents = data.map((object, index) => {
         return <MiniPlanCard key={index} id={object}/>
     })
 
     const [labels, setLabels] = useState([]);
+
     useEffect(() => {
-        console.log("in label useeffect");
+        // console.log("in label useEffect");
         setLabels(getAllLabels());
-    }, [])
-    console.log("labels" + labels);
+    }, [labels])
+    // console.log("labels" + labels);
 
     function getAllLabels () {
         const allLabels = [];
         for (let i = 0; i < data.length; i++){
-            console.log(data[i]);
+            // console.log(data[i]);
             for (let x=0; x < data[i].labels.length; x++){
                 let currLabel = data[i].labels[x];
-                console.log(currLabel);
+                // console.log(currLabel);
                 if (!allLabels.includes(currLabel)){
                     allLabels.push(currLabel);
                 }

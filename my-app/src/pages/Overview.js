@@ -1,7 +1,6 @@
 import "./../styles/overview/Overview.css";
 import SummaryContainer from "../components/home/SummaryContainer"
-
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPlansAsync } from "../redux/plans/thunks";
 import List from "../components/overview/List";
@@ -17,11 +16,11 @@ function Overview() {
     return (
         <div className="Overview">
             <SummaryContainer />
-            <List sampleData={userPlans}/>
+            {/*userPlans? <List sampleData ={userPlans}/> : <Loading/>*/}
+            <List sampleData={userPlans} />
 
         </div>
     );
 
 }
-
 export default Overview;

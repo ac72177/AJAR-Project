@@ -7,20 +7,16 @@ import {useDispatch, useSelector} from "react-redux";
 import {getPlansAsync} from "../../redux/plans/thunks";
 
 function List (props) {
-    const plans = [];
+
     const [data, setData] = useState(props.sampleData);
+    console.log(props.sampleData);
 
     useEffect(() => {
         console.log("trigger");
-        // console.log("props.sampleData in useEffect = " +sampleData);
-        if (props.sampleData !== null) {
-            for (let i =0; i< props.sampleData.length; i++){
-                plans.push(props.sampleData[i]);
-            } setData(plans);
-        }
-    }, [data])
-
-    console.log("after setting data to props.sampleData = " + data);
+        console.log("data in useEffect = " + data);
+        setData(data);
+    }, [])
+    console.log("after setting data = " + data);
 
     function handleSort() {
         const sortedData = [...data].sort((a, b) =>
@@ -38,7 +34,7 @@ function List (props) {
     useEffect(() => {
         // console.log("in label useEffect");
         setLabels(getAllLabels());
-    }, [labels])
+    }, [])
     // console.log("labels" + labels);
 
     function getAllLabels () {

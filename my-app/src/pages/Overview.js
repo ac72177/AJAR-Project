@@ -13,11 +13,17 @@ function Overview() {
         dispatch(getPlansAsync());
     }, []);
 
+
+
+
     return (
         <div className="Overview">
             <SummaryContainer />
-            {/*userPlans? <List sampleData ={userPlans}/> : <Loading/>*/}
-            <List sampleData={userPlans} />
+            {userPlans.length > 0 &&
+            <List sampleData={userPlans}/> }
+            {userPlans.length == 0 &&
+                <p> loading </p> }
+            {/*<List sampleData={userPlans} />*/}
 
         </div>
     );

@@ -9,14 +9,10 @@ import {getPlansAsync} from "../../redux/plans/thunks";
 function List (props) {
 
     const [data, setData] = useState(props.sampleData);
-    console.log(props.sampleData);
 
     useEffect(() => {
-        console.log("trigger");
-        console.log("data in useEffect = " + data);
         setData(data);
     }, [])
-    console.log("after setting data = " + data);
 
     function handleSort() {
         const sortedData = [...data].sort((a, b) =>
@@ -42,9 +38,9 @@ function List (props) {
         for (let i = 0; i < data.length; i++){
             // console.log(data[i]);
             for (let x=0; x < data[i].labels.length; x++){
-                let currLabel = data[i].labels[x];
+                let currLabel = data[i].labels[x].trim();
                 // console.log(currLabel);
-                if (!allLabels.includes(currLabel)){
+                if (!allLabels.includes(currLabel) && currLabel!==""){
                     allLabels.push(currLabel);
                 }
             }
@@ -53,18 +49,20 @@ function List (props) {
     }
 
     function handleFilter(chosenLabel) {
-        if (chosenLabel !== 'Select label') {
+        setData(props.sampleData);
+        if (chosenLabel !== 'All') {
             console.log(chosenLabel);
-            const filteredData = data.filter( (value) => {
+            const filteredData = props.sampleData.filter( (value) => {
                 console.log(value);
                 for (let i=0; i<value.labels.length; i++){
                     console.log(value.labels[i]);
-                    if (value.labels[i] !== "" && value.labels[i] === chosenLabel) return true;
+                    if (value.labels[i] === chosenLabel) return true;
                 }
                 return false;
             })
-            console.log(filteredData);
             setData(filteredData);
+        } else {
+            setData(props.sampleData);
         }
     }
 
@@ -87,9 +85,7 @@ function List (props) {
 
                 <div>
                     <select onChange={(event) => handleFilter(event.target.value)}>
-                        {/*<option value="outdoor">Outdoor</option>*/}
-                        {/*<option value="fun">Fun</option>*/}
-                        <option className={"optionList"}> Select label </option>
+                        <option className={"optionList"}>All</option>
                             {labels.map((e, index) => {
                                 return <option key={index}> {e} </option>
                             })}

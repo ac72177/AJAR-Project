@@ -1,6 +1,6 @@
-# AJAR-Project
+# Plan+
 ## Project Description
-Plan+ (Plant) is designed for young adults and adults (ages 18-35) who want to stay organized and ensure that they achieve their goals. Plan+ allows users to set goals and keep track of the progress of their goals through viewing progress visualization, setting their schedule, and more. The data that this product will store is mainly user account information and user inputted data (plans, files, etc). Users will be able to upload, update, and view the data that they have inputted. Given enough time, a notification system could be implemented as well as a way to view other user profiles.
+Plan+ (Plant) is a garden-theme planning tool for anyone who wishes to manage and keep track of their their goals. Plan+ helps users to gain a better control of their plans by providng the ability to add tasks under each plan, visualize progress, and to view plans based on labels and other attributes. Unlike all the other planning tools, Plan+ presents a fun and comforting user experience by visualizing each plan as a Plant in users' garden, which "grows" as the plan gets completed. 
 
 ## Task Requirements 
 ### Minimal

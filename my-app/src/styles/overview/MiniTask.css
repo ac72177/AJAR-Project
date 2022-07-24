@@ -1,18 +1,18 @@
 .row {
-    display: flex;
-    align-items: center;
-    border: 1px solid red;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
 }
 
 .subtask {
-    margin-left: 10px;
-    display: inline;
+  margin-left: 10px;
+  display: inline;
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 hr {
-    border-color: lightgrey;
+  border-color: lightgrey;
 }

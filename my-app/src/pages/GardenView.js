@@ -1,19 +1,18 @@
 import "../styles/home/Garden.css";
-import GardenContainer from '../components/home/GardenContainer'
+import GardenContainer from "../components/home/GardenContainer";
 import SummaryBarContainer from "../components/home/SummaryContainer";
 import WelcomeMsg from "../components/home/WelcomeMsg";
-import '../styles/home/SummaryBar.css';
-
+import "../styles/home/SummaryBar.css";
 
 export default function GardenView() {
-    return (
-        <div className={"home"}>
-            <WelcomeMsg />
-            <br/>
+  return (
+    <div className={"home"}>
+      <WelcomeMsg />
+      <br />
 
-            <SummaryBarContainer />
+      <SummaryBarContainer />
 
-            <GardenContainer />
-        </div>
-    );
+      <GardenContainer />
+    </div>
+  );
 }

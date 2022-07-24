@@ -1,16 +1,15 @@
-
 .home {
-    padding: 40px;
+  padding: 40px;
 }
 .garden {
-    padding-top: 10px;
-    position: center;
+  padding-top: 10px;
+  position: center;
 }
-.garden_background{
-    position: relative;
-    width: 940px;
-    height: 500px;
-    padding: 30px;
-    background-image: url("./../../img/garden.png");
-    background-size: cover;
+.garden_background {
+  position: relative;
+  width: 940px;
+  height: 500px;
+  padding: 30px;
+  background-image: url("./../../img/garden.png");
+  background-size: cover;
 }

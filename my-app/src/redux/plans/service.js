@@ -8,6 +8,7 @@ const addPlan = async (plan) => {
     plans: plan.plans,
     // attachments: plan.attachments.split("")
     attachments: [],
+    owner: plan.owner,
   };
   const response = await fetch("api/plans", {
     method: "POST",
@@ -25,13 +26,16 @@ const addPlan = async (plan) => {
   return data;
 };
 
-const deletePlan = async (id) => {
-  const response = await fetch("api/plans/" + id, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+const deletePlan = async (deleteData) => {
+  const response = await fetch(
+    "api/plans/" + deleteData.user + "/" + deleteData.plan,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   const data = await response.json();
   if (!response.ok) {
@@ -42,8 +46,8 @@ const deletePlan = async (id) => {
   return data;
 };
 
-const getPlans = async () => {
-  const response = await fetch("api/plans", {
+const getPlans = async (userId) => {
+  const response = await fetch("api/plans/" + userId, {
     method: "GET",
   });
   return response.json();
@@ -55,10 +59,10 @@ editedFields: body of this req,
 which is an object with plan id and fieldName: updatedValue for updated fields.
 E.g. { _id: "1", name: "new plan name", isComplete: false }
 */
-const putPlan = async (editedFields) => {
-  const body = editedFields;
+const putPlan = async (editData) => {
+  const body = editData;
   const response = await fetch(
-    "http://localhost:3001/api/plans/" + editedFields._id,
+    "http://localhost:3001/api/plans/" + editData._id,
     {
       method: "PUT",
       headers: {

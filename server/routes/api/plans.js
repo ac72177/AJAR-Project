@@ -8,11 +8,11 @@ const Plan = require("../../models/Plan");
 // @route DELETE api/plans/:id
 // @desc Delete a plan
 // @access Public
-router.delete("/:id", function (req, res, next) {
-  Plan.findById(req.params.id)
+router.delete("/:userId/:planId", function (req, res, next) {
+  Plan.findById(req.params.planId)
     .then((plan) =>
       plan.remove().then(() =>
-        Plan.find()
+        Plan.find({ owner: req.params.userId })
           .sort({ date: -1 })
           .then((plans) => res.send(plans))
       )
@@ -23,8 +23,8 @@ router.delete("/:id", function (req, res, next) {
 // @route GET api/plans
 // @desc Get All Plans
 // @access Public
-router.get("/", function (req, res, next) {
-  Plan.find()
+router.get("/:userId", function (req, res, next) {
+  Plan.find({ owner: req.params.userId })
     .sort({ date: -1 })
     .then((plans) => res.send(plans));
 });
@@ -42,6 +42,7 @@ router.post("/", function (req, res, next) {
     description: req.body.desc,
     plans: req.body.plans,
     attachments: req.body.attachments,
+    owner: req.body.owner,
   });
   newPlan
     .save()
@@ -57,7 +58,7 @@ router.put("/:planID", function (req, res, next) {
   const conditions = { _id: req.params.planID };
   Plan.findOneAndUpdate(conditions, req.body, { new: true })
     .then(() => {
-      Plan.find()
+      Plan.find({ owner: req.body.owner })
         .sort({ date: -1 })
         .then((plans) => res.send(plans));
     })

@@ -6,6 +6,7 @@ import CreatePlanButton from "../components/planModification/CreatePlanButton";
 import SummaryContainer from "../components/home/SummaryContainer";
 
 import { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlansAsync } from "../redux/plans/thunks";
 
@@ -14,8 +15,10 @@ function Overview() {
   const userPlans = useSelector((state) => state.plans.list);
   const cards = [];
 
+  const { user } = useAuth0();
+
   useEffect(() => {
-    dispatch(getPlansAsync());
+    dispatch(getPlansAsync(user.sub));
   }, []);
 
   for (let i = 0; i < userPlans.length; i++) {

@@ -2,11 +2,13 @@ import "./../../styles/overview/MiniTask.css";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { putPlanAsync } from "../../redux/plans/thunks";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function MiniTask(props) {
   const [checked, setChecked] = useState(props.data.isComplete);
   const [completed, setCompleted] = useState(props.plan.isComplete);
   const dispatch = useDispatch();
+  const { user } = useAuth0();
 
   const checkBox = () => {
     let tasks = props.plan.plans;
@@ -42,6 +44,7 @@ function MiniTask(props) {
       _id: props.plan._id,
       plans: data,
       isComplete: checkComplete,
+      owner: user.sub,
     };
 
     dispatch(putPlanAsync(request));

@@ -18,15 +18,15 @@ export const checkTaskAsync = createAsyncThunk(
 
 export const deletePlanAsync = createAsyncThunk(
   actionTypes.DELETE_PLAN,
-  async (id) => {
-    return await PlanService.deletePlan(id);
+  async (data) => {
+    return await PlanService.deletePlan(data);
   }
 );
 
 export const getPlansAsync = createAsyncThunk(
   actionTypes.GET_PLANS,
-  async () => {
-    return await PlanService.getPlans();
+  async (userId) => {
+    return await PlanService.getPlans(userId);
   }
 );
 

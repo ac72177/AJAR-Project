@@ -1,4 +1,5 @@
 import { unstable_createMuiStrictModeTheme } from "@material-ui/core";
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPlanAsync, putPlanAsync } from "../../redux/plans/thunks";
@@ -11,6 +12,7 @@ export default function Form(props) {
   const [dueDate, setEnd] = useState("");
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState("");
+  const { user } = useAuth0();
   const dispatch = useDispatch();
 
   const savePlan = (e) => {
@@ -34,6 +36,7 @@ export default function Form(props) {
       dueDate: dueDate,
       description: description,
       plans: subplanObjects,
+      owner: user.sub,
     };
     if (props.put) {
       dispatch(putPlanAsync(data));

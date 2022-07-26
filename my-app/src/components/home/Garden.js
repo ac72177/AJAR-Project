@@ -93,6 +93,7 @@ function Plant5({classes}) {
     )
 }
 
+
 export default function Garden(props) {
     const plans = props.plans;
     console.log(plans);

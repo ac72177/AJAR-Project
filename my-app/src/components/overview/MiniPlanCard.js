@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Label from "./Label";
 import Subtask from "./MiniTask";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "./MyProgressBar";
 import DeletePlanButton from "../planModification/DeletePlanButton";
 import EditPlanButton from "../planModification/EditPlanButton";
 import "./../../styles/overview/MiniPlan.css";
@@ -64,7 +64,7 @@ function MiniPlan(props) {
 
                 <div className="labels-section">{labels}</div>
                 <div className="progress-bar-section">
-                    <ProgressBar props={props.data} />
+                    <ProgressBar props={currPlan} />
                 </div>
 
                 <div className="subtasks-section">

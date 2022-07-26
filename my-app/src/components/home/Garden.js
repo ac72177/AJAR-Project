@@ -93,41 +93,75 @@ function Plant5({classes}) {
     )
 }
 
-
 export default function Garden(props) {
     const plans = props.plans;
-    console.log(plans);
+    const progress = (currPlan) => {
+        var completed = 0;
+        var incomplete = 0;
 
-    const notCompletedPlans = plans.filter(function (el) {
-        return el.isComplete === false;
+        for (let i = 0; i < currPlan.plans.length; i++){
+            if (currPlan.plans[i].isComplete === true) {
+                completed++;
+            } else {
+                incomplete++;
+            }
+        }
+        let percentage = completed/(completed+incomplete);
+        return percentage*100;
+    }
+
+    const plant1 = plans.filter(function (el) {
+        return (progress(el) <= 20);
     });
 
-    const completedPlans = plans.filter(function (el) {
-        return el.isComplete === true;
+    const plant2 = plans.filter(function (el) {
+        return (progress(el) > 20 && progress(el) <=40);
+    });
+    const plant3 = plans.filter(function (el) {
+        return (progress(el) > 40 && progress(el) <=60);
+    });
+    const plant4 = plans.filter(function (el) {
+        return (progress(el)  >60 && progress(el) <=80);
+    });
+    const plant5 = plans.filter(function (el) {
+        return (progress(el) > 80);
     });
 
     const classes = useStyles();
 
     return (
-        // <div className={"garden"}>
             <Grid container direction="row" className={"garden_background"}>
-                {/*<div className={"garden_background"}>*/}
-                    {notCompletedPlans.map(plan => (
-                        <Grid key={plan.id} >
-                            <Plant1 classes={classes} />
-                            <p> {plan.name}</p>
-                        </Grid>
-                    ))}
-                    {completedPlans.map(plan => (
-                        <Grid key={plan.id} >
-                            <Plant3 classes={classes} />
-                            <p color={"white"}> {plan.name}</p>
-                        </Grid>
-                    ))}
-                {/*</div>*/}
-
+                {plant1.map(plan => (
+                    <Grid key={plan.id} >
+                        <Plant1 classes={classes} />
+                        <p> {plan.name}</p>
+                    </Grid>
+                ))}
+                {plant2.map(plan => (
+                    <Grid key={plan.id} >
+                        <Plant2 classes={classes} />
+                        <p> {plan.name}</p>
+                    </Grid>
+                ))}
+                {plant3.map(plan => (
+                    <Grid key={plan.id} >
+                        <Plant3 classes={classes} />
+                        <p> {plan.name}</p>
+                    </Grid>
+                ))}
+                {plant4.map(plan => (
+                    <Grid key={plan.id} >
+                        <Plant4 classes={classes} />
+                        <p> {plan.name}</p>
+                    </Grid>
+                ))}
+                {plant5.map(plan => (
+                    <Grid key={plan.id} >
+                        <Plant5 classes={classes} />
+                        <p color={"white"}> {plan.name}</p>
+                    </Grid>
+                ))}
             </Grid>
-        // </div>
     )
 
 }

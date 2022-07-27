@@ -17,5 +17,6 @@
 .garden_background p {
     color: white;
     font-size: 10px;
-    justify-items: center;
+    text-align: center;
 }
+

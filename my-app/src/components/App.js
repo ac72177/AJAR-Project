@@ -1,38 +1,35 @@
-import "../styles/App.css";
-import Filter from "./Filter";
-import MiniPlanCard from "./MiniPlanCard";
-import Sort from "./Sort";
+import { useAuth0 } from "@auth0/auth0-react";
+import Navbar from "./navBar/Navbar";
+import MyRoutes from "./../pages/MyRoutes";
+import "./../styles/App.css";
+import LoginButton from "../components/login/LoginButton";
+import SignupButton from "../components/login/SignupButton";
+import Loading from "./login/Loading";
 
-function App(props) {
-    const cards = [];
-    const userPlans = props.data.plans;
-    for (let i = 0; i < userPlans.length; i++) {
-        cards.push(<MiniPlanCard key={i.toString()} id={i} data={props.data} />);
-    }
+function App() {
+  const { isLoading, isAuthenticated, user } = useAuth0();
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isAuthenticated) {
     return (
-        <div className="App">
-            <div className="section options-container">
-                <div className="option new-plan-button">
-                    <button
-                        id="new-plan-button"
-                        className=""
-                        onClick={() => alert("TODO: open create plan modal")}
-                    >
-                        New Plan
-                    </button>
-                </div>
-                <div className="option sort-button">
-                    <Sort />
-                </div>
-
-                <div className="option filter-button">
-                    <Filter />
-                </div>
-            </div>
-
-            <div className="section grid-container">{cards}</div>
+      <div className="layout">
+        <Navbar />
+        <div className="page">
+          <MyRoutes />
         </div>
+      </div>
     );
+  } else {
+    return (
+      <div>
+        <h1>Welcome to Plan+</h1>
+        <LoginButton />
+        <SignupButton />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,54 @@
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 17px;
+  padding: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  border-width: 3px;
+  overflow: auto;
+}
+
+.form label {
+  font-weight: bold;
+  display: -webkit-flex;
+}
+
+.form label input {
+  display: auto;
+  flex: 1;
+  -webkit-flex: 1;
+  margin-left: 10px;
+}
+
+.buttons input {
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid darkslategrey;
+  border-radius: 17px;
+  color: white;
+  font-weight: bold;
+  padding: 10px 50px;
+  background-color: darkslategrey;
+  font-size: 1em;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

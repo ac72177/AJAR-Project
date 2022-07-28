@@ -15,11 +15,12 @@ const PlanSchema = new Schema({
         type: Array,
     },
     "startDate": {
-        type: Date,
-        default: Date.now
+        type: String,
+        required: true
     },
     "dueDate": {
-        type: Date
+        type: String,
+        required: true
     },
     "isComplete": {
         type: Boolean,
@@ -28,13 +29,9 @@ const PlanSchema = new Schema({
     "description": {
         type: String
     },
-    "attachments": {
-        type: Array,
-        default: []
-    },
     "plans": {
         type: Array,
-        default: []
+        required: true
     }
 });
 

@@ -1,25 +1,22 @@
 import MiniPlanCard from "./MiniPlanCard";
 import {useEffect, useState} from "react";
-import {Button} from "react-bootstrap";
 import CreatePlanButton from "../planModification/CreatePlanButton";
-import Filter from "./Filter";
 import {useDispatch, useSelector} from "react-redux";
 import {getPlansAsync} from "../../redux/plans/thunks";
 
 function List () {
-    // const [labels, setLabels] = useState([]);
     const dispatch = useDispatch();
     let userPlans = useSelector((state) => state.plans.list);
+    const [plans, setPlans] = useState(userPlans);
 
     useEffect(() => {
         dispatch(getPlansAsync());
-    }, []);
+    }, [plans]);
 
     function handleSort() {
         const sortedData = [...userPlans].sort((a, b) =>
             a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1,
         );
-        // setData(sortedData);
     }
 
     function getAllLabels () {
@@ -31,22 +28,24 @@ function List () {
                     allLabels.push(currLabel);
                 }
             }
-        } console.log("getting all labels" + allLabels);
+        }
         return allLabels;
     }
 
     function handleFilter(chosenLabel) {
+        console.log("handlingFilter")
         if (chosenLabel !== 'All') {
-            console.log(chosenLabel);
-            const filteredData = userPlans.filter( (value) => {
-                console.log(value);
+            let filtered = userPlans.filter( (value) => {
                 for (let i=0; i<value.labels.length; i++){
-                    console.log(value.labels[i]);
                     if (value.labels[i] === chosenLabel) return true;
                 }
                 return false;
-            })
+            });
+            // setPlans[filtered];
+        } else {
+            // setPlans[userPlans];
         }
+        console.log(plans)
     }
 
     const labels = getAllLabels().map((e, index) => {

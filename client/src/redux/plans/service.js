@@ -5,11 +5,9 @@ const addPlan = async (plan) => {
         startDate: plan.startDate,
         dueDate: plan.dueDate,
         description: plan.description,
-        plans: plan.plans,
-        // attachments: plan.attachments.split("")
-        attachments: []
+        plans: plan.plans
     }
-    const response = await fetch('api/plans', {
+    const response = await fetch('/api/plans', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -26,7 +24,7 @@ const addPlan = async (plan) => {
 };
 
 const deletePlan = async (id) => {
-    const response = await fetch('api/plans/' + id, {
+    const response = await fetch('/api/plans/' + id, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'
@@ -43,7 +41,7 @@ const deletePlan = async (id) => {
 };
 
 const getPlans = async () => {
-    const response = await fetch('api/plans', {
+    const response = await fetch('/api/plans', {
         method: 'GET'
     });
     return response.json();
@@ -57,7 +55,7 @@ E.g. { _id: "1", name: "new plan name", isComplete: false }
 */
 const putPlan = async (editedFields) => {
     const body = editedFields
-    const response = await fetch('http://localhost:3001/api/plans/' + editedFields._id, {
+    const response = await fetch('/api/plans/' + editedFields._id, {
         method: 'PUT',
         headers: {
         'Content-Type': 'application/json'
@@ -76,7 +74,6 @@ const putPlan = async (editedFields) => {
 
 export default {
     addPlan,
-    // checkTask,
     deletePlan,
     getPlans,
     putPlan

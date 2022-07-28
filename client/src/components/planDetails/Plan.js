@@ -1,21 +1,10 @@
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
 import './../../styles/planDetails/Plan.css';
-import { useDispatch } from 'react-redux';
 
 export default function Plan(props) {
     const plan = props.plan;
-    const dispatch = useDispatch();
     let planName = plan['name'];
-
-    const markAllComplete = () => {
-        // TODO
-        // console.log(plan);
-        // for (let i = 0; i < plan.plans.length(); i++) {
-        //     plan.plans[i].isComplete = true; 
-        // }
-        // dispatch(putPlanAsync(plan));
-    }
 
     return (
         <div className='Plan'>
@@ -34,14 +23,10 @@ export default function Plan(props) {
                 </div>
 
                 <h3> <strong>Description:</strong> {plan.description}</h3>
-
-                <h3> <strong>Attachments:</strong> {pullAttachments()}</h3>
             </div>
 
             <div>
                 <h2> Tasks: </h2>
-
-                <button onClick={markAllComplete}>Mark all completed</button>
 
                 {plan.plans.map(subPlan => {
                     return (
@@ -50,11 +35,5 @@ export default function Plan(props) {
                 })}
             </div>
         </div>
-
-
     )
-}
-
-function pullAttachments() {
-    return 'attachment1.pdf';
 }

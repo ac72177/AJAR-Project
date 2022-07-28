@@ -13,7 +13,6 @@ function MiniPlan(props) {
 
     const labels = [];
     const subTasks = [];
-    const dueTasks = [];
 
     for (let i = 0; i < currPlan.labels.length; i++) {
         labels.push(
@@ -33,12 +32,6 @@ function MiniPlan(props) {
                 plan={currPlan}
                 data={currPlan.plans[i]}
             />
-        );
-    }
-    // TODO
-    for (let i = 0; i < currPlan.plans.length; i++) {
-        dueTasks.push(
-            // push subtask 
         );
     }
 

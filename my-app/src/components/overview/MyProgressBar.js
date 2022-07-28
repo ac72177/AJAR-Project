@@ -16,15 +16,12 @@ function MyProgressBar(props) {
             }
         }
         let percentage = completed/(completed+incompleted);
-        return percentage*100;
+        return Math.round(percentage*100);
     }
 
     return (
         <div className="w3-light-grey">
-            {/*<div className="w3-grey w3-container w3-center">*/}
-                {/*<p className="bar">{progress()}</p>*/}
-                <ProgressBar now={progress()} label={`${progress()}%`} />
-            {/*</div>*/}
+            <ProgressBar now={progress()} label={`${progress()}%`} />
         </div>
     );
 }

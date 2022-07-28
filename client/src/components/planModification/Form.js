@@ -20,7 +20,7 @@ export default function Form(props) {
   const dispatch = useDispatch();
 
   function initializePlan() {
-    let currPlan = props.currPlan
+    let currPlan = props.currPlan;
     if (currPlan == undefined) {
       return {
         name: "",
@@ -28,17 +28,17 @@ export default function Form(props) {
         dueDate: "",
         description: "",
         labels: "",
-        plans: ""
-      }
+        plans: "",
+      };
     } else {
       let existingLabels = currPlan.labels.join(",");
 
-      let existingTasks = ""
-      for (let i=0; i < currPlan.plans.length; i++) {
+      let existingTasks = "";
+      for (let i = 0; i < currPlan.plans.length; i++) {
         if (existingTasks == "") {
-          existingTasks = currPlan.plans[i].name
+          existingTasks = currPlan.plans[i].name;
         } else {
-          existingTasks = existingTasks + ", " + currPlan.plans[i].name
+          existingTasks = existingTasks + ", " + currPlan.plans[i].name;
         }
       }
       return {
@@ -47,8 +47,8 @@ export default function Form(props) {
         dueDate: currPlan.dueDate,
         description: currPlan.description,
         labels: existingLabels,
-        plans: existingTasks
-      }
+        plans: existingTasks,
+      };
     }
   }
 
@@ -56,7 +56,7 @@ export default function Form(props) {
     e.preventDefault();
 
     if (tasks == "") {
-      setTasks("Completed")
+      setTasks("Completed");
     }
 
     let subplans = tasks.split(",");
@@ -143,7 +143,9 @@ export default function Form(props) {
           maxRows={4}
           value={description}
           placeholder="Enter Description"
-          onChange={(e) => {setDescription(e.target.value)}}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
           variant="filled"
         />
         <TextField
@@ -154,7 +156,9 @@ export default function Form(props) {
           maxRows={4}
           value={labels}
           placeholder="Cooking, Exercise, Summer"
-          onChange={(e) => {setLabels(e.target.value)}}
+          onChange={(e) => {
+            setLabels(e.target.value);
+          }}
           variant="filled"
         />
 
@@ -165,7 +169,9 @@ export default function Form(props) {
           maxRows={4}
           value={tasks}
           placeholder="Visit Costco, Invite Friends, Cleanup House"
-          onChange={(e) => {setTasks(e.target.value)}}
+          onChange={(e) => {
+            setTasks(e.target.value);
+          }}
         />
       </div>
       <br></br>

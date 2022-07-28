@@ -7,7 +7,8 @@
     "server": "nodemon ./bin/www",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm config set legacy-peer-deps true && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm config set legacy-peer-deps true && npm install --only=dev && npm install && npm run build",
+    "prettier": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "dependencies": {
     "concurrently": "^7.2.2",
@@ -18,6 +19,7 @@
     "express": "~4.16.1",
     "mongoose": "^6.4.0",
     "morgan": "~1.9.1",
+    "prettier": "^2.7.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

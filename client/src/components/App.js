@@ -1,16 +1,16 @@
-import Navbar from './navBar/Navbar'
+import Navbar from "./navBar/Navbar";
 import MyRoutes from "./../pages/MyRoutes";
-import "./../styles/App.css"
+import "./../styles/App.css";
 
 function App() {
   return (
     <div className="layout">
-        <Navbar />
+      <Navbar />
       <div className="page">
         <MyRoutes />
       </div>
     </div>
-  )
+  );
 }
 
 export default App;

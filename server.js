@@ -12,10 +12,10 @@ require("dotenv").config()
 const app = express();
 
 //DB config
-// const db = require('./config/keys').mongoURI;
+const db = require('./config/keys').mongoURI;
 // connect to Mongo
 mongoose
-    .connect('mongodb+srv://Bob:bob123@cluster0.dqdwbum.mongodb.net/?retryWrites=true&w=majority')
+    .connect(db)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
@@ -24,14 +24,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 // Use Routes
-// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/plans', plansRouter)
 
-app.use(express.static(path.join(__dirname, "client", "build")))
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });

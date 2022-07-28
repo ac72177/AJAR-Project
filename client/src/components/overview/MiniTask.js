@@ -5,7 +5,6 @@ import { putPlanAsync } from '../../redux/plans/thunks';
 
 function MiniTask(props) {
     const [checked, setChecked] = useState(props.data.isComplete);
-    const [completed, setCompleted] = useState(props.plan.isComplete);
     const dispatch = useDispatch();
 
     const checkBox = () => {
@@ -23,10 +22,6 @@ function MiniTask(props) {
         
         let checkComplete;
         for ( let i = 0; i < data.length; i++ ) {
-            console.log("testing " + data[i]);
-            console.log(data[i]._id)
-            console.log(data[i].name)
-            console.log(data[i].isComplete)
 
             if (data[i].isComplete == true) {
                 checkComplete = true;

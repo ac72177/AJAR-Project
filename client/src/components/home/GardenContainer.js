@@ -1,4 +1,3 @@
-// import Garden from "./Garden";
 import './../../styles/home/Garden.css';
 import {useDispatch, useSelector} from "react-redux";
 import Garden from "./Garden";

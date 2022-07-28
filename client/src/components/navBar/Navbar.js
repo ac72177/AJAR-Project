@@ -36,7 +36,7 @@ export default function Navbar(props) {
                 </CDBSidebarContent>
 
                 <CDBSidebarFooter>
-                    {/* remove */}
+                    {/* TODO remove */}
                 <NavLink to="/profile" className="isActive">
                     <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
                     </NavLink>

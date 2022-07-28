@@ -10,9 +10,9 @@ function MyRoutes() {
     <div>
       <Routes>
         <Route path='/calendar' element={<CalendarView />}/> 
-        <Route path='/overview' element={<Overview />}/>
-        <Route path='/home' exact-to element={<GardenView />}/> 
-        <Route path='/plans/:plan_ID' element={<PlanContainer />} />           
+        <Route path='/plans' element={<Overview />}/>
+        <Route path='/plans/:plan_ID' element={<PlanContainer />} />  
+        <Route path='/home' exact-to element={<GardenView />}/>          
       </Routes>
     </div>
   )

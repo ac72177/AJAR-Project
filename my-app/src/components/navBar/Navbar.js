@@ -29,16 +29,14 @@ export default function Navbar(props) {
                         <NavLink to="/calendar" className="isActive">
                             <CDBSidebarMenuItem icon="table">Calendar</CDBSidebarMenuItem>
                         </NavLink>
-                        <NavLink to="/test" className="isActive">
-                            <CDBSidebarMenuItem icon="th-large">Test</CDBSidebarMenuItem>
-                        </NavLink>
-                        <NavLink to="/overview" className="isActive">
+                        <NavLink to="/plans" className="isActive">
                             <CDBSidebarMenuItem icon="th-large">Plans</CDBSidebarMenuItem>
                         </NavLink>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
 
                 <CDBSidebarFooter>
+                    {/* remove */}
                 <NavLink to="/profile" className="isActive">
                     <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
                     </NavLink>

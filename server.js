@@ -5,7 +5,6 @@ const logger = require('morgan');
 const cors = require('cors')
 const mongoose = require('mongoose');
 
-const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const plansRouter = require('./routes/api/plans');
 require("dotenv").config()
@@ -13,10 +12,10 @@ require("dotenv").config()
 const app = express();
 
 //DB config
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
 // connect to Mongo
 mongoose
-    .connect(db)
+    .connect('mongodb+srv://Bob:bob123@cluster0.dqdwbum.mongodb.net/?retryWrites=true&w=majority')
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 

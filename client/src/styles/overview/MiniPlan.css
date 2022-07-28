@@ -1,25 +1,25 @@
 .card {
-    border: 1px solid lightgrey;
-    margin: 1.5em;
-    border-radius: 10%;
-    padding: 2em 0.4em;
+  border: 1px solid lightgrey;
+  margin: 1.5em;
+  border-radius: 10%;
+  padding: 2em 0.4em;
 }
 
 .card-content {
-    margin: 1em 3em;
+  margin: 1em 3em;
 }
 
 .labels-section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .subtasks-section {
-    text-align: left;
+  text-align: left;
 }
 
 h2 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .ButtonContainer{

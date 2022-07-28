@@ -47,7 +47,7 @@ function MiniTask(props) {
         <div className="mini-task">
             <input type="checkbox" defaultChecked={checked} onClick={checkBox}/>
             <p className="subtask">
-                        Task #{props.taskNumber}: {props.data.name}
+                        Task #{props.taskNumber + 1}: {props.data.name}
                     </p>
             <hr className="row-end"></hr>
         </div>

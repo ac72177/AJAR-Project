@@ -73,7 +73,7 @@ export default function Form(props) {
     const data = {
       _id: props.id,
       name: planName,
-      labels: labels.split(" ,"),
+      labels: labels.split(","),
       startDate: startDate,
       dueDate: dueDate,
       description: description,
@@ -150,6 +150,7 @@ export default function Form(props) {
           id="filled-multiline-flexible"
           label="Labels"
           multiline
+          required
           maxRows={4}
           value={labels}
           placeholder="Cooking, Exercise, Summer"

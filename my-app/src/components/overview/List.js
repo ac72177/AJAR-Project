@@ -6,7 +6,8 @@ import Filter from "./Filter";
 import {useDispatch, useSelector} from "react-redux";
 import {getPlansAsync} from "../../redux/plans/thunks";
 
-function List (props) {
+function List () {
+    // const [labels, setLabels] = useState([]);
     const dispatch = useDispatch();
     let userPlans = useSelector((state) => state.plans.list);
 
@@ -21,35 +22,20 @@ function List (props) {
         // setData(sortedData);
     }
 
-    const listComponents = userPlans.map((object, index) => {
-        return <MiniPlanCard key={index} id={object}/>
-    })
-
-    const [labels, setLabels] = useState([]);
-
-    useEffect(() => {
-        // console.log("in label useEffect");
-        setLabels(getAllLabels());
-    }, [])
-    // console.log("labels" + labels);
-
     function getAllLabels () {
         const allLabels = [];
         for (let i = 0; i < userPlans.length; i++){
-            // console.log(data[i]);
             for (let x=0; x < userPlans[i].labels.length; x++){
                 let currLabel = userPlans[i].labels[x].trim();
-                // console.log(currLabel);
                 if (!allLabels.includes(currLabel) && currLabel!==""){
                     allLabels.push(currLabel);
                 }
             }
-        } console.log(allLabels);
+        } console.log("getting all labels" + allLabels);
         return allLabels;
     }
 
     function handleFilter(chosenLabel) {
-        // setData(props.sampleData);
         if (chosenLabel !== 'All') {
             console.log(chosenLabel);
             const filteredData = userPlans.filter( (value) => {
@@ -60,11 +46,16 @@ function List (props) {
                 }
                 return false;
             })
-            // setData(filteredData);
-        } else {
-            // setData(props.sampleData);
         }
     }
+
+    const labels = getAllLabels().map((e, index) => {
+        return <option key={index}> {e} </option>
+    })
+
+    const listComponents = userPlans.map((object, index) => {
+        return <MiniPlanCard key={index} id={object}/>
+    })
 
     return (
         <>
@@ -86,9 +77,7 @@ function List (props) {
                 <div>
                     <select onChange={(event) => handleFilter(event.target.value)}>
                         <option className={"optionList"}>All</option>
-                            {labels.map((e, index) => {
-                                return <option key={index}> {e} </option>
-                            })}
+                            {labels}
                     </select>
                 </div>
             </div>

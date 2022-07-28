@@ -9,17 +9,50 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function Form(props) {
+  let plan = initializePlan();
   const { v4: uuid } = require("uuid");
-  const [planName, setName] = useState("");
-  const [labels, setLabels] = useState("");
-  const [startDate, setStart] = useState("");
-  const [dueDate, setEnd] = useState("");
-  const [description, setDescription] = useState("");
-  const [tasks, setTasks] = useState("");
+  const [planName, setName] = useState(plan.name);
+  const [labels, setLabels] = useState(plan.labels);
+  const [startDate, setStart] = useState(plan.startDate);
+  const [dueDate, setEnd] = useState(plan.dueDate);
+  const [description, setDescription] = useState(plan.description);
+  const [tasks, setTasks] = useState(plan.plans);
   const dispatch = useDispatch();
 
+  function initializePlan() {
+    let currPlan = props.currPlan
+    if (currPlan == undefined) {
+      return {
+        name: "",
+        startDate: "",
+        dueDate: "",
+        description: "",
+        labels: "",
+        plans: ""
+      }
+    } else {
+      let existingLabels = currPlan.labels.join(",");
+
+      let existingTasks = ""
+      for (let i=0; i < currPlan.plans.length; i++) {
+        if (existingTasks == "") {
+          existingTasks = currPlan.plans[i].name
+        } else {
+          existingTasks = existingTasks + ", " + currPlan.plans[i].name
+        }
+      }
+      return {
+        name: currPlan.name,
+        startDate: currPlan.startDate,
+        dueDate: currPlan.dueDate,
+        description: currPlan.description,
+        labels: existingLabels,
+        plans: existingTasks
+      }
+    }
+  }
+
   const savePlan = (e) => {
-    console.log("is this even working?")
     e.preventDefault();
 
     if (tasks == "") {
@@ -40,7 +73,7 @@ export default function Form(props) {
     const data = {
       _id: props.id,
       name: planName,
-      labels: labels.split(","),
+      labels: labels.split(" ,"),
       startDate: startDate,
       dueDate: dueDate,
       description: description,
@@ -60,7 +93,6 @@ export default function Form(props) {
       sx={{
         "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
-      noValidate
       autoComplete="off"
     >
       <div>

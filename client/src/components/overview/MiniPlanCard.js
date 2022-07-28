@@ -45,7 +45,7 @@ function MiniPlan(props) {
                 <div className="heading-section">
                     <h2>{currPlan.name}</h2>
                     <div className={"ButtonContainer"}>
-                        <EditPlanButton id={currPlan._id}/>
+                        <EditPlanButton id={currPlan._id} currPlan={currPlan}/>
                         <DeletePlanButton id={currPlan._id} />
                         <i
                             className="fa-solid fa-eye"

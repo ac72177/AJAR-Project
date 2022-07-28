@@ -3,7 +3,7 @@ const router = express.Router();
 const { v4: uuid } = require('uuid');
 
 // Plan Model 
-const Plan = require('../../models/Plan');
+const Plan = require('../models/Plan');
 
 // @route DELETE api/plans/:id
 // @desc Delete a plan

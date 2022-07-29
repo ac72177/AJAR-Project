@@ -1,0 +1,14 @@
+div.sidebar {
+  display: "flex";
+  position: "fixed";
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: "scroll initial";
+}
+
+.sidebar-header {
+  text-decoration: none;
+  color: inherit;
+}

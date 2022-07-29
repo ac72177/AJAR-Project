@@ -38,3 +38,9 @@ Plan+ (Plant) is a garden-theme planning tool for anyone who wishes to manage an
 ![MacBook Pro 14_ - 3 (1)](https://user-images.githubusercontent.com/43710010/170760325-655a8baf-7676-42ec-a316-6e1ef7461f2a.png)
 ![MacBook Pro 14_ - 4](https://user-images.githubusercontent.com/43710010/170760340-e300dde5-e80d-4dbc-8da4-4cd40c71ae7e.png)
 
+## Resources 
+Navigation: 
+https://reactrouter.com/docs/en/v6/getting-started/overview
+https://www.devwares.com/docs/contrast/react/navigation/sidebar/
+
+

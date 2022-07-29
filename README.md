@@ -1,6 +1,6 @@
 # Plan+
 ## Project Description
-Plan+ (Plant) is a garden-theme planning tool for anyone who wishes to manage and keep track of their their goals. Plan+ helps users to gain a better control of their plans by providng the ability to add tasks under each plan, visualize progress, and to view plans based on labels and other attributes. Unlike all the other planning tools, Plan+ presents a fun and comforting user experience by visualizing each plan as a Plant in users' garden, which "grows" as the plan gets completed. 
+Plan+ (Plan-plus) is a garden-theme planning tool for anyone who wishes to manage and keep track of their their goals. Plan+ helps users to gain a better control of their plans and progress by providng the ability to add tasks under each plan, visualize plan progress, and to view plans based on labels and other attributes. Unlike all the other planning tools, Plan+ presents a fun and comforting user experience by visualizing each plan as a Plant in users' garden, which "grows" as the plan gets completed. 
 
 ## Task Requirements 
 ### Minimal

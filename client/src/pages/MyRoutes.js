@@ -12,7 +12,7 @@ function MyRoutes() {
         <Route path="/calendar" element={<CalendarView />} />
         <Route path="/plans" element={<Overview />} />
         <Route path="/plans/:plan_ID" element={<PlanContainer />} />
-        <Route path="/home" exact-to element={<GardenView />} />
+        <Route path="/" exact-to element={<GardenView />} />
       </Routes>
     </div>
   );

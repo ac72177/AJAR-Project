@@ -16,28 +16,25 @@ export default function Navbar(props) {
     <div className="sidebar">
       <CDBSidebar textColor="#fff" backgroundColor="#013220">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          <a href="/home" className="sidebar-header">
-            My Garden
-          </a>
+          plan+
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink to="/calendar" className="isActive">
-              <CDBSidebarMenuItem icon="table">Calendar</CDBSidebarMenuItem>
+            <NavLink to="/" className="isActive">
+              <CDBSidebarMenuItem icon="table">Garden</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/plans" className="isActive">
-              <CDBSidebarMenuItem icon="th-large">Plans</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Plans</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink to="/calendar" className="isActive">
+              <CDBSidebarMenuItem icon="th-large">Calendar</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
         <CDBSidebarFooter>
-          {/* TODO remove */}
-          <NavLink to="/profile" className="isActive">
-            <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-          </NavLink>
-          <LogoutButton />
+            <LogoutButton />
         </CDBSidebarFooter>
       </CDBSidebar>
     </div>

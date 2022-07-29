@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Form(props) {
   let plan = initializePlan();
@@ -17,6 +18,7 @@ export default function Form(props) {
   const [dueDate, setEnd] = useState(plan.dueDate);
   const [description, setDescription] = useState(plan.description);
   const [tasks, setTasks] = useState(plan.plans);
+  const { user } = useAuth0();
   const dispatch = useDispatch();
 
   function initializePlan() {
@@ -78,6 +80,7 @@ export default function Form(props) {
       dueDate: dueDate,
       description: description,
       plans: subplanObjects,
+      owner: user.sub,
     };
     if (props.put) {
       dispatch(putPlanAsync(data));

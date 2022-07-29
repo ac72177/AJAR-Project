@@ -6,6 +6,7 @@ const addPlan = async (plan) => {
     dueDate: plan.dueDate,
     description: plan.description,
     plans: plan.plans,
+    owner: plan.owner,
   };
   const response = await fetch("/api/plans", {
     method: "POST",
@@ -23,13 +24,16 @@ const addPlan = async (plan) => {
   return data;
 };
 
-const deletePlan = async (id) => {
-  const response = await fetch("/api/plans/" + id, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+const deletePlan = async (deleteData) => {
+  const response = await fetch(
+    "api/plans/" + deleteData.user + "/" + deleteData.plan,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   const data = await response.json();
   if (!response.ok) {
@@ -40,8 +44,8 @@ const deletePlan = async (id) => {
   return data;
 };
 
-const getPlans = async () => {
-  const response = await fetch("/api/plans", {
+const getPlans = async (userId) => {
+  const response = await fetch("/api/plans/" + userId, {
     method: "GET",
   });
   return response.json();

@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import CreatePlanButton from "../planModification/CreatePlanButton";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlansAsync } from "../../redux/plans/thunks";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function List() {
   const dispatch = useDispatch();
+  const { user } = useAuth0();
   let userPlans = useSelector((state) => state.plans.list);
   const [plans, setPlans] = useState(userPlans);
 
   useEffect(() => {
-    dispatch(getPlansAsync());
+    dispatch(getPlansAsync(user.sub));
   }, [plans]);
 
   function handleSort() {

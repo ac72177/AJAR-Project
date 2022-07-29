@@ -7,7 +7,7 @@ import SignupButton from "../components/login/SignupButton";
 import Loading from "./login/Loading";
 
 function App() {
-  const { isLoading, isAuthenticated, user } = useAuth0();
+  const { isLoading, isAuthenticated } = useAuth0();
   if (isLoading) {
     return <Loading />;
   }

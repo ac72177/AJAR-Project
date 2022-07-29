@@ -9,6 +9,7 @@ import {
 } from "cdbreact";
 import { NavLink } from "react-router-dom";
 import "./../../styles/navBar/style.css";
+import LogoutButton from "../login/LogoutButton";
 
 export default function Navbar(props) {
   return (
@@ -36,6 +37,7 @@ export default function Navbar(props) {
           <NavLink to="/profile" className="isActive">
             <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
           </NavLink>
+          <LogoutButton />
         </CDBSidebarFooter>
       </CDBSidebar>
     </div>

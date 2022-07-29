@@ -33,6 +33,10 @@ const PlanSchema = new Schema({
     type: Array,
     required: true,
   },
+  owner: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = Plan = mongoose.model("plan", PlanSchema);

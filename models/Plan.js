@@ -7,6 +7,10 @@ const PlanSchema = new Schema({
     type: String,
     required: true,
   },
+  owner: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -33,9 +37,9 @@ const PlanSchema = new Schema({
     type: Array,
     required: true,
   },
-  owner: {
-    type: String,
-    required: true,
+  attachments: {
+    type: Array,
+    default: []
   },
 });
 

@@ -6,16 +6,16 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const domain = process.env.REACT_APP_AUTH0_DOMAIN;
   const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const onRedirectCallback = (appState) => {
-    history.push(appState?.returnTo || window.location.pathname);
+    navigate("/");
   };
 
   return (
     <Auth0Provider
-      domain="dev-mal2sd77.us.auth0.com"
-      clientId="qceuP0sWV562V7xJDNlvneVqvJUjrIzh"
+      domain={domain}
+      clientId={clientId}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
     >

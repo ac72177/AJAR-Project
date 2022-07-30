@@ -1,0 +1,27 @@
+div.sidebar {
+  display: "flex";
+  position: "fixed";
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: "scroll initial";
+}
+
+.sidebar-header {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logout button {
+  border: 1px solid rgba(25, 73, 45, 0.533);
+  border-radius: 5px;
+  color: white;
+  padding: 10px 50px;
+  background-color: rgb(7, 27, 7);
+  font-size: 1em;
+}
+
+.logout {
+  margin: auto;
+}

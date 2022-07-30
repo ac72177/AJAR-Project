@@ -7,6 +7,7 @@ const PlanSchema = new Schema({
     type: String,
     required: true,
   },
+  // for a Plan, owner is user. For a Subplan, owner is the parent Plan.
   owner: {
     type: String,
     required: true,

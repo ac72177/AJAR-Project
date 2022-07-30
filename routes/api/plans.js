@@ -91,12 +91,12 @@ router.post("/:planID/subplans", function (req, res, next) {
     description: req.body.desc,
     plans: req.body.plans,
     attachments: req.body.attachments,
-    owner: req.params.planID,
+    owner: req.body.planID,
   });
   Plan.findOneAndUpdate(conditions, { $push: { plans: newSubPlan } })
     .then(() => newSubPlan.save())
     .then(() => {
-      Plan.find({ owner: req.body.owner })
+      Plan.find({ owner: req.body.user })
         .sort({ date: -1 })
         .then((plans) => res.send(plans));
     })
@@ -114,7 +114,7 @@ router.delete("/:planId/subplans/:subplanId", function (req, res, next) {
     })
     .then(() => Plan.findOneAndDelete({ _id: req.params.subplanId }))
     .then(() =>
-      Plan.find({ owner: req.body.owner })
+      Plan.find({ owner: req.body.user })
         .sort({ date: -1 })
         .then((plans) => res.send(plans))
     )

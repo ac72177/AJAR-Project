@@ -4,21 +4,28 @@ import CreatePlanButton from "../planModification/CreatePlanButton";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlansAsync } from "../../redux/plans/thunks";
 import { useAuth0 } from "@auth0/auth0-react";
+import MiniPlanCardList from "./MiniPlanCardList";
 
 function List() {
   const dispatch = useDispatch();
   const { user } = useAuth0();
   let userPlans = useSelector((state) => state.plans.list);
   const [plans, setPlans] = useState(userPlans);
+  // var plansToDisplay = userPlans;
+  // console.log("List plansToDisplay= " + plansToDisplay);
 
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));
   }, [plans]);
 
   function handleSort() {
-    const sortedData = [...userPlans].sort((a, b) =>
+    console.log("handlesort, plans =");
+
+    const sortedData = [...plans].sort((a, b) =>
       a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
     );
+    console.log(sortedData);
+    // plansToDisplay = sortedData;
   }
 
   function getAllLabels() {
@@ -54,9 +61,9 @@ function List() {
     return <option key={index}> {e} </option>;
   });
 
-  const listComponents = userPlans.map((object, index) => {
-    return <MiniPlanCard key={index} id={object} />;
-  });
+  // const listComponents = userPlans.map((object, index) => {
+  //   return <MiniPlanCard key={index} id={object} />;
+  // });
 
   return (
     <>
@@ -85,7 +92,10 @@ function List() {
         </div>
       </div>
 
-      <ul className="section grid-container">{listComponents}</ul>
+      {/*<ul className="section grid-container">{listComponents}</ul>*/}
+
+      {plans.length > 0 && <MiniPlanCardList plans={plans}/>}
+      {plans.length == 0 && <p> Loading </p>}
     </>
   );
 }

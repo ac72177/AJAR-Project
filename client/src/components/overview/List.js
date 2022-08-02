@@ -11,8 +11,9 @@ function List() {
   const { user } = useAuth0();
   let userPlans = useSelector((state) => state.plans.list);
   const [plans, setPlans] = useState(userPlans);
-  // var plansToDisplay = userPlans;
-  // console.log("List plansToDisplay= " + plansToDisplay);
+
+  // console.log(userPlans);
+  // console.log(plans);
 
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));
@@ -25,7 +26,6 @@ function List() {
       a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
     );
     console.log(sortedData);
-    // plansToDisplay = sortedData;
   }
 
   function getAllLabels() {
@@ -61,9 +61,9 @@ function List() {
     return <option key={index}> {e} </option>;
   });
 
-  // const listComponents = userPlans.map((object, index) => {
-  //   return <MiniPlanCard key={index} id={object} />;
-  // });
+  const listComponents = userPlans.map((object, index) => {
+    return <MiniPlanCard key={index} id={object} />;
+  });
 
   return (
     <>
@@ -92,10 +92,10 @@ function List() {
         </div>
       </div>
 
-      {/*<ul className="section grid-container">{listComponents}</ul>*/}
+      <ul className="section grid-container">{listComponents}</ul>
 
-      {plans.length > 0 && <MiniPlanCardList plans={plans}/>}
-      {plans.length == 0 && <p> Loading </p>}
+      {/*{plans.length > 0 && <MiniPlanCardList plans={plans}/>}*/}
+      {/*{plans.length == 0 && <p> Loading </p>}*/}
     </>
   );
 }

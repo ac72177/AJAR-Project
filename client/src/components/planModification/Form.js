@@ -1,7 +1,7 @@
 import { unstable_createMuiStrictModeTheme } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPlanAsync, putPlanAsync } from "../../redux/plans/thunks";
+import { addPlanAsync, addSubplanAsync, putPlanAsync } from "../../redux/plans/thunks";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
@@ -23,7 +23,12 @@ export default function Form(props) {
 
   function initializePlan() {
     let currPlan = props.currPlan;
-    if (currPlan == undefined) {
+    console.log(props.subplan)
+    console.log("undefied?")
+    console.log(currPlan == undefined)
+    if ((currPlan == undefined) || (props.subplan)) {
+      
+      console.log("inside here!")
       return {
         name: "",
         startDate: "",
@@ -82,10 +87,16 @@ export default function Form(props) {
       plans: subplanObjects,
       owner: user.sub,
     };
+
     if (props.put) {
       dispatch(putPlanAsync(data));
     } else {
-      dispatch(addPlanAsync(data));
+      if (props.subplan) {
+        data.owner = props.currPlan._id;
+        dispatch(addSubplanAsync(data));
+      } else {
+        dispatch(addPlanAsync(data));
+      }
     }
   };
 
@@ -179,7 +190,7 @@ export default function Form(props) {
       </div>
       <br></br>
       <div className="buttons">
-        <input type="submit" value="Cancel" onClick={props.handleClose}></input>
+        <input type="button" value="Cancel" onClick={props.handleClose}></input>
         <input type="submit" value="Save" onClick={savePlan}></input>
       </div>
     </Box>

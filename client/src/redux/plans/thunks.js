@@ -40,7 +40,7 @@ export const getPlanAsync = createAsyncThunk(
 export const addSubplanAsync = createAsyncThunk(
   actionTypes.ADD_SUBPLAN,
   async (data) => {
-    return await PlanService.addPlan(data);
+    return await PlanService.addSubplan(data);
   }
 );
 

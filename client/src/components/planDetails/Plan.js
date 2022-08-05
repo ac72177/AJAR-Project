@@ -1,6 +1,7 @@
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
 import "./../../styles/planDetails/Plan.css";
+import CreateSubplanButton from "../planModification/CreateSubplanButton.js";
 
 export default function Plan(props) {
   const plan = props.plan;
@@ -49,9 +50,9 @@ export default function Plan(props) {
 
       <div>
         <h2> Tasks: </h2>
-
+        <CreateSubplanButton subplan={true} currPlan={plan}/>
         {plan.plans.map((subPlan) => {
-          return <SubPlan subPlan={subPlan} isComplete={subPlan.isComplete} />;
+          return <SubPlan key={subPlan._id} subPlan={subPlan} isComplete={subPlan.isComplete} />;
         })}
       </div>
     </div>

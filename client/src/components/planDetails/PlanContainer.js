@@ -16,9 +16,7 @@ export default function PlanContainer() {
     dispatch(getPlansAsync(user.sub));
   }, []);
 
-  console.log(plans)
   let plan = plans.find((plan) => plan._id === plan_ID);
-  console.log(plan)
 
   return (
     <div className="PlanContainer">

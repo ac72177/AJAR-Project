@@ -2,9 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Navbar from "./navBar/Navbar";
 import MyRoutes from "./../pages/MyRoutes";
 import "./../styles/App.css";
-import LoginButton from "../components/login/LoginButton";
-import SignupButton from "../components/login/SignupButton";
 import Loading from "./login/Loading";
+import LandingView from "../pages/LandingView";
 
 function App() {
   const { isLoading, isAuthenticated } = useAuth0();
@@ -22,13 +21,7 @@ function App() {
       </div>
     );
   } else {
-    return (
-      <div>
-        <h1>Welcome to Plan+</h1>
-        <LoginButton />
-        <SignupButton />
-      </div>
-    );
+    return <LandingView />;
   }
 }
 

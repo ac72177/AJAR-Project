@@ -1,0 +1,84 @@
+.landing-container {
+    text-align: center;
+    font-weight: bold;
+    /*border: 2px solid blue;*/
+
+}
+
+.loading {
+    /*justify-content: center;*/
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+}
+
+.banner {
+    background-color: rgba(26, 26, 26, 0.95);
+    padding-top: 2em;
+    background-image: url("https://i.imgur.com/9lEyT89.png");
+    /*background-size: contain;*/
+
+}
+
+h1 {
+    white-space: nowrap;
+    /*padding-top: 1em;*/
+    overflow: hidden;
+    color: rgb(28, 140, 28);
+    /*text-shadow: 2px 2px black;*/
+    animation: animated-text 2s  1s 1 normal both;
+
+}
+
+/* text animation */
+
+@keyframes animated-text{
+    from{width: 0;}
+    to{width: 100%;}
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    font-family: "Arial Rounded MT Bold";
+    font-size: 6em;
+}
+
+.welcome {
+    color: rgb(224, 224, 224);
+    font-size: 1em;
+}

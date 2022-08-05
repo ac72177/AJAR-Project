@@ -16,8 +16,10 @@ export default function Navbar(props) {
     <div className="sidebar">
       <CDBSidebar textColor="#fff" backgroundColor="#013220">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          plan+
+          Menu
         </CDBSidebarHeader>
+
+        <img src="https://i.imgur.com/r21Xyaj.png" />
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
@@ -34,7 +36,7 @@ export default function Navbar(props) {
         </CDBSidebarContent>
 
         <CDBSidebarFooter>
-            <LogoutButton />
+          <LogoutButton />
         </CDBSidebarFooter>
       </CDBSidebar>
     </div>

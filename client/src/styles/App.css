@@ -23,3 +23,11 @@
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+
+.fade-in {
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+}

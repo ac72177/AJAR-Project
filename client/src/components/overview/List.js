@@ -60,7 +60,7 @@ function List() {
 
   return (
     <>
-      <div className="section options-container">
+      <div className="section options-container fade-in">
         <div className="option new-plan-button">
           <CreatePlanButton />
         </div>
@@ -85,7 +85,7 @@ function List() {
         </div>
       </div>
 
-      <ul className="section grid-container">{listComponents}</ul>
+      <ul className="section grid-container fade-in">{listComponents}</ul>
     </>
   );
 }

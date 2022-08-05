@@ -1,11 +1,11 @@
-export default function WelcomeMsg() {
-  // TODO, read in user's name
+export default function WelcomeMsg(props) {
+    const userName = props.userName;
 
   return (
     <div className="Welcome-message">
       <h1>
         {" "}
-        <strong> Hi Bob! </strong>{" "}
+        <strong> Hi {userName}! </strong>{" "}
       </h1>
     </div>
   );

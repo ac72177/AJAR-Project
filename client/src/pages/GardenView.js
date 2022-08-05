@@ -8,6 +8,7 @@ export default function GardenView() {
   return (
     <div className={"home"}>
 
+
       <SummaryBarContainer />
 
       <GardenContainer />

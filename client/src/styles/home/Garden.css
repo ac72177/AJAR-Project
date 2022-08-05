@@ -7,11 +7,12 @@
 }
 .garden_background {
   position: relative;
-  width: 940px;
+  width: 800px;
   height: 500px;
-  padding: 30px;
+  padding: 20px;
   background-image: url("./../../img/garden.png");
-  background-size: cover;
+  background-size: 800px 400px;
+    background-repeat: no-repeat;
 }
 .garden_background p {
     color: white;

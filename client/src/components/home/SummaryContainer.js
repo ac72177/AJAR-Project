@@ -10,7 +10,6 @@ export default function SummaryBarContainer() {
   const dispatch = useDispatch();
   const userPlans = useSelector((state) => state.plans.list);
   const { user } = useAuth0();
-  console.log(user.nickname);
 
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));

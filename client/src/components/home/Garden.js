@@ -7,6 +7,8 @@ import plant4 from "../../img/plant4.png";
 import plant5 from "../../img/plant5.png";
 import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useNavigate } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   plant5: {
@@ -57,14 +59,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Plant1({ classes }) {
   return (
-    <Grid xs={1}>
+    <Grid>
       <Paper className={classes.plant1}> </Paper>
     </Grid>
   );
 }
 function Plant2({ classes }) {
   return (
-    <Grid xs={1}>
+    <Grid>
       <Paper className={classes.plant2}> </Paper>
     </Grid>
   );
@@ -72,14 +74,14 @@ function Plant2({ classes }) {
 
 function Plant3({ classes }) {
   return (
-    <Grid xs={1}>
+    <Grid>
       <Paper className={classes.plant3}> </Paper>
     </Grid>
   );
 }
 function Plant4({ classes }) {
   return (
-    <Grid xs={1}>
+    <Grid>
       <Paper className={classes.plant4}> </Paper>
     </Grid>
   );
@@ -87,7 +89,7 @@ function Plant4({ classes }) {
 
 function Plant5({ classes }) {
   return (
-    <Grid xs={1}>
+    <Grid>
       <Paper className={classes.plant5}> </Paper>
     </Grid>
   );
@@ -95,6 +97,8 @@ function Plant5({ classes }) {
 
 export default function Garden(props) {
   const plans = props.plans;
+
+
   const progress = (currPlan) => {
     var completed = 0;
     var incomplete = 0;
@@ -128,37 +132,38 @@ export default function Garden(props) {
   });
 
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Grid container direction="row" className={"garden_background"}>
       {plant1.map((plan) => (
-        <Grid key={plan.id}>
+        <Grid key={plan} id={plan.id} onClick={() => {navigate("/plans/" + plan._id); }}>
           <Plant1 classes={classes} />
           <p> {plan.name}</p>
         </Grid>
       ))}
       {plant2.map((plan) => (
-        <Grid key={plan.id}>
+        <Grid key={plan} id={plan.id} onClick={() => {navigate("/plans/" + plan._id); }} >
           <Plant2 classes={classes} />
           <p> {plan.name}</p>
         </Grid>
       ))}
       {plant3.map((plan) => (
-        <Grid key={plan.id}>
+        <Grid key={plan} id={plan.id} onClick={() => {navigate("/plans/" + plan._id); }}>
           <Plant3 classes={classes} />
           <p> {plan.name}</p>
         </Grid>
       ))}
       {plant4.map((plan) => (
-        <Grid key={plan.id}>
+        <Grid key={plan} id={plan.id} onClick={() => {navigate("/plans/" + plan._id); }}>
           <Plant4 classes={classes} />
           <p> {plan.name}</p>
         </Grid>
       ))}
       {plant5.map((plan) => (
-        <Grid key={plan.id}>
+        <Grid key={plan} id={plan.id} onClick={() => {navigate("/plans/" + plan._id); }}>
           <Plant5 classes={classes} />
-          <p color={"white"}> {plan.name}</p>
+          <p> {plan.name}</p>
         </Grid>
       ))}
     </Grid>

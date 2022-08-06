@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+.display-row {
+    margin: 2em 3em 4em 5em;
+}
+
 .loading {
     margin: 0;
     position: absolute;
@@ -22,6 +26,19 @@
 
 .banner {
     padding-top: 2em;
+    margin-bottom: 7em;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+.footer-banner {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: whitesmoke;
+}
+
+.footer-logo {
+    width: 8%;
 }
 
 h1 {
@@ -72,4 +89,29 @@ h1 {
 .welcome {
     color: #736f6f;
     font-size: 1em;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-left {
+    width: 50%;
+    margin: auto;
+    border: 1px solid lightgray;
+}
+
+.flex-right {
+    width: 50%;
+    margin: auto;
+}
+
+.landing-photo {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
 }

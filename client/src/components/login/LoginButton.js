@@ -7,7 +7,6 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
   return (
     <Button
-        className="auth-button"
       variant="contained"
       color="primary"
       sx={{ margin: 1, marginBottom: 3 }}

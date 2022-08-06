@@ -6,7 +6,7 @@ div.sidebar {
   top: 0;
   left: 0;
   overflow: "scroll initial";
-  font-family: "Segoe UI";
+  font-family: sans-serif;
   font-size: 1.3em;
 }
 

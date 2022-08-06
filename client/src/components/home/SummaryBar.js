@@ -30,7 +30,7 @@ export default function SummaryBar(props) {
   }
 
   return (
-    <div className="summaryBar">
+    <div className="summaryBar fade-in">
       {/* active plans */}
       <div className="summaryData">
         <h1>

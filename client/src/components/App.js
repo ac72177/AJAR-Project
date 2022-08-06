@@ -4,6 +4,27 @@ import MyRoutes from "./../pages/MyRoutes";
 import "./../styles/App.css";
 import Loading from "./login/Loading";
 import LandingView from "../pages/LandingView";
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#373c42",
+      darker: "#232629",
+    },
+    neutral: {
+      main: "#64748B",
+    },
+    logout: {
+      main: "#d9e5d9",
+      contrastText: "#fff",
+    },
+  },
+});
 
 function App() {
   const { isLoading, isAuthenticated } = useAuth0();
@@ -14,14 +35,20 @@ function App() {
   if (isAuthenticated) {
     return (
       <div className="layout">
-        <Navbar />
+        <ThemeProvider theme={theme}>
+          <Navbar />
+        </ThemeProvider>
         <div className="page">
           <MyRoutes />
         </div>
       </div>
     );
   } else {
-    return <LandingView />;
+    return (
+      <ThemeProvider theme={theme}>
+        <LandingView />;
+      </ThemeProvider>
+    );
   }
 }
 

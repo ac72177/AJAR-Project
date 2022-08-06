@@ -24,8 +24,9 @@ const LandingView = () => {
       }}
     >
       <div className="banner">
+        <img src="https://i.imgur.com/9lEyT89.png" />
         <h1>
-          <em className="welcome">welcome to</em> plan+
+          <em className="welcome">welcome</em>
         </h1>
         <LoginButton />
         <SignupButton />

@@ -1,12 +1,9 @@
 .landing-container {
     text-align: center;
     font-weight: bold;
-    /*border: 2px solid blue;*/
-
 }
 
 .loading {
-    /*justify-content: center;*/
     margin: 0;
     position: absolute;
     top: 50%;
@@ -24,20 +21,14 @@
 }
 
 .banner {
-    background-color: rgba(26, 26, 26, 0.95);
     padding-top: 2em;
-    background-image: url("https://i.imgur.com/9lEyT89.png");
-    /*background-size: contain;*/
-
 }
 
 h1 {
     white-space: nowrap;
-    /*padding-top: 1em;*/
     overflow: hidden;
-    color: rgb(28, 140, 28);
-    /*text-shadow: 2px 2px black;*/
-    animation: animated-text 2s  1s 1 normal both;
+    color: #4f4e4e;
+    animation: animated-text 1s 0.65s 1 normal both;
 
 }
 
@@ -74,11 +65,11 @@ h1 {
 }
 
 h1 {
-    font-family: "Arial Rounded MT Bold";
+    font-family: "Segoe UI";
     font-size: 6em;
 }
 
 .welcome {
-    color: rgb(224, 224, 224);
+    color: #736f6f;
     font-size: 1em;
 }

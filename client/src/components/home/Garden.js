@@ -130,7 +130,7 @@ export default function Garden(props) {
   const classes = useStyles();
 
   return (
-    <Grid container direction="row" className={"garden_background"}>
+    <Grid container direction="row" className={"garden_background fade-in"}>
       {plant1.map((plan) => (
         <Grid key={plan.id}>
           <Plant1 classes={classes} />

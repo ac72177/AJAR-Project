@@ -7,8 +7,8 @@ const LogoutButton = () => {
   return (
     <div className="logout">
       <Button
-          variant="outlined"
-          color="logout"
+        variant="outlined"
+        color="logout"
         onClick={() =>
           logout({
             returnTo: window.location.origin,
@@ -22,4 +22,3 @@ const LogoutButton = () => {
 };
 
 export default LogoutButton;
-

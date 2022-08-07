@@ -1,4 +1,3 @@
-import { unstable_createMuiStrictModeTheme } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPlanAsync, putPlanAsync } from "../../redux/plans/thunks";

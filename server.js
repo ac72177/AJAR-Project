@@ -5,7 +5,7 @@ const logger = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/api/users");
 const plansRouter = require("./routes/api/plans");
 require("dotenv").config();
 
@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
 // Use Routes
-app.use("/users", usersRouter);
+app.use("/api/users", usersRouter);
 app.use("/api/plans", plansRouter);
 
 app.get("*", (req, res) => {

@@ -4,6 +4,15 @@ const router = express.Router();
 // User Model
 const User = require("../../models/User");
 
+router.get("/:userId", function (req, res, next) {
+  User.find({ auth: req.params.userId })
+    .then((user) => {
+      console.log(user);
+      res.send(user);
+    })
+    .catch((error) => res.status(404));
+});
+
 // @route POST api/users
 // @desc Create a User
 // @access Public

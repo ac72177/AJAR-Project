@@ -1,3 +1,10 @@
+const getUser = async (userId) => {
+  const response = await fetch("/api/users/" + userId, {
+    method: "GET",
+  });
+  return response.json();
+};
+
 const addUser = async (userInfo) => {
   const body = {
     auth: userInfo.auth,
@@ -24,4 +31,5 @@ const addUser = async (userInfo) => {
 
 export default {
   addUser,
+  getUser,
 };

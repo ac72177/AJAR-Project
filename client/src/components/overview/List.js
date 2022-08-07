@@ -61,7 +61,7 @@ function List() {
   return (
     <>
       <div className="section options-container fade-in">
-        <div className="option new-plan-button">
+        <div className="new-plan-button">
           <CreatePlanButton />
         </div>
 
@@ -69,12 +69,12 @@ function List() {
           <i className="fa-solid fa-arrow-up-a-z" onClick={() => handleSort()}>
             {" "}
           </i>
-          <p className="help-text">Sort</p>
+          <span className="help-text">Sort</span>
         </div>
 
         <div className="option filter-button">
           <i className="fa-solid fa-filter" />
-          <p className="help-text">Filter</p>
+          <span className="help-text">Filter</span>
         </div>
 
         <div>

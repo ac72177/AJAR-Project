@@ -65,7 +65,7 @@ const LandingView = () => {
             />
           </div>
           <div className="flex-right">
-            <h3>View detailed information on specific a plan</h3>
+            <h3>View detailed information on a specific plan</h3>
           </div>
         </div>
       </div>

@@ -12,12 +12,13 @@ import { NavLink } from "react-router-dom";
 import "./../../styles/navBar/style.css";
 import LogoutButton from "../login/LogoutButton";
 
-export default function Navbar(props) {
+export default function Navbar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar fade-in">
       <CDBSidebar textColor="#fff" backgroundColor="#013220">
+        <img src="https://i.imgur.com/r21Xyaj.png" />
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          plan+
+          Menu
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
@@ -35,10 +36,7 @@ export default function Navbar(props) {
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-
-        <CDBSidebarFooter>
-          <LogoutButton />
-        </CDBSidebarFooter>
+        <LogoutButton />
       </CDBSidebar>
     </div>
   );

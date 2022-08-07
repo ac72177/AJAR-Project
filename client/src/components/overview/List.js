@@ -67,8 +67,8 @@ function List() {
 
   return (
     <>
-      <div className="section options-container">
-        <div className="option new-plan-button">
+      <div className="section options-container fade-in">
+        <div className="new-plan-button">
           <CreatePlanButton />
         </div>
 
@@ -76,12 +76,12 @@ function List() {
           <i className="fa-solid fa-arrow-up-a-z" onClick={() => handleSort()}>
             {" "}
           </i>
-          <p className="help-text">Sort</p>
+          <span className="help-text">Sort</span>
         </div>
 
         <div className="option filter-button">
           <i className="fa-solid fa-filter" />
-          <p className="help-text">Filter</p>
+          <span className="help-text">Filter</span>
         </div>
 
         <div>
@@ -91,9 +91,7 @@ function List() {
           </select>
         </div>
       </div>
-
-      <ul className="section grid-container">{listComponents}</ul>
-
+      <ul className="section grid-container fade-in">{listComponents}</ul>
       {/*{plans.length > 0 && <MiniPlanCardList plans={plans}/>}*/}
       {/*{plans.length == 0 && <p> Loading </p>}*/}
     </>

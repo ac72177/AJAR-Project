@@ -6,6 +6,7 @@ import Loading from "./login/Loading";
 import LandingView from "../pages/LandingView";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import WelcomeForm from "../pages/WelcomeForm";
 
 const theme = createTheme({
   status: {
@@ -27,12 +28,22 @@ const theme = createTheme({
 });
 
 function App() {
-  const { isLoading, isAuthenticated } = useAuth0();
+  const { isLoading, isAuthenticated, user } = useAuth0();
   if (isLoading) {
     return <Loading />;
   }
 
   if (isAuthenticated) {
+    console.log(user.name);
+    if (user.name.includes("@")) {
+      return (
+        <div>
+          <div>You are authenticated but we don't know your name!</div>
+          <WelcomeForm />
+        </div>
+      );
+    }
+
     return (
       <div className="layout">
         <ThemeProvider theme={theme}>

@@ -7,7 +7,7 @@ import Loading from "./login/Loading";
 import LandingView from "../pages/LandingView";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import WelcomeForm from "../pages/WelcomeForm";
+import NameForm from "../pages/NameForm";
 import { useEffect } from "react";
 import { getUserAsync } from "../redux/users/thunks";
 
@@ -38,33 +38,27 @@ function App() {
     return <Loading />;
   }
 
-  if (isAuthenticated) {
-    // if (returnedUser.name_first ==) {
-    //   return (
-    //     <div>
-    //       <div>You are authenticated but we don't know your name!</div>
-    //       <WelcomeForm />
-    //     </div>
-    //   );
-    // }
-
+  if (isAuthenticated && user) {
     useEffect(() => {
       dispatch(getUserAsync(user.sub));
     }, []);
     let usersState = useSelector((state) => state.users.list);
     let returnedUser = usersState[0];
-    console.log(returnedUser);
 
-    return (
-      <div className="layout">
-        <ThemeProvider theme={theme}>
-          <Navbar />
-        </ThemeProvider>
-        <div className="page">
-          <MyRoutes />
+    if (returnedUser === undefined) {
+      return <NameForm />;
+    } else {
+      return (
+        <div className="layout">
+          <ThemeProvider theme={theme}>
+            <Navbar />
+          </ThemeProvider>
+          <div className="page">
+            <MyRoutes />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   } else {
     return (
       <ThemeProvider theme={theme}>

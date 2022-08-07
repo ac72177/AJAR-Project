@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -11,34 +12,34 @@ import { NavLink } from "react-router-dom";
 import "./../../styles/navBar/style.css";
 import LogoutButton from "../login/LogoutButton";
 
-export default function Navbar(props) {
+export default function Navbar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar fade-in">
       <CDBSidebar textColor="#fff" backgroundColor="#013220">
+        <img src="https://i.imgur.com/r21Xyaj.png" />
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          plan+
+          Menu
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <NavLink to="/" className="isActive">
-              <CDBSidebarMenuItem icon="table">Garden</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="tree">Garden</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/plans" className="isActive">
               <CDBSidebarMenuItem icon="table">Plans</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/calendar" className="isActive">
-              <CDBSidebarMenuItem icon="th-large">Calendar</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="calendar-alt">
+                Calendar
+              </CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/share" className="isActive">
               <CDBSidebarMenuItem icon="th-large">Share</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-
-        <CDBSidebarFooter>
-            <LogoutButton />
-        </CDBSidebarFooter>
+        <LogoutButton />
       </CDBSidebar>
     </div>
   );

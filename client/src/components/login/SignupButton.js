@@ -1,19 +1,23 @@
 import React from "react";
+import Button from "@mui/material/Button";
+import "../../styles/landing/style.css";
 import { useAuth0 } from "@auth0/auth0-react";
-
 const SignupButton = () => {
   const { loginWithRedirect } = useAuth0();
+
   return (
-    <button
-      className="btn btn-primary btn-block"
+    <Button
+      variant="contained"
+      color="primary"
+      sx={{ margin: 1, marginBottom: 3 }}
       onClick={() =>
         loginWithRedirect({
           screen_hint: "signup",
         })
       }
     >
-      Create new account
-    </button>
+      Register
+    </Button>
   );
 };
 

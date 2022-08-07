@@ -13,7 +13,7 @@ export default function Plan(props) {
   let dueDate = new Date(plan.dueDate);
   console.log(plan)
   return (
-    <div className="Plan">
+    <div className="Plan fade-in">
       <div className="titleContainer">
         <h1> {planName} </h1>
         <ProgressBar plan={plan} />

@@ -1,11 +1,13 @@
 .label {
   margin: 10px;
   background-color: lightgrey;
-  border-radius: 10%;
-  padding: 0px 15px;
+  border-radius: 8px;
+  padding: 0px 10px;
   height: 100%;
 }
 
 h6 {
   font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
 }

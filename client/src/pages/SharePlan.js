@@ -18,22 +18,26 @@ function SharePlan() {
         const body = {
             owner: user.sub
         }
-        const response = await fetch("api/invites/" + inviteId, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
-        })
 
-        if (!response.ok) {
-            const errorMsg = data?.message;
-            console.log(errorMsg)
+        try {
+            const response = await fetch("api/invites/" + inviteId, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+            })
+
+            if (!response.ok) {
+                const errorMsg = data?.message;
+                console.log(errorMsg)
+                notifyOnFail("Couldn't add plan. Make sure your friend clicks the `invite user` button first to create an invitation.")
+                return
+            }
+            notifyOnSuccess("New plan added! Have fun with your shared plan!")
+        } catch {
             notifyOnFail("Couldn't add plan. Make sure your friend clicks the `invite user` button first to create an invitation.")
-            return
         }
-
-        notifyOnSuccess("New plan added! Have fun with your shared plan!")
     }
 
     return (

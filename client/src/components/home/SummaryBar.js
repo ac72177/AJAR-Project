@@ -69,7 +69,7 @@ export default function SummaryBar(props) {
         </h1>
         <h3>
           {" "}
-          <strong> Tasks Due This Month </strong>
+          <strong> Plans Due This Month </strong>
         </h3>
       </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -23,13 +24,15 @@ export default function Navbar() {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <NavLink to="/" className="isActive">
-              <CDBSidebarMenuItem icon="table">Garden</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="tree">Garden</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/plans" className="isActive">
               <CDBSidebarMenuItem icon="table">Plans</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/calendar" className="isActive">
-              <CDBSidebarMenuItem icon="th-large">Calendar</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="calendar-alt">
+                Calendar
+              </CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>

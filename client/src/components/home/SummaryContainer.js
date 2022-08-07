@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getPlansAsync } from "../../redux/plans/thunks";
 import { useAuth0 } from "@auth0/auth0-react";
+import WelcomeMsg from "./WelcomeMsg";
 
 export default function SummaryBarContainer() {
   const dispatch = useDispatch();
@@ -15,8 +16,9 @@ export default function SummaryBarContainer() {
   }, []);
 
   return (
-    <div className="SummaryBarContainer">
-      <SummaryBar plans={userPlans} />
-    </div>
+      <div className="SummaryBarContainer">
+        <SummaryBar plans={userPlans} />
+          <br/>
+      </div>
   );
 }

@@ -25,6 +25,15 @@
   align-items: center;
 }
 
+.button:hover {
+  border:3px solid #013220;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px 50px;
+  background-color: white;
+  color: #013220;
+  font-size: 1em;
+}
 .button {
   border: 1px solid lightgray;
   border-radius: 1.2em;

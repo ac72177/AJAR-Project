@@ -45,6 +45,7 @@ const WelcomeForm = () => {
                 register_date: new Date(),
               })
             );
+            window.location.reload();
           }}
         >
           Next

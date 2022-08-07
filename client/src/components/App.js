@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./navBar/Navbar";
 import MyRoutes from "./../pages/MyRoutes";
 import "./../styles/App.css";
@@ -7,6 +8,8 @@ import LandingView from "../pages/LandingView";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import WelcomeForm from "../pages/WelcomeForm";
+import { useEffect } from "react";
+import { getUserAsync } from "../redux/users/thunks";
 
 const theme = createTheme({
   status: {
@@ -29,20 +32,28 @@ const theme = createTheme({
 
 function App() {
   const { isLoading, isAuthenticated, user } = useAuth0();
+  const dispatch = useDispatch();
+
   if (isLoading) {
     return <Loading />;
   }
 
   if (isAuthenticated) {
-    console.log(user.name);
-    if (user.name.includes("@")) {
-      return (
-        <div>
-          <div>You are authenticated but we don't know your name!</div>
-          <WelcomeForm />
-        </div>
-      );
-    }
+    // if (returnedUser.name_first ==) {
+    //   return (
+    //     <div>
+    //       <div>You are authenticated but we don't know your name!</div>
+    //       <WelcomeForm />
+    //     </div>
+    //   );
+    // }
+
+    useEffect(() => {
+      dispatch(getUserAsync(user.sub));
+    }, []);
+    let usersState = useSelector((state) => state.users.list);
+    let returnedUser = usersState[0];
+    console.log(returnedUser);
 
     return (
       <div className="layout">

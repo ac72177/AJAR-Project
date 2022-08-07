@@ -122,7 +122,6 @@ h1 {
 .flex-left {
   width: 50%;
   margin: auto;
-  border: 1px solid lightgray;
 }
 
 .flex-right {
@@ -131,6 +130,8 @@ h1 {
 }
 
 .landing-photo {
+  border: 1px solid lightgray;
+  border-radius: 2em;
   width: 100%;
   height: auto;
 }

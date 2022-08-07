@@ -7,7 +7,6 @@ const User = require("../../models/User");
 router.get("/:userId", function (req, res, next) {
   User.find({ auth: req.params.userId })
     .then((user) => {
-      console.log(user);
       res.send(user);
     })
     .catch((error) => res.status(404));
@@ -24,6 +23,7 @@ router.post("/", function (req, res, next) {
     email: req.body.email,
     register_date: req.body.register_date,
   });
+
   newUser
     .save()
     .then((user) => res.send(user))

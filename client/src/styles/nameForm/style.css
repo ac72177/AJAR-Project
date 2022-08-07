@@ -1,0 +1,30 @@
+.page-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.imgur.com/WRDV0D7.png");
+  background-size: cover;
+}
+
+.welcome-container {
+  text-align: center;
+    background-color: white;
+    padding:3em;
+    border-radius:2em;
+}
+
+.greeting {
+  font-size: 4em;
+}
+
+.name-fields {
+  margin: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  text-align: center;
+}

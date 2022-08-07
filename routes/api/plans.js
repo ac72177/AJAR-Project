@@ -68,9 +68,8 @@ router.put("/:planID", function (req, res, next) {
 // @route GET api/plans
 // @desc Get one plan based on ID
 // @access Public
-// TODO @Jun FIX
 router.get("/plan/:planID", function (req, res, next) {
-  Plan.find({ _id: req.params.planID })
+  Plan.findById({ _id: req.params.planID })
     .sort({ date: -1 })
     .then((plans) => res.send(plans));
 });
@@ -91,7 +90,7 @@ router.post("/:planID/subplans", function (req, res, next) {
     description: req.body.desc,
     plans: req.body.plans,
     attachments: req.body.attachments,
-    owner: req.body.planID,
+    owner: req.body.owner,
   });
   Plan.findOneAndUpdate(conditions, { $push: { plans: newSubPlan } })
     .then(() => newSubPlan.save())
@@ -121,4 +120,18 @@ router.delete("/:planId/subplans/:subplanId", function (req, res, next) {
     .catch((err) => res.status(404).json({ success: false }));
 });
 
+// @route PUT api/plans/planID
+// @desc Modify a Plan
+// @access Public
+router.put("/:planID", function (req, res, next) {
+  // tutorial: https://www.youtube.com/watch?v=M2u1W2CzXdE&ab_channel=LarsBilde
+  const conditions = { _id: req.params.planID };
+  Plan.findOneAndUpdate(conditions, req.body, { new: true })
+    .then(() => {
+      Plan.find({ owner: req.body.owner })
+        .sort({ date: -1 })
+        .then((plans) => res.send(plans));
+    })
+    .catch((error) => console.error(error));
+});
 

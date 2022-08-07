@@ -23,12 +23,7 @@ export default function Form(props) {
 
   function initializePlan() {
     let currPlan = props.currPlan;
-    console.log(props.subplan)
-    console.log("undefied?")
-    console.log(currPlan == undefined)
     if ((currPlan == undefined) || (props.subplan)) {
-      
-      console.log("inside here!")
       return {
         name: "",
         startDate: "",
@@ -92,6 +87,7 @@ export default function Form(props) {
       dispatch(putPlanAsync(data));
     } else {
       if (props.subplan) {
+        data.user = user.sub
         data.owner = props.currPlan._id;
         dispatch(addSubplanAsync(data));
       } else {

@@ -30,6 +30,9 @@ export default function Navbar(props) {
             <NavLink to="/calendar" className="isActive">
               <CDBSidebarMenuItem icon="th-large">Calendar</CDBSidebarMenuItem>
             </NavLink>
+            <NavLink to="/share" className="isActive">
+              <CDBSidebarMenuItem icon="th-large">Share</CDBSidebarMenuItem>
+            </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
 

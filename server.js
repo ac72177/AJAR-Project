@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 
 const usersRouter = require("./routes/users");
 const plansRouter = require("./routes/api/plans");
+const invitesRouter = require("./routes/api/invites");
 require("dotenv").config();
 
 const app = express();
@@ -28,7 +29,9 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 // Use Routes
 app.use("/users", usersRouter);
+app.use("/api/invites", invitesRouter);
 app.use("/api/plans", plansRouter);
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));

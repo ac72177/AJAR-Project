@@ -1,7 +1,3 @@
-import { useAuth0 } from "@auth0/auth0-react";
-
-
-const user = "asdfa"
 const addPlan = async (plan) => {
   const body = {
     name: plan.name,
@@ -96,7 +92,7 @@ const addSubplan = async (subplan) => {
     description: subplan.description,
     plans: subplan.plans,
     owner: subplan.owner,
-    user: user
+    user: subplan.user
   };
   const response = await fetch("/api/plans/" + subplan.owner + "/subplans/", {
     method: "POST",
@@ -107,10 +103,12 @@ const addSubplan = async (subplan) => {
   });
 
   const data = await response.json();
+  console.log(data)
   if (!response.ok) {
     const errorMsg = data?.message;
     throw new Error(errorMsg);
   }
+  
   return data;
 };
 
@@ -123,7 +121,7 @@ const deleteSubplan = async (subplan) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: { user: user}
+      body: { user: subplan.user }
     }
   );
 

@@ -3,7 +3,7 @@
   border-radius: 10%;
   padding: 1em 1em;
   margin-right: 1.2em;
-
+  margin-bottom: 2em;
 }
 
 .card-content {
@@ -23,10 +23,10 @@ h2 {
   font-weight: bold;
 }
 
-.ButtonContainer{
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+.ButtonContainer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }

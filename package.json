@@ -8,7 +8,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm config set legacy-peer-deps true && npm install --only=dev && npm install && npm run build",
-    "prettier": "prettier --write \"./**/*.{js,jsx,json}\""
+    "prettier": "prettier --write \"./**/*.{js,jsx,json,css}\""
   },
   "dependencies": {
     "concurrently": "^7.2.2",

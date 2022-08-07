@@ -1,5 +1,5 @@
 export default function WelcomeMsg(props) {
-    const userName = props.userName;
+  const userName = props.userName;
 
   return (
     <div className="Welcome-message">

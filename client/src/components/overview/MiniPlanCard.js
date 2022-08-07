@@ -58,10 +58,6 @@ function MiniPlan(props) {
         </div>
 
         <div className="subtasks-section">
-          <div className="due-this-week-section">
-            <h6>Due this week</h6>
-            <hr></hr>
-          </div>
           <br></br>
           <div className="all-tasks-section">
             <h6>All Tasks</h6>

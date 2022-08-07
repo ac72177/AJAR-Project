@@ -3,13 +3,14 @@ import GardenContainer from "../components/home/GardenContainer";
 import SummaryBarContainer from "../components/home/SummaryContainer";
 import WelcomeMsg from "../components/home/WelcomeMsg";
 import "../styles/home/SummaryBar.css";
+import WelcomeMsgContainer from "../components/home/WelcomeMsgContainer";
 
 export default function GardenView() {
   return (
     <div className={"home"}>
+        <WelcomeMsgContainer/>
 
-
-      <SummaryBarContainer />
+        <SummaryBarContainer />
 
       <GardenContainer />
     </div>

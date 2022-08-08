@@ -18,7 +18,7 @@ function SharePlan() {
         const body = {
             owner: user.sub
         }
-
+        
         try {
             const response = await fetch("api/invites/" + inviteId, {
                 method: "DELETE",

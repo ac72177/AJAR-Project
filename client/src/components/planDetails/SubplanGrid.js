@@ -1,7 +1,7 @@
-
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
+import { stringToDate } from "../utils/dateFormat";
 // const columns = [
 //   { field: 'id', headerName: 'ID', width: 90 },
 //   {
@@ -35,31 +35,25 @@ import { DataGrid } from '@mui/x-data-grid';
 // ];
 
 const columns = [
-    { field: 'name', headerName: 'Name', width: 90 },
-    { field: 'startDate', headerName: 'Start Date', width: 90 },
+    { field: 'name', headerName: 'Name', width: 90, editable: true },
+    // { field: 'startDate', headerName: 'Start Date', width: 90 },
     { field: 'dueDate', headerName: 'Due Date', width: 90 },
     { field: 'isComplete', headerName: 'Complete?', width: 90 },
-    // {
-    //     field: 'startDate',
-    //     headerName: 'Start Date',
-    //     width: 200,
-    //     renderCell: (params) => {
-            
-    //         if (params.value) {
-    //             date = new Date(params.value)
-    //             return
-    //              <div>{date.toLocaleDateString("en-US", {
-    //                 year: "numeric",
-    //                 month: "2-digit",
-    //                 day: "2-digit",
-    //             })}
-    //             </div>
-    //         } else {
-    //             <div></div>
-    //         }
-
-    //     }
-    // }
+    {
+        field: 'startDate',
+        headerName: 'Start Date',
+        width: 200,
+        renderCell: (params) => {
+            if (params.value) {
+                const date = stringToDate(params.value)
+                return (
+                    <div>{date}
+                    </div>)
+            } else {
+                <div></div>
+            }
+        }
+    }
 ];
 
 

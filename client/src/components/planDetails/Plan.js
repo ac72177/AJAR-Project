@@ -1,3 +1,5 @@
+import { LinkPreview } from '@dhaiwat10/react-link-preview';
+
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
 import "./../../styles/planDetails/Plan.css";
@@ -44,6 +46,12 @@ export default function Plan(props) {
         <h3>
           {" "}
           <strong>Description:</strong> {plan.description}
+        </h3>
+
+        <h3>
+          {" "}
+          <strong> Useful Links: </strong>
+          <LinkPreview url="https://www.youtube.com/watch?v=qSdPxslMRws&ab_channel=BrilliantLabs%2FLabosCr%C3%A9atifs"  descriptionLength="0" width='150px' height='200px' />
         </h3>
       </div>
 

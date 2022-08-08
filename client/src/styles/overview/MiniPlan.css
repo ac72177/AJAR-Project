@@ -1,8 +1,10 @@
 .card {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 6px 0 rgba(0, 0, 0, 0.19);
   border: 1px solid lightgrey;
-  margin: 1.5em;
   border-radius: 10%;
-  padding: 2em 0.4em;
+  padding: 1em 1em;
+  margin-right: 1.2em;
+  margin-bottom: 2em;
 }
 
 .card-content {
@@ -22,10 +24,10 @@ h2 {
   font-weight: bold;
 }
 
-.ButtonContainer{
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+.ButtonContainer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }

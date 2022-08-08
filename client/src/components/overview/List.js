@@ -4,6 +4,7 @@ import CreatePlanButton from "../planModification/CreatePlanButton";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlansAsync } from "../../redux/plans/thunks";
 import { useAuth0 } from "@auth0/auth0-react";
+import MiniPlanCardList from "./MiniPlanCardList";
 
 function List() {
   const dispatch = useDispatch();
@@ -11,14 +12,20 @@ function List() {
   let userPlans = useSelector((state) => state.plans.list);
   const [plans, setPlans] = useState(userPlans);
 
+  // console.log(userPlans);
+  // console.log(plans);
+
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));
   }, [plans]);
 
   function handleSort() {
-    const sortedData = [...userPlans].sort((a, b) =>
+    console.log("handlesort, plans =");
+
+    const sortedData = [...plans].sort((a, b) =>
       a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
     );
+    console.log(sortedData);
   }
 
   function getAllLabels() {
@@ -60,8 +67,8 @@ function List() {
 
   return (
     <>
-      <div className="section options-container">
-        <div className="option new-plan-button">
+      <div className="section options-container fade-in">
+        <div className="new-plan-button">
           <CreatePlanButton />
         </div>
 
@@ -69,12 +76,12 @@ function List() {
           <i className="fa-solid fa-arrow-up-a-z" onClick={() => handleSort()}>
             {" "}
           </i>
-          <p className="help-text">Sort</p>
+          <span className="help-text">Sort</span>
         </div>
 
         <div className="option filter-button">
           <i className="fa-solid fa-filter" />
-          <p className="help-text">Filter</p>
+          <span className="help-text">Filter</span>
         </div>
 
         <div>
@@ -84,8 +91,9 @@ function List() {
           </select>
         </div>
       </div>
-
-      <ul className="section grid-container">{listComponents}</ul>
+      <ul className="section grid-container fade-in">{listComponents}</ul>
+      {/*{plans.length > 0 && <MiniPlanCardList plans={plans}/>}*/}
+      {/*{plans.length == 0 && <p> Loading </p>}*/}
     </>
   );
 }

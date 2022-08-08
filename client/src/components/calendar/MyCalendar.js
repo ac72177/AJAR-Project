@@ -8,13 +8,15 @@ export default function MyCalendar(props) {
   const planList = props.plans;
 
   return (
-    <div className={"calendarContainer"}>
+    <div className={"calendarContainer fade-in"}>
       <Calendar
         localizer={localizer}
         events={planList}
         titleAccessor="name"
         startAccessor="startDate"
-        endAccessor="dueDate"
+        endAccessor={(planList) => {
+          return new Date(planList.dueDate).setHours(3, 3, 3, 3);
+        }}
         style={{ height: 800, padding: 50 }}
         popup
         views={["month"]}

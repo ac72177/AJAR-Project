@@ -12,6 +12,8 @@
 
 .planSummary {
   align-items: flex-start;
+  margin-top: 2em;
+  margin-bottom: 4em;
 }
 
 .Plan h1 {

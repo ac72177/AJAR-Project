@@ -5,15 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlansAsync } from "../../redux/plans/thunks";
 import { useAuth0 } from "@auth0/auth0-react";
 import MiniPlanCardList from "./MiniPlanCardList";
+import { selectPlans, selectFilteredPlans } from "../../redux/plans/reducer";
 
 function List() {
   const dispatch = useDispatch();
   const { user } = useAuth0();
-  let userPlans = useSelector((state) => state.plans.list);
+  console.log("printing filtered plans")
+  const userPlans = useSelector(selectPlans);
+  console.log(userPlans)
+  const filteredPlans = useSelector(selectFilteredPlans);
+  console.log(filteredPlans)
   const [plans, setPlans] = useState(userPlans);
-
-  // console.log(userPlans);
-  // console.log(plans);
 
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));
@@ -42,6 +44,7 @@ function List() {
   }
 
   function handleFilter(chosenLabel) {
+    dispatch({type: 'filters/labelFilterChanged', payload: chosenLabel})
     console.log("handlingFilter");
     if (chosenLabel !== "All") {
       let filtered = userPlans.filter((value) => {
@@ -50,19 +53,15 @@ function List() {
         }
         return false;
       });
-      // setPlans[filtered];
+      setPlans[filtered];
     } else {
-      // setPlans[userPlans];
+      setPlans[userPlans];
     }
     console.log(plans);
   }
 
   const labels = getAllLabels().map((e, index) => {
     return <option key={index}> {e} </option>;
-  });
-
-  const listComponents = userPlans.map((object, index) => {
-    return <MiniPlanCard key={index} id={object} />;
   });
 
   return (
@@ -92,7 +91,9 @@ function List() {
         </div>
       </div>
 
-      <ul className="section grid-container">{listComponents}</ul>
+      <MiniPlanCardList plans={filteredPlans}/>
+
+      {/* <ul className="section grid-container">{listComponents}</ul> */}
 
       {/*{plans.length > 0 && <MiniPlanCardList plans={plans}/>}*/}
       {/*{plans.length == 0 && <p> Loading </p>}*/}

@@ -16,17 +16,15 @@ export default function SummaryBarContainer() {
   }, []);
 
   return (
+    <div>
       <div>
-        <div>
-          <WelcomeMsg userName={user.nickname} />
-          <br />
-
-        </div>
-
-        <div className="SummaryBarContainer">
-          <SummaryBar plans={userPlans} />
-        </div>
+        <WelcomeMsg userName={user.nickname} />
+        <br />
       </div>
 
+      <div className="SummaryBarContainer">
+        <SummaryBar plans={userPlans} />
+      </div>
+    </div>
   );
 }

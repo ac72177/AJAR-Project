@@ -6,15 +6,15 @@ const LogoutButton = () => {
   return (
     <div className="logout">
       <button
-      className="button"
-      onClick={() =>
-        logout({
-          returnTo: window.location.origin,
-        })
-      }
-    >
-      Log Out
-    </button>
+        className="button"
+        onClick={() =>
+          logout({
+            returnTo: window.location.origin,
+          })
+        }
+      >
+        Log Out
+      </button>
     </div>
   );
 };

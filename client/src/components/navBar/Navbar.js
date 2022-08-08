@@ -29,13 +29,15 @@ export default function Navbar(props) {
               <CDBSidebarMenuItem icon="table">Plans</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/calendar" className="isActive">
-              <CDBSidebarMenuItem icon="calendar-alt">Calendar</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="calendar-alt">
+                Calendar
+              </CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
         <CDBSidebarFooter>
-            <LogoutButton />
+          <LogoutButton />
         </CDBSidebarFooter>
       </CDBSidebar>
     </div>

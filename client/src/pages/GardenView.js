@@ -7,8 +7,6 @@ import "../styles/home/SummaryBar.css";
 export default function GardenView() {
   return (
     <div className={"home"}>
-
-
       <SummaryBarContainer />
 
       <GardenContainer />

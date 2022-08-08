@@ -1,4 +1,3 @@
-import MiniPlanCard from "./MiniPlanCard";
 import { useEffect, useState } from "react";
 import CreatePlanButton from "../planModification/CreatePlanButton";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,25 +9,13 @@ import { selectPlans, selectFilteredPlans } from "../../redux/plans/reducer";
 function List() {
   const dispatch = useDispatch();
   const { user } = useAuth0();
-  console.log("printing filtered plans")
   const userPlans = useSelector(selectPlans);
-  console.log(userPlans)
   const filteredPlans = useSelector(selectFilteredPlans);
-  console.log(filteredPlans)
-  const [plans, setPlans] = useState(userPlans);
+  const [sortOrder, setSortOrder] = useState(false);
 
   useEffect(() => {
     dispatch(getPlansAsync(user.sub));
-  }, [plans]);
-
-  function handleSort() {
-    console.log("handlesort, plans =");
-
-    const sortedData = [...plans].sort((a, b) =>
-      a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
-    );
-    console.log(sortedData);
-  }
+  }, []);
 
   function getAllLabels() {
     const allLabels = [];
@@ -44,20 +31,7 @@ function List() {
   }
 
   function handleFilter(chosenLabel) {
-    dispatch({type: 'filters/labelFilterChanged', payload: chosenLabel})
-    console.log("handlingFilter");
-    if (chosenLabel !== "All") {
-      let filtered = userPlans.filter((value) => {
-        for (let i = 0; i < value.labels.length; i++) {
-          if (value.labels[i] === chosenLabel) return true;
-        }
-        return false;
-      });
-      setPlans[filtered];
-    } else {
-      setPlans[userPlans];
-    }
-    console.log(plans);
+    dispatch({ type: "filters/labelFilterChanged", payload: chosenLabel });
   }
 
   const labels = getAllLabels().map((e, index) => {
@@ -69,13 +43,6 @@ function List() {
       <div className="section options-container">
         <div className="option new-plan-button">
           <CreatePlanButton />
-        </div>
-
-        <div className="option sort-button">
-          <i className="fa-solid fa-arrow-up-a-z" onClick={() => handleSort()}>
-            {" "}
-          </i>
-          <p className="help-text">Sort</p>
         </div>
 
         <div className="option filter-button">
@@ -91,12 +58,7 @@ function List() {
         </div>
       </div>
 
-      <MiniPlanCardList plans={filteredPlans}/>
-
-      {/* <ul className="section grid-container">{listComponents}</ul> */}
-
-      {/*{plans.length > 0 && <MiniPlanCardList plans={plans}/>}*/}
-      {/*{plans.length == 0 && <p> Loading </p>}*/}
+      <MiniPlanCardList plans={filteredPlans} />
     </>
   );
 }

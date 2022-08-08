@@ -3,20 +3,25 @@
 }
 .garden {
   padding-top: 10px;
-  position: center;
+
+
 }
 .garden_background {
   position: relative;
   width: 800px;
   height: 500px;
-  padding: 20px;
+  padding: 30px;
   background-image: url("./../../img/garden.png");
-  background-size: 800px 400px;
+  background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .garden_background p {
-    color: white;
-    font-size: 10px;
-    text-align: center;
+  color: white;
+  font-size: 10px;
+  text-align: center;
 }
 
+.Welcome-message {
+  font-size: 3vw;
+}

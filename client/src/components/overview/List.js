@@ -40,14 +40,14 @@ function List() {
 
   return (
     <>
-      <div className="section options-container">
-        <div className="option new-plan-button">
+      <div className="section options-container fade-in">
+        <div className="new-plan-button">
           <CreatePlanButton />
         </div>
 
         <div className="option filter-button">
           <i className="fa-solid fa-filter" />
-          <p className="help-text">Filter</p>
+          <span className="help-text">Filter</span>
         </div>
 
         <div>
@@ -57,7 +57,6 @@ function List() {
           </select>
         </div>
       </div>
-
       <MiniPlanCardList plans={filteredPlans} />
     </>
   );

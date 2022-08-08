@@ -8,7 +8,7 @@ export default function MyCalendar(props) {
   const planList = props.plans;
 
   return (
-    <div className={"calendarContainer"}>
+    <div className={"calendarContainer fade-in"}>
       <Calendar
         localizer={localizer}
         events={planList}

@@ -133,7 +133,7 @@ export default function Garden(props) {
   const navigate = useNavigate();
 
   return (
-    <Grid container direction="row" className={"garden_background"}>
+    <Grid container direction="row" className={"garden_background fade-in"}>
       {plant1.map((plan) => (
         <Grid
           key={plan}

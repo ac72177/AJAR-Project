@@ -81,6 +81,9 @@ export default function Form(props) {
       plans: subplanObjects,
       owner: user.sub,
     };
+
+    dispatch({ type: "filters/labelFilterChanged", payload: "All" });
+
     if (props.put) {
       dispatch(putPlanAsync(data));
     } else {
@@ -178,7 +181,7 @@ export default function Form(props) {
       </div>
       <br></br>
       <div className="buttons">
-        <input type="submit" value="Cancel" onClick={props.handleClose}></input>
+        <input type="submit" value="Exit" onClick={props.handleClose}></input>
         <input type="submit" value="Save" onClick={savePlan}></input>
       </div>
     </Box>

@@ -33,6 +33,7 @@ function MiniPlan(props) {
 
   // React route onClick: https://stackoverflow.com/questions/71540485/how-to-navigate-through-routing-on-button-click-in-react-react-router-6-2-1
   const navigate = useNavigate();
+  let dueDate = new Date(currPlan.dueDate);
 
   return (
     <div className="card">
@@ -49,7 +50,11 @@ function MiniPlan(props) {
               }}
             ></i>
           </div>
-          <h6>Due: {currPlan.dueDate}</h6>
+          <h6>Due: {dueDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+              })}</h6>
         </div>
 
         <div className="labels-section">{labels}</div>

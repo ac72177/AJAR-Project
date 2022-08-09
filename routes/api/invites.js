@@ -9,7 +9,6 @@ const Plan = require("../../models/Plan")
 /*
 @route POST api/invites
 @desc post an invite
-@access Public
 The body of this request should follow
 {
     planId: <planId>,
@@ -40,7 +39,6 @@ router.post("/", function (req, res, next) {
 
 // @route DELETE api/invite/:inviteId
 // @desc Delete an invite and push redeemer to plan
-// @access Public
 // body of this req should include the user who made the request.
 router.delete("/:inviteId", function (req, res, next) {
     const conditions = { _id: req.params.inviteId }

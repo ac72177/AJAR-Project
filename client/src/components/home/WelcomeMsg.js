@@ -27,8 +27,8 @@ export default function WelcomeMsg() {
 
   if (returnedUser !== undefined) {
     return (
-      <div className="Welcome-message">
-        <h1>
+      <div>
+        <h1 className="Welcome-message">
           {" "}
           <strong>
             {" "}

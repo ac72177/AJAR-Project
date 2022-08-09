@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
+import { LabelFilters } from "../filter/reducer";
 import { REQUEST_STATE } from "../utils";
 import {
   addPlanAsync,
@@ -108,5 +110,26 @@ const plansSlice = createSlice({
       })
   },
 });
+
+export const selectPlans = (state) => state.plans.list;
+
+export const selectLabel = (state) => state.filters.label;
+
+export const selectFilteredPlans = createSelector(
+  selectPlans,
+  selectLabel,
+  (list, label) => {
+    if (label === LabelFilters.All) {
+      return list;
+    }
+    let filtered = list.filter((item) => {
+      for (let i = 0; i < item.labels.length; i++) {
+        if (item.labels[i] === label) return true;
+      }
+      return false;
+    });
+    return filtered;
+  }
+);
 
 export default plansSlice.reducer;

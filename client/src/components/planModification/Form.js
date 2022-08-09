@@ -56,10 +56,6 @@ export default function Form(props) {
   const savePlan = (e) => {
     e.preventDefault();
 
-    if (tasks == "") {
-      setTasks("Completed");
-    }
-
     let subplans = tasks.split(",");
     let subplanObjects = [];
     for (let i = 0; i < subplans.length; i++) {
@@ -82,6 +78,8 @@ export default function Form(props) {
       owner: user.sub,
     };
 
+    dispatch({ type: "filters/labelFilterChanged", payload: "All" });
+
     if (props.put) {
       dispatch(putPlanAsync(data));
     } else {
@@ -102,7 +100,7 @@ export default function Form(props) {
       sx={{
         "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
-      autoComplete="off"
+      autoComplete="on"
     >
       <div>
         <TextField
@@ -134,6 +132,7 @@ export default function Form(props) {
           <DatePicker
             required
             label="Due Date"
+            minDate={startDate}
             value={dueDate}
             onChange={(dueDate) => {
               // TODO error if its before the start date
@@ -175,6 +174,7 @@ export default function Form(props) {
           id="filled-multiline-flexible"
           label="Tasks"
           multiline
+          required
           maxRows={4}
           value={tasks}
           placeholder="Visit Costco, Invite Friends, Cleanup House"
@@ -185,7 +185,7 @@ export default function Form(props) {
       </div>
       <br></br>
       <div className="buttons">
-        <input type="button" value="Cancel" onClick={props.handleClose}></input>
+        <input type="submit" value="Exit" onClick={props.handleClose}></input>
         <input type="submit" value="Save" onClick={savePlan}></input>
       </div>
     </Box>

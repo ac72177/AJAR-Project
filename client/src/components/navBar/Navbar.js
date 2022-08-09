@@ -12,6 +12,10 @@ import { NavLink } from "react-router-dom";
 import "./../../styles/navBar/style.css";
 import LogoutButton from "../login/LogoutButton";
 
+// Resources
+// https://reactrouter.com/docs/en/v6/getting-started/overview
+// https://www.devwares.com/docs/contrast/react/navigation/sidebar/
+
 export default function Navbar() {
   return (
     <div className="sidebar fade-in">

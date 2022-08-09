@@ -12,7 +12,7 @@ export default function Plan(props) {
   let planName = plan["name"];
   let startDate = new Date(plan.startDate);
   let dueDate = new Date(plan.dueDate);
-  console.log(plan)
+  
   return (
     <div className="Plan fade-in">
       <div className="titleContainer">

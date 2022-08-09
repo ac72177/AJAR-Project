@@ -103,7 +103,6 @@ const addSubplan = async (subplan) => {
   });
 
   const data = await response.json();
-  console.log(data)
   if (!response.ok) {
     const errorMsg = data?.message;
     throw new Error(errorMsg);

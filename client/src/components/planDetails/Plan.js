@@ -61,10 +61,9 @@ export default function Plan(props) {
 
       <div>
         <Stack direction="row">
-          <h3>
-            {" "}
-            <strong> Useful Links: </strong>
-          </h3>
+          <h2>
+            Useful Links
+          </h2>
           <AddAttachmentButton plan={plan} />
         </Stack>
 

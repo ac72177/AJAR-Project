@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@dhaiwat10/react-link-preview": "^1.14.2",
+    "@mui/icons-material": "^5.8.4",
     "concurrently": "^7.2.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",

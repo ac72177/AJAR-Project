@@ -1,4 +1,8 @@
 import { useState } from "react";
+
+import IconButton from '@mui/material/IconButton';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+
 import AddAttachmentForm from "./AddAttachmentForm";
 
 
@@ -12,11 +16,8 @@ export default function AddAttachmentButton(props) {
     return (
         <div>
             {isOpen && <AddAttachmentForm plan={props.plan} handleClose={togglePopup} />}
-            {/* <button className="button" onClick={togglePopup}>
-                New Attachment
-            </button> */}
             <IconButton aria-label="Add Attachment" onClick={togglePopup}>
-                <CheckIcon color="success" />
+                <AddBoxOutlinedIcon />
             </IconButton>
         </div>
     );

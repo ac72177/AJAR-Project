@@ -37,6 +37,9 @@ const PlanSchema = new Schema({
     type: String,
     required: true,
   },
+  attachments: {
+    type: Array,
+  }
 });
 
 module.exports = Plan = mongoose.model("plan", PlanSchema);

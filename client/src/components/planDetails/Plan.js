@@ -3,6 +3,8 @@ import { LinkPreview } from '@dhaiwat10/react-link-preview';
 import SubPlan from "./SubPlan.js";
 import ProgressBar from "./ProgressBar.js";
 import "./../../styles/planDetails/Plan.css";
+import AddAttachmentButton from '../planModification/AddAttachmentButton.js';
+import { Stack, Grid } from '@mui/material';
 
 export default function Plan(props) {
   const plan = props.plan;
@@ -47,12 +49,6 @@ export default function Plan(props) {
           {" "}
           <strong>Description:</strong> {plan.description}
         </h3>
-
-        <h3>
-          {" "}
-          <strong> Useful Links: </strong>
-          <LinkPreview url="https://www.youtube.com/watch?v=qSdPxslMRws&ab_channel=BrilliantLabs%2FLabosCr%C3%A9atifs"  descriptionLength="0" width='150px' height='200px' />
-        </h3>
       </div>
 
       <div>
@@ -61,6 +57,26 @@ export default function Plan(props) {
         {plan.plans.map((subPlan) => {
           return <SubPlan subPlan={subPlan} isComplete={subPlan.isComplete} />;
         })}
+      </div>
+
+      <div>
+        <Stack direction="row">
+          <h3>
+            {" "}
+            <strong> Useful Links: </strong>
+          </h3>
+          <AddAttachmentButton plan={plan} />
+        </Stack>
+
+        <Grid container spacing={1}>
+          {plan.attachments.map((url, i) => {
+            return (
+              <Grid item>
+                <LinkPreview url={url} key={i} descriptionLength="0" width='150px' height='200px' />
+              </ Grid>
+            )
+          })}
+        </Grid>
       </div>
     </div>
   );

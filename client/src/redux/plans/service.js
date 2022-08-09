@@ -76,9 +76,70 @@ const putPlan = async (editedFields) => {
   return data;
 };
 
+const getPlan = async (planID) => {
+  const response = await fetch("/api/plans/plan/" + planID, {
+    method: "GET",
+  });
+  return response.json();
+};
+
+const addSubplan = async (subplan) => {
+  const body = {
+    name: subplan.name,
+    labels: subplan.labels,
+    startDate: subplan.startDate,
+    dueDate: subplan.dueDate,
+    description: subplan.description,
+    plans: subplan.plans,
+    owner: subplan.owner,
+    user: subplan.user
+  };
+  const response = await fetch("/api/plans/" + subplan.owner + "/subplans/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    const errorMsg = data?.message;
+    throw new Error(errorMsg);
+  }
+  
+  return data;
+};
+
+// subplan field contains subplan's owner and subplan ID.
+const deleteSubplan = async (subplan) => {
+  const response = await fetch(
+    "/api/plans/" + subplan.owner + "/subplans/" + subplan._id,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: { user: subplan.user }
+    }
+  );
+
+  const data = await response.json();
+  if (!response.ok) {
+    const errorMsg = data?.message;
+    throw new Error(errorMsg);
+  }
+
+  return data;
+};
+
 export default {
   addPlan,
   deletePlan,
   getPlans,
   putPlan,
+  getPlan,
+
+  addSubplan,
+  deleteSubplan
 };

@@ -9,6 +9,7 @@ export default function PopupForm(props) {
         <Form
           id={props.id}
           put={props.put}
+          subplan={props.subplan}
           currPlan={props.currPlan}
           handleClose={props.handleClose}
         />

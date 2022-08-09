@@ -29,3 +29,24 @@ export const putPlanAsync = createAsyncThunk(
     return await PlanService.putPlan(data);
   }
 );
+
+export const getPlanAsync = createAsyncThunk(
+  actionTypes.GET_PLAN,
+  async (planID) => {
+    return await PlanService.getPlan(planID);
+  }
+);
+
+export const addSubplanAsync = createAsyncThunk(
+  actionTypes.ADD_SUBPLAN,
+  async (data) => {
+    return await PlanService.addSubplan(data);
+  }
+);
+
+export const deleteSubplanAsync = createAsyncThunk(
+  actionTypes.DELETE_SUBPLAN,
+  async (data) => {
+    return await PlanService.deletePlan(data);
+  }
+);

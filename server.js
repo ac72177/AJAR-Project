@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 
 const usersRouter = require("./routes/api/users");
 const plansRouter = require("./routes/api/plans");
+const invitesRouter = require("./routes/api/invites");
 require("dotenv").config();
 
 const app = express();
@@ -27,8 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
 // Use Routes
+app.use("/api/invites", invitesRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/plans", plansRouter);
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));

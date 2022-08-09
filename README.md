@@ -18,7 +18,7 @@ Plan+ (Plan-plus) is a garden-theme planning tool for anyone who wishes to manag
 ### Standard
 - [x] A user can delete data from their account
 - [x] A user can edit their existing plans
-- [ ] A user can sort/filter plans based on a specific plan attribute 
+- [x] A user can filter plans based on a specific plan attribute 
 - [x] A user can associate Plans with other Tasks
 - [x] A user can assign a due date field to a Plan
 6. A user can attach files to each plan 

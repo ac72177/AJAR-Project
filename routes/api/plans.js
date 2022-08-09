@@ -119,19 +119,3 @@ router.delete("/:planId/subplans/:subplanId", function (req, res, next) {
     )
     .catch((err) => res.status(404).json({ success: false }));
 });
-
-// @route PUT api/plans/planID
-// @desc Modify a Plan
-// @access Public
-router.put("/:planID", function (req, res, next) {
-  // tutorial: https://www.youtube.com/watch?v=M2u1W2CzXdE&ab_channel=LarsBilde
-  const conditions = { _id: req.params.planID };
-  Plan.findOneAndUpdate(conditions, req.body, { new: true })
-    .then(() => {
-      Plan.find({ owner: req.body.owner })
-        .sort({ date: -1 })
-        .then((plans) => res.send(plans));
-    })
-    .catch((error) => console.error(error));
-});
-

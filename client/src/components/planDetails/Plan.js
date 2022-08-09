@@ -5,6 +5,7 @@ import "./../../styles/planDetails/Plan.css";
 import CreateSubplanButton from "../planModification/CreateSubplanButton.js";
 import SubplanGrid from "./SubplanGrid"
 import InviteButton from './InviteButton.js';
+import { Stack } from '@mui/material';
 
 export default function Plan(props) {
   const plan = props.plan;
@@ -49,13 +50,16 @@ export default function Plan(props) {
           {" "}
           <strong>Description:</strong> {plan.description}
         </h3>
-        <InviteButton plan={plan}/>
+        <InviteButton plan={plan} />
       </div>
 
       <div>
-        <h2> Tasks: </h2>
-        <CreateSubplanButton subplan={true} currPlan={plan}/>
-        <SubplanGrid subplans={plan.plans}/>
+        <Stack direction="row">
+          <h2> Tasks </h2>
+          <CreateSubplanButton subplan={true} currPlan={plan} />
+        </Stack>
+
+        <SubplanGrid plan={plan} />
       </div>
       <ToastContainer />
     </div>

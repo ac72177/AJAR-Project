@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import { useAuth0 } from "@auth0/auth0-react";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,7 +33,7 @@ export default function InviteButton(props) {
         notifyOnSuccess(`Invitation ID copied to clipboard! Send this ID to your friend so they can redeem it on the "Share" page!`)
     }
     return (
-        <Button variant="contained" onClick={() => { invite() }}
-        >Invite others to this plan</Button>
+        <button className="button"  onClick={() => { invite() }}
+        >Invite others to this plan</button>
     )
 }

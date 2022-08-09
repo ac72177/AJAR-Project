@@ -1,5 +1,5 @@
 export function stringToDate(dateString) {
-    const date = new Date(params.value)
+    const date = new Date(dateString)
     return date.toLocaleDateString("en-US", {
         year: "numeric",
         month: "2-digit",

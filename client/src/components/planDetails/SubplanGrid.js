@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
-import { stringToDate } from "../utils/dateFormat";
+import { stringToDate } from "../../utils/dateFormat";
 // const columns = [
 //   { field: 'id', headerName: 'ID', width: 90 },
 //   {

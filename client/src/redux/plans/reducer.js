@@ -7,6 +7,10 @@ import {
   getPlansAsync,
   deletePlanAsync,
   putPlanAsync,
+  getPlanAsync,
+  
+  addSubplanAsync,
+  deleteSubplanAsync,
 } from "./thunks";
 
 const INITIAL_STATE = {
@@ -15,6 +19,10 @@ const INITIAL_STATE = {
   deletePlan: REQUEST_STATE.IDLE,
   getPlans: REQUEST_STATE.IDLE,
   putPlan: REQUEST_STATE.IDLE,
+  getPlan: REQUEST_STATE.IDLE,
+
+  addSubplan: REQUEST_STATE.IDLE,
+  deleteSubplan: REQUEST_STATE.IDLE,
   error: null,
 };
 
@@ -67,7 +75,39 @@ const plansSlice = createSlice({
       .addCase(putPlanAsync.rejected, (state, action) => {
         state.putPlan = REQUEST_STATE.REJECTED;
         state.error = action.error;
-      });
+      })
+      .addCase(getPlanAsync.pending, (state) => {
+        state.getPlan = REQUEST_STATE.PENDING;
+        state.error = null;
+      })
+      .addCase(getPlanAsync.fulfilled, (state, action) => {
+        state.getPlan = REQUEST_STATE.FULFILLED;
+      })
+      .addCase(getPlanAsync.rejected, (state, action) => {
+        state.getPlan = REQUEST_STATE.REJECTED;
+        state.error = action.error;
+      })
+
+      .addCase(addSubplanAsync.pending, (state) => {
+        state.addSubplan = REQUEST_STATE.PENDING;
+        state.error = null;
+      })
+      .addCase(addSubplanAsync.fulfilled, (state, action) => {
+        state.addSubplan = REQUEST_STATE.FULFILLED;
+        state.list = action.payload;
+      })
+      .addCase(addSubplanAsync.rejected, (state, action) => {
+        state.addSubplan = REQUEST_STATE.REJECTED;
+        state.error = action.error;
+      })
+      .addCase(deleteSubplanAsync.fulfilled, (state, action) => {
+        state.deleteSubplan = REQUEST_STATE.FULFILLED;
+        state.list = action.payload;
+      })
+      .addCase(deleteSubplanAsync.rejected, (state, action) => {
+        state.deleteSubplan = REQUEST_STATE.REJECTED;
+        state.error = action.error;
+      })
   },
 });
 

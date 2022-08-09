@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPlanAsync, putPlanAsync } from "../../redux/plans/thunks";
+import { addPlanAsync, addSubplanAsync, putPlanAsync } from "../../redux/plans/thunks";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
@@ -22,7 +22,7 @@ export default function Form(props) {
 
   function initializePlan() {
     let currPlan = props.currPlan;
-    if (currPlan == undefined) {
+    if ((currPlan == undefined) || (props.subplan)) {
       return {
         name: "",
         startDate: "",
@@ -83,7 +83,13 @@ export default function Form(props) {
     if (props.put) {
       dispatch(putPlanAsync(data));
     } else {
-      dispatch(addPlanAsync(data));
+      if (props.subplan) {
+        data.user = user.sub
+        data.owner = props.currPlan._id;
+        dispatch(addSubplanAsync(data));
+      } else {
+        dispatch(addPlanAsync(data));
+      }
     }
   };
 

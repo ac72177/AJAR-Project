@@ -12,7 +12,11 @@
   },
   "dependencies": {
     "@dhaiwat10/react-link-preview": "^1.14.2",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.3",
+    "@mui/x-data-grid": "^5.15.1",
     "concurrently": "^7.2.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",

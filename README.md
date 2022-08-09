@@ -18,7 +18,7 @@ Plan+ (Plan-plus) is a garden-theme planning tool for anyone who wishes to manag
 ### Standard
 - [x] A user can delete data from their account
 - [x] A user can edit their existing plans
-- [ ] A user can sort/filter plans based on a specific plan attribute 
+- [x] A user can filter plans based on a specific plan attribute 
 - [x] A user can associate Plans with other Tasks
 - [x] A user can assign a due date field to a Plan
 6. A user can attach files to each plan 
@@ -60,7 +60,7 @@ worked on the UI for the overview and landing page. He worked on signup/login wo
 ### Jun Choi 
 worked on the UI for the individual plan page. He set up the Update endpoint for the backend API and worked on the plan sharing/invite feature. He also added embedded links in the individual plan page. 
 ### Rene Huang 
-worked on the UI for the Garden, Sort and Filter, and the Calendar. She implemented the progress bar logic that would ensure that the status bars would update when tracking progress. She contributed to UI cleanup and added more functionality to the garden so that you could reach the detailed view of each plant. 
+worked on the UI for the Garden, the filtering functionalities, and the Calendar. She implemented the progress bar logic that would ensure that the status bars would update when tracking progress. She contributed to UI cleanup and added more functionality to the garden so that you could reach the detailed view of each plant. 
 
 
 ## Rough Sketch

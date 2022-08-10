@@ -6,5 +6,5 @@ export const actionTypes = {
   GET_PLAN: "api/plans/getPlan",
 
   ADD_SUBPLAN: "api/plans/subplans/addPlan",
-  DELETE_SUBPLAN: "api/plans/subplans/deletePlan"
+  DELETE_SUBPLAN: "api/plans/subplans/deletePlan",
 };

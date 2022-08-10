@@ -92,7 +92,7 @@ const addSubplan = async (subplan) => {
     description: subplan.description,
     plans: subplan.plans,
     owner: subplan.owner,
-    user: subplan.user
+    user: subplan.user,
   };
   const response = await fetch("/api/plans/" + subplan.owner + "/subplans/", {
     method: "POST",
@@ -107,7 +107,7 @@ const addSubplan = async (subplan) => {
     const errorMsg = data?.message;
     throw new Error(errorMsg);
   }
-  
+
   return data;
 };
 
@@ -120,7 +120,7 @@ const deleteSubplan = async (subplan) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: { user: subplan.user }
+      body: { user: subplan.user },
     }
   );
 
@@ -141,5 +141,5 @@ export default {
   getPlan,
 
   addSubplan,
-  deleteSubplan
+  deleteSubplan,
 };

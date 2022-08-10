@@ -40,7 +40,7 @@ const PlanSchema = new Schema({
   },
   attachments: {
     type: Array,
-    default: []
+    default: [],
   },
 });
 

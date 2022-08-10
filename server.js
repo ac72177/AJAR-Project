@@ -32,7 +32,6 @@ app.use("/api/invites", invitesRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/plans", plansRouter);
 
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });

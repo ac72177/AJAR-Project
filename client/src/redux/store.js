@@ -3,7 +3,6 @@ import plansReducer from "./plans/reducer";
 import filtersReducer from "./filter/reducer";
 import usersReducer from "./users/reducer";
 
-
 const store = configureStore({
   reducer: {
     plans: plansReducer,

@@ -3,8 +3,6 @@
 }
 .garden {
   padding-top: 10px;
-
-
 }
 .garden_background {
   position: relative;
@@ -13,8 +11,8 @@
   padding: 30px;
   background-image: url("./../../img/garden.png");
   background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .garden_background p {
   color: white;

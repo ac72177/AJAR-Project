@@ -7,9 +7,9 @@ import WelcomeMsgContainer from "../components/home/WelcomeMsgContainer";
 export default function GardenView() {
   return (
     <div className={"home"}>
-        <WelcomeMsgContainer/>
+      <WelcomeMsgContainer />
 
-        <SummaryBarContainer />
+      <SummaryBarContainer />
 
       <GardenContainer />
     </div>

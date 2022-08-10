@@ -1,18 +1,18 @@
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 import ProgressBar from "./ProgressBar.js";
 import "./../../styles/planDetails/Plan.css";
 import CreateSubplanButton from "../planModification/CreateSubplanButton.js";
-import SubplanGrid from "./SubplanGrid"
-import InviteButton from './InviteButton.js';
-import { Stack } from '@mui/material';
+import SubplanGrid from "./SubplanGrid";
+import InviteButton from "./InviteButton.js";
+import { Stack } from "@mui/material";
 
 export default function Plan(props) {
   const plan = props.plan;
   let planName = plan["name"];
   let startDate = new Date(plan.startDate);
   let dueDate = new Date(plan.dueDate);
-  
+
   return (
     <div className="Plan fade-in">
       <div className="titleContainer">

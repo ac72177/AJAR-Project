@@ -5,18 +5,17 @@ import { useAuth0 } from "@auth0/auth0-react";
 import WelcomeMsg from "./WelcomeMsg";
 
 export default function WelcomeMsgContainer() {
-    const dispatch = useDispatch();
-    const userPlans = useSelector((state) => state.plans.list);
-    const { user } = useAuth0();
+  const dispatch = useDispatch();
+  const userPlans = useSelector((state) => state.plans.list);
+  const { user } = useAuth0();
 
-    useEffect(() => {
-        dispatch(getPlansAsync(user.sub));
-    }, []);
+  useEffect(() => {
+    dispatch(getPlansAsync(user.sub));
+  }, []);
 
-    return (
-        <div>
-            <WelcomeMsg userName={user.nickname} />
-        </div>
-
-    );
+  return (
+    <div>
+      <WelcomeMsg userName={user.nickname} />
+    </div>
+  );
 }

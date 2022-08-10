@@ -3,8 +3,8 @@
 Plan+ (Plan-plus) is a garden-theme planning tool for anyone who wishes to manage and keep track of their their goals. Plan+ helps users to gain a better control of their plans and progress by providing the ability to add tasks under each plan, visualize plan progress, and to view plans based on labels and other attributes. Unlike all the other planning tools, Plan+ presents a fun and comforting user experience by visualizing each plan as a Plant in users' garden, which "grows" as the plan gets completed. 
 ## Task Requirements 
 ### Minimal
-1. A user must be able to login/signup to their account 
-- [x] Signup: username, password, email address, privacy agreement box
+1. A user must be able to login/signup to their account (completed)
+- [x] Signup: username, password, email address
 - [x] Login: input email and password or username and password to log in
  
 2. A user must be able to create a plan in the UI (completed)
@@ -21,8 +21,8 @@ Plan+ (Plan-plus) is a garden-theme planning tool for anyone who wishes to manag
 - [x] A user can filter plans based on a specific plan attribute 
 - [x] A user can associate Plans with other Tasks
 - [x] A user can assign a due date field to a Plan
-6. A user can attach files to each plan 
-7. A user can Aggregate progress for all plans on dashboard
+- [ ] A user can attach files to each plan 
+- [x] A user can Aggregate progress for all plans on dashboard
  
 ### Stretch
 - [ ] Notifications to remind users when a plan is due soon

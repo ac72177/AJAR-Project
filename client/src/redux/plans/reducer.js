@@ -8,7 +8,6 @@ import {
   deletePlanAsync,
   putPlanAsync,
   getPlanAsync,
-  
   addSubplanAsync,
   deleteSubplanAsync,
 } from "./thunks";
@@ -107,7 +106,7 @@ const plansSlice = createSlice({
       .addCase(deleteSubplanAsync.rejected, (state, action) => {
         state.deleteSubplan = REQUEST_STATE.REJECTED;
         state.error = action.error;
-      })
+      });
   },
 });
 

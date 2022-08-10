@@ -50,11 +50,14 @@ function MiniPlan(props) {
               }}
             ></i>
           </div>
-          <h6>Due: {dueDate.toLocaleDateString("en-US", {
+          <h6>
+            Due:{" "}
+            {dueDate.toLocaleDateString("en-US", {
               year: "numeric",
               month: "2-digit",
               day: "2-digit",
-              })}</h6>
+            })}
+          </h6>
         </div>
 
         <div className="labels-section">{labels}</div>

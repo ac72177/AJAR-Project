@@ -14,7 +14,7 @@ const InviteSchema = new Schema({
   sender: {
     type: Object,
     required: true,
-  }
+  },
 });
 
 module.exports = Invite = mongoose.model("invite", InviteSchema);

@@ -108,8 +108,10 @@ router.post("/:planID/subplans", function (req, res, next) {
 router.delete("/:planId/subplans/:subplanId", function (req, res, next) {
   Plan.findById(req.params.planId)
     .then((plan) => {
-      plan.plans = plan.plans.filter((subplan) => subplan._id !== req.params.subplanId)
-      plan.save()
+      plan.plans = plan.plans.filter(
+        (subplan) => subplan._id !== req.params.subplanId
+      );
+      plan.save();
     })
     .then(() => Plan.findOneAndDelete({ _id: req.params.subplanId }))
     .then(() =>

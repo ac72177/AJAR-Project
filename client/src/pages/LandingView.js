@@ -26,7 +26,7 @@ const LandingView = () => {
           <div className="flex-left">
             <img
               className="landing-photo"
-              src="https://i.imgur.com/bBLvpSU.png"
+              src="https://i.imgur.com/jFWkdOe.png"
               alt="picture"
             />
           </div>
@@ -46,7 +46,7 @@ const LandingView = () => {
           <div className="flex-left">
             <img
               className="landing-photo"
-              src="https://i.imgur.com/bBLvpSU.png"
+              src="https://i.imgur.com/L2W0q8J.png"
               alt="picture"
             />
           </div>
@@ -60,7 +60,7 @@ const LandingView = () => {
           <div className="flex-left">
             <img
               className="landing-photo"
-              src="https://i.imgur.com/bBLvpSU.png"
+              src="https://i.imgur.com/acfkBca.png"
               alt="picture"
             />
           </div>
@@ -80,7 +80,7 @@ const LandingView = () => {
           <div className="flex-left">
             <img
               className="landing-photo"
-              src="https://i.imgur.com/bBLvpSU.png"
+              src="https://i.imgur.com/FVq4yiw.png"
               alt="picture"
             />
           </div>
@@ -94,7 +94,7 @@ const LandingView = () => {
           <div className="flex-left">
             <img
               className="landing-photo"
-              src="https://i.imgur.com/bBLvpSU.png"
+              src="https://i.imgur.com/KwpWlRF.png"
               alt="picture"
             />
           </div>
